@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+                                                           Lego Website Clone
+# Lego Website Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project aims to recreate the lego.com website using React, SCSS, and other web technologies. Our goal is to create a responsive and interactive website that closely resembles the original lego.com site.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+1. Clone the repository to your local machine.
 
-### `npm start`
+   ```git clone https://github.com/Develhope-FS-INT-6-Team2/legoReact.git```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Navigate to the project directory.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```cd root directory of LEGOREACT ```
 
-### `npm test`
+3. Install the required dependencies.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```npm install```
 
-### `npm run build`
+4. Start the development server.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```npm start```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   Your React application will now be running at http://localhost:3000. or Network IP 192.168.X.X
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Workflow for Team Members
 
-### `npm run eject`
+### Creating a branch for your assignment
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Before starting a new assignment, make sure your local repository is up-to-date with the remote repository.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```git switch main```
+   ```git pull```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Create a new branch for your assignment. Use a descriptive name for your branch, such as feature/header-component or feature/product-listing-page.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```git switch -c <your-branch-name>```
 
-## Learn More
+### Working on your assignment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Begin working on your assignment by creating new components or modifying existing ones in the src folder.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Commit your changes regularly to keep track of your progress. Be sure to write descriptive commit messages.
 
-### Code Splitting
+   ```git add .
+   git commit -m "Your descriptive commit message"```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. Push your changes to the remote repository.
 
-### Analyzing the Bundle Size
+   ```git push origin <your-branch-name>```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Submitting your work
 
-### Making a Progressive Web App
+1. Once you have completed your assignment, push your final changes to the remote repository.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```git push origin <your-branch-name>```
 
-### Advanced Configuration
+2. Create a pull request on GitHub, comparing your branch with the main branch. Add a description of your work, and request a review from your teammates or project lead.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. After receiving feedback, make any necessary changes, and push the updates to your branch.
 
-### Deployment
+4. Once your work has been approved, merge your pull request into the main branch. Be sure to delete your branch after the merge is complete.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+                                                  Project Structure
+legoReact/
+│
+│
+├── src/
+│   ├── assets/
+│   │   ├── images/
+│   │   ├── fonts/
+│   │   └── icons/
+│   │
+│   ├── components/              <--- Components folder: Store reusable React components
+│   │   ├── Header/              <--- Header component folder
+│   │   │   ├── Header.js        <--- Header component logic
+│   │   │   └── Header.scss      <--- Header component styles
+│   │   ├── Footer/              <--- Footer component folder
+│   │   │   ├── Footer.js        <--- Footer component logic
+│   │   │   └── Footer.scss      <--- Footer component styles
+│   │   └── other components/    <--- Other reusable components
+│   │
+│   ├── css/
+│   │   └── main.css
+│   │
+│   ├── scss/
+│   │   ├── _variables.scss
+│   │   ├── _mixins.scss
+│   │   └── main.scss
+│   │
+│   ├── js/
+│   │   ├── main.js
+│   │   └── other scripts (if necessary)
+│   │
+│   ├── App.js                   <--- App.js: Main container for your React application
+│   ├── index.js                 <--- index.js: Entry point for your React application
+│   └── other React files (if necessary)
+│
+├── .gitignore
+├── package.json (if using npm or yarn)
+├── README.md
+└── other configuration files (if necessary, e.g., webpack.config.js)
+  ```
