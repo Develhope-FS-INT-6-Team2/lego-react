@@ -4,6 +4,7 @@ import FooterEmailFollow from "./footer-email-follow/FooterEmailFollow";
 import FooterLinks from "./footer-links/FooterLinks";
 import "./footer.css";
 
+
 function Footer(){
     return(
         <footer className="footer-container">
