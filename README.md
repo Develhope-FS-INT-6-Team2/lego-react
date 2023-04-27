@@ -1,4 +1,4 @@
-                                                           Lego Website Clone
+                                                       Lego Website Clone
 # Lego Website Clone
 
 This project aims to recreate the lego.com website using React, SCSS, and other web technologies. Our goal is to create a responsive and interactive website that closely resembles the original lego.com site.
@@ -7,7 +7,7 @@ This project aims to recreate the lego.com website using React, SCSS, and other 
 
 1. Clone the repository to your local machine.
 
-   ```git clone https://github.com/Develhope-FS-INT-6-Team2/legoReact.git```
+   ```git clone https://github.com/Develhope-FS-INT-6-Team2/lego-react.git```
 
 2. Navigate to the project directory.
 
