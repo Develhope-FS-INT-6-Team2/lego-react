@@ -1,0 +1,132 @@
+@import "../mixins.scss";
+.flex-column-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section-container {
+    @extend .flex-column-centered;
+    position: relative;
+    .hero-section-img-container{
+        max-width: 100%;
+        .big-img-hero-section {
+            max-width: 100%;
+            @include mQmax(600px){
+                display: none
+            }
+        }
+        .small-img-hero-section{
+            display: none;
+            max-width: 100%;
+            @include mQmax(600px){
+                display: block
+            }
+        }
+    }
+    .hero-section-text {
+        @extend .flex-column-centered;
+        width: 75%;
+        position: absolute;
+        // transform: translate(-50%, -50%);
+        color: #fff;
+        text-align: end;
+        align-items: end;
+        @include mQmax(600px){
+            position: static;
+            text-align: center;
+            align-items: center;
+            background-color: black;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+        img {
+            
+            @include mQmin(601px){
+                width: 50px
+            }
+            @include mQmin(901px){
+                width: auto;
+            }
+            @include mQmax(600px){
+                align-items:end;
+            }
+        }
+        h1 {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            font-weight: 100;
+            @include mQmin(601px){
+                font-size: 1.25rem;
+                line-height: 1.9375rem;
+                margin-top: 1px;
+                margin-bottom:1px;
+            }
+            @include mQmin(900px){
+                font-size: 2rem;
+                line-height: 2.6875rem;
+                margin-top: 10px;
+                margin-bottom:10px;
+                
+            }
+            @include mQmin(1201px){
+                font-size: 2.5rem;
+                line-height: 3.125rem;
+                
+            }
+        }
+        h2 {
+            font-size: 0.875rem;
+            line-height: 1.1875rem;
+            font-weight: 400;
+            @include mQmin(901px){
+                font-size: 1.125rem;
+                line-height: 1.75rem;
+            }
+        }
+        .hero-section-buttons {
+            @extend .flex-column-centered;
+            flex-direction: row;
+            align-items: end;
+            width: auto;
+            text-align: end;
+            a {
+                @extend .flex-column-centered;
+                flex-direction: row;
+                font-size: 0.875rem;
+                line-height: 1.1875rem;
+                margin-top: 0.9375rem;
+                margin-left: 0.625rem;
+                margin-right: 0.625rem;
+                align-items: center;
+                font-weight: 500;
+                padding: 0.1rem 1.25rem;
+                width: auto;
+                border-width: 1px;
+                border-style: solid;
+                text-align: center;
+                border-color: transparent;
+                border-radius: 4px;
+                background-color: white;
+                color: black;
+                text-decoration: none;
+                height: 40px;
+                &:hover{
+                    background-color: rgb(13, 13, 13);
+                    color: rgb(233, 229, 229);
+                }
+                p{
+                    font-size: 1rem;
+                    line-height: 1rem;
+                    
+                }
+                img {
+                    width: 20px;
+                    padding-left: 10px;
+
+                }
+            }  
+        }
+    }
+}
