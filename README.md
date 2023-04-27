@@ -64,13 +64,15 @@ This project aims to recreate the lego.com website using React, SCSS, and other 
 ```
                                                   Project Structure
 legoReact/
-│
+│── public/
+│     │
+│     │────assets/
+│           ├── images/
+│           ├── fonts/
+│           └── icons/
 │
 ├── src/
-│   ├── assets/
-│   │   ├── images/
-│   │   ├── fonts/
-│   │   └── icons/
+│   ├
 │   │
 │   ├── components/              <--- Components folder: Store reusable React components
 │   │   ├── Header/              <--- Header component folder
