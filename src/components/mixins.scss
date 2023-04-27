@@ -1,0 +1,78 @@
+@mixin respond($breakpoint) {
+    @if $breakpoint == mobile {
+        @media (max-width: 480px) { @content; }
+    }
+    @else if $breakpoint == tablet {
+        @media (max-width: 768px) { @content; }
+    }
+    @else if $breakpoint == desktop {
+        @media (max-width: 1024px) { @content; }
+    }
+}
+
+
+$screen-sizes: (
+  sm: 600px,
+  md: 900px,
+  lg: 1200px,
+  xl: 1600px,
+);
+
+@mixin sm {
+  @media (min-width: map-get($screen-sizes, sm)) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: map-get($screen-sizes, md)) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: map-get($screen-sizes, lg)) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: map-get($screen-sizes, xl)) {
+    @content;
+  }
+}
+
+@mixin custom($size) {
+  @media (min-width: $size) {
+    @content;
+   }
+  }
+
+@mixin respond2($breakpoint) {
+    @if $breakpoint == tablet {
+      @media screen and (max-width: 900px) { @content; }
+    }
+    @if $breakpoint == mobile {
+      @media screen and (max-width: 600px) { @content; }
+    }
+    @if $breakpoint == large-desktop {
+      @media screen and (min-width: 1200px) { @content; }
+    }
+  }
+
+@mixin flex-centered($direction: row, $content-place: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content-place;
+    align-items: $content-place;
+}
+@mixin mQmin($arg){
+    @media screen and (min-width: $arg){
+        @content;
+    }
+}
+@mixin mQmax($arg){
+    @media screen and (max-width: $arg){
+        @content;
+    }
+}
