@@ -2,6 +2,8 @@ import {React, useRef} from "react";
 
 
 function FooterMain() {
+
+  //part for the email input
   const emailRef = useRef("");
 
   function takeEmail(){
@@ -13,6 +15,44 @@ function FooterMain() {
     }
     emailRef.current.value = ""
   }
+
+  //part for the main sections ont he mobile version
+
+  //variables for the main sections
+  const list1Ref = useRef(null);
+  const list2Ref = useRef(null);
+  const list3Ref = useRef(null);
+  const list4Ref = useRef(null);
+
+
+  function handleButtonClick(buttonId) {
+    // opening the correct list for each buttons
+    if (window.innerWidth <= 900){
+        switch (buttonId) {
+        case "button1":
+            list1Ref.current.classList.toggle("show");
+            break;
+
+        case "button2":
+            list2Ref.current.classList.toggle("show");
+            break;
+
+        case "button3":
+            list3Ref.current.classList.toggle("show");
+            break;
+
+        case "button4":
+            list4Ref.current.classList.toggle("show");
+            break;
+
+        default:
+            break;
+        }
+    }
+}
+
+
+
     return(
         <div className="footer-main">
           <div className="footer-main-part-logo">
@@ -45,10 +85,10 @@ function FooterMain() {
           </div>
           <div className="footer-main-sections">
             <div className="footer-main-about-us-section">
-              <h4 id="button1" >
+              <h4 id="button1" onClick={() => handleButtonClick("button1")}>
                 ABOUT US
               </h4>
-              <ul className="main-section-list1">
+              <ul className="main-section-list1" ref={list1Ref}>
                 <li><a href="#">About the LEGO Group</a></li>
                 <li><a href="#">LEGO® news</a></li>
                 <li><a href="#">Sustainability</a></li>
@@ -59,10 +99,10 @@ function FooterMain() {
               </ul>
             </div>
             <div className="footer-main-support-section">
-              <h4 id="button2">
+              <h4 id="button2" onClick={() => handleButtonClick("button2")}>
                 SUPPORT US
               </h4>
-              <ul className="main-section-list2">
+              <ul className="main-section-list2" ref={list2Ref}>
                 <li><a href="#">Contact us</a></li>
                 <li><a href="#">Find building instructions</a></li>
                 <li><a href="#">Replacement parts</a></li>
@@ -73,20 +113,20 @@ function FooterMain() {
               </ul>
             </div>
             <div className="footer-main-attractions-section">
-              <h4 id="button3" >
+              <h4 id="button3" onClick={() => handleButtonClick("button3")}>
                 ATTRACTIONS
               </h4>
-              <ul className="main-section-list3">
+              <ul className="main-section-list3" ref={list3Ref}>
                 <li><a href="#">LEGO® House</a></li>
                 <li><a href="#">LEGOLAND® Parks</a></li>
                 <li><a href="#">LEGOLAND Discovery Centers</a></li>
               </ul>
             </div>
             <div className="footer-main-made-from-us-section">
-              <h4 id="button4">
+              <h4 id="button4" onClick={() => handleButtonClick("button4")}>
                 MORE FROM US
               </h4>
-              <ul className="main-section-list4">
+              <ul className="main-section-list4" ref={list4Ref}>
                 <li><a href="#">LEGO® LIFE</a></li>
                 <li><a href="#">LEGO Education</a></li>
                 <li><a href="#">LEGO Ideas</a></li>
