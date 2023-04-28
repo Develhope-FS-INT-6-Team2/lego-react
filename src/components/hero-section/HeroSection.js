@@ -8,21 +8,21 @@ import landRoverIcon from "./images/landRoverIcon.jpg";
 
 function HeroSection(){
     return(
-    <div class="hero-section-container">
-        <div class="hero-section-img-container">
+    <div className="hero-section-container">
+        <div className="hero-section-img-container">
             <img
-                class="small-img-hero-section"
+                className="small-img-hero-section"
                 src={landRoverMobile}
                 alt="hero-section-img"
             />
             <img
-                class="big-img-hero-section"
+                className="big-img-hero-section"
                 src={landRoverDesktop}
                 alt="hero-section-img"
             />
         </div>
 
-        <div class="hero-section-text">
+        <div className="hero-section-text">
             <img src={landRoverIcon}/>
             <h1>Go above and beyond</h1>
             <h2>
@@ -30,7 +30,7 @@ function HeroSection(){
                 <br />
                 Classic Defender 90.
             </h2>
-            <div class="hero-section-buttons">
+            <div className="hero-section-buttons">
                 <a href="#">
                     <p>Shop now</p>
                     <img

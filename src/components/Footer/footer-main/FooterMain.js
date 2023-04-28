@@ -1,8 +1,18 @@
-import React from "react";
+import {React, useRef} from "react";
 
 
 function FooterMain() {
+  const emailRef = useRef("");
 
+  function takeEmail(){
+    if (emailRef.current.value === "example@email.com"){
+      console.log("email")
+    }
+    else{
+      console.log({email: emailRef.current.value})
+    }
+    emailRef.current.value = ""
+  }
     return(
         <div className="footer-main">
           <div className="footer-main-part-logo">
@@ -17,15 +27,17 @@ function FooterMain() {
           <div className="footer-sub-email">
             <h3>SUBSCRIBE TO DIGITAL MARKETING EMAILS</h3>
             <div className="footer-email-input-area">
-              <input
+            <input
+                ref={emailRef}
                 type="email"
                 className="footer-email"
-                onclick="changeEmailInputValue('emailMobile')"
-                value="Your email adress"
+                defaultValue="example@email.com"
+                onClick={takeEmail}
               />
               <button
                 className="email-button"
-                onclick="addEmailtoContainer('emailMobile')"
+                type="submit"
+                onClick={takeEmail}
               >
                 <img src="../assets/images/featured-sets/right-arrow.png" />
               </button>
@@ -33,7 +45,7 @@ function FooterMain() {
           </div>
           <div className="footer-main-sections">
             <div className="footer-main-about-us-section">
-              <h4 id="button1" onclick="handleButtonClick('button1')">
+              <h4 id="button1" >
                 ABOUT US
               </h4>
               <ul className="main-section-list1">
@@ -47,7 +59,7 @@ function FooterMain() {
               </ul>
             </div>
             <div className="footer-main-support-section">
-              <h4 id="button2" onclick="handleButtonClick('button2')">
+              <h4 id="button2">
                 SUPPORT US
               </h4>
               <ul className="main-section-list2">
@@ -61,7 +73,7 @@ function FooterMain() {
               </ul>
             </div>
             <div className="footer-main-attractions-section">
-              <h4 id="button3" onclick="handleButtonClick('button3')">
+              <h4 id="button3" >
                 ATTRACTIONS
               </h4>
               <ul className="main-section-list3">
@@ -71,7 +83,7 @@ function FooterMain() {
               </ul>
             </div>
             <div className="footer-main-made-from-us-section">
-              <h4 id="button4" onclick="handleButtonClick('button4')">
+              <h4 id="button4">
                 MORE FROM US
               </h4>
               <ul className="main-section-list4">
