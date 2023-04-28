@@ -1,22 +1,35 @@
-import React from "react";
+import {React, useRef} from "react";
 
 
 function FooterEmailFollow(){
+  const emailRef = useRef("");
+
+  function takeEmail(){
+    if (emailRef.current.value === "example@email.com"){
+      console.log("not valid")
+    }
+    else{
+      console.log({email: emailRef.current.value})
+    }
+    emailRef.current.value = ""
+  }
 
     return(
         <div className="footer-sub-and-follow">
           <div className="footer-sub-email">
             <h3>SUBSCRIBE TO DIGITAL MARKETING EMAILS</h3>
-            <div className="footer-email-input-area">
+            <div className="footer-email-input-area" >
               <input
+                ref={emailRef}
                 type="email"
                 className="footer-email"
-                onclick="changeEmailInputValue('emailDesktop')"
-                value="Your email adress"
+                defaultValue="example@email.com"
+                onClick={takeEmail}
               />
               <button
                 className="email-button"
-                onclick="addEmailtoContainer('emailDesktop')"
+                type="submit"
+                onClick={takeEmail}
               >
                 <img src="../assets/images/featured-sets/right-arrow.png" />
               </button>

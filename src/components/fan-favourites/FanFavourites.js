@@ -11,10 +11,10 @@ import landRoverSmall from './images/landRoverSmall.png';
 function FanFavourites() {
 
     return(
-    <div class="fan-favourites-container">
+    <div className="fan-favourites-container">
         <h1>Fan Favourites</h1>
-        <div class="fan-favourites-items">
-            <div class="fan-favourites-one-item">
+        <div className="fan-favourites-items">
+            <div className="fan-favourites-one-item">
                 <a href="#"> 
                     <img 
                         src={castleBig}
@@ -23,7 +23,7 @@ function FanFavourites() {
                         src= {castleSmall}
                         alt="castle-mobile"
                     />
-                    <div class="fan-favourites-item-text">
+                    <div className="fan-favourites-item-text">
                         <h2>Go above and beyond</h2>
                         <p>
                             Build your sense of adventure with the new Land
@@ -33,8 +33,8 @@ function FanFavourites() {
                     </div>
                 </a>
             </div>
-            <div class="fan-favourites-one-item">
-                <a class="fan-favourites-white-text" href="#">
+            <div className="fan-favourites-one-item">
+                <a className="fan-favourites-white-text" href="#">
                     <img
                         src={landRoverBig}
                         alt="land-rover-desktop"
@@ -44,7 +44,7 @@ function FanFavourites() {
                         alt="land-rover-mobile"
                     />
                     <div
-                        class="fan-favourites-item-text"
+                        className="fan-favourites-item-text"
                         id="fan-favourites-white-text"
                     >
                         <h2>Go above and beyond</h2>
