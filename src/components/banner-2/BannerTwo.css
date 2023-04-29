@@ -1,0 +1,150 @@
+.banner-two-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.banner-two-container .banner-two-upside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.banner-two-container .banner-two-upside .banner-two-upside-img {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.banner-two-container .banner-two-upside .banner-two-upside-img img {
+  max-width: 100%;
+}
+.banner-two-container .banner-two-upside .banner-two-upside-img img:last-child {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .banner-two-container .banner-two-upside .banner-two-upside-img img:last-child {
+    display: flex;
+  }
+}
+.banner-two-container .banner-two-upside .banner-two-upside-img img:first-child {
+  display: flex;
+}
+@media screen and (max-width: 600px) {
+  .banner-two-container .banner-two-upside .banner-two-upside-img img:first-child {
+    display: none;
+  }
+}
+.banner-two-container .banner-two-upside .banner-two-upside-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  align-items: start;
+  margin-left: 2%;
+  right: 45%;
+  width: 45%;
+}
+@media screen and (max-width: 600px) {
+  .banner-two-container .banner-two-upside .banner-two-upside-text {
+    position: static;
+    align-items: center;
+    padding-bottom: 20px;
+    background-color: rgb(255, 238, 122);
+    width: 100%;
+  }
+}
+.banner-two-container .banner-two-upside .banner-two-upside-text a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 0.875rem;
+  line-height: 1.1875rem;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-weight: 500;
+  padding: 0.1rem 1.25rem;
+  width: auto;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  border-color: transparent;
+  border-radius: 4px;
+  background-color: rgb(13, 13, 13);
+  color: rgb(233, 229, 229);
+  text-decoration: none;
+  height: 40px;
+}
+.banner-two-container .banner-two-upside .banner-two-upside-text a:hover {
+  background-color: white;
+  color: black;
+}
+.banner-two-container .banner-two-upside .banner-two-upside-text a p {
+  font-size: 1rem;
+  line-height: 1rem;
+  flex-wrap: nowrap;
+}
+.banner-two-container .banner-two-upside .banner-two-upside-text a img {
+  width: 20px;
+  padding-left: 10px;
+}
+
+.banner-two-downside-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  align-items: end;
+  margin-right: 2%;
+  left: 45%;
+  width: 45%;
+}
+@media screen and (max-width: 600px) {
+  .banner-two-downside-text {
+    position: static;
+    align-items: center;
+    background-color: rgb(64, 186, 96);
+    width: 100%;
+    padding-bottom: 20px;
+  }
+}
+.banner-two-downside-text a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 0.875rem;
+  line-height: 1.1875rem;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-weight: 500;
+  padding: 0.1rem 1.25rem;
+  width: auto;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  border-color: transparent;
+  border-radius: 4px;
+  background-color: rgb(13, 13, 13);
+  color: rgb(233, 229, 229);
+  text-decoration: none;
+  height: 40px;
+}
+.banner-two-downside-text a:hover {
+  background-color: white;
+  color: black;
+}
+.banner-two-downside-text a p {
+  font-size: 1rem;
+  line-height: 1rem;
+  flex-wrap: nowrap;
+}
+.banner-two-downside-text a img {
+  width: 20px;
+  padding-left: 10px;
+}
+
+/*# sourceMappingURL=BannerTwo.css.map */
