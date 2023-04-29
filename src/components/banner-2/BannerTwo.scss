@@ -1,0 +1,140 @@
+@import "../mixins.scss";
+
+.banner-two-container {
+    margin-top: 50px;
+    @include flex-centered(column);
+    .banner-two-upside{
+        @include flex-centered(column);
+        .banner-two-upside-img{
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            img{
+                max-width: 100%;
+                &:last-child{
+                    display: none;
+                    @include mQmax(600px){
+                        display: flex;
+                    }
+                }
+                &:first-child{
+                    display: flex;
+                    @include mQmax(600px){
+                        display: none;
+                    }
+                }
+            }  
+        }
+        .banner-two-upside-text{
+            @include flex-centered(column);
+            position: absolute;
+            align-items: start;
+            margin-left: 2%;
+            right: 45%;
+            width: 45%;
+            @include mQmax(600px){
+                position: static;
+                align-items: center;
+                padding-bottom: 20px;
+                background-color:rgb(255, 238, 122);
+                width: 100%;
+            }
+            
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                font-size: 0.875rem;
+                line-height: 1.1875rem;
+                flex-wrap: nowrap;
+                align-items: center;
+                font-weight: 500;
+                padding: 0.1rem 1.25rem;
+                width: auto;
+                border-width: 1px;
+                border-style: solid;
+                text-align: center;
+                border-color: transparent;
+                border-radius: 4px;
+                background-color: rgb(13, 13, 13);
+                color: rgb(233, 229, 229);
+                text-decoration: none;
+                height: 40px;
+
+                &:hover{
+                    background-color: white;
+                    color: black;
+                }
+                p{
+                    font-size: 1rem;
+                    line-height: 1rem;
+                    flex-wrap: nowrap;
+                    
+                }
+                img {
+                    width: 20px;
+                    padding-left: 10px;
+
+                }
+
+            }
+        }
+    }
+}
+
+.banner-two-downside-text{
+    @include flex-centered(column);
+    position: absolute;
+    align-items: end;
+    margin-right: 2%;
+    left: 45%;
+    width: 45%;
+    @include mQmax(600px){
+        position: static;
+        align-items: center;
+        background-color:rgb(64, 186, 96);
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        font-size: 0.875rem;
+        line-height: 1.1875rem;
+        flex-wrap: nowrap;
+        align-items: center;
+        font-weight: 500;
+        padding: 0.1rem 1.25rem;
+        width: auto;
+        border-width: 1px;
+        border-style: solid;
+        text-align: center;
+        border-color: transparent;
+        border-radius: 4px;
+        background-color: rgb(13, 13, 13);
+        color: rgb(233, 229, 229);
+        text-decoration: none;
+        height: 40px;
+
+        &:hover{
+            background-color: white;
+            color: black;
+        }
+        p{
+            font-size: 1rem;
+            line-height: 1rem;
+            flex-wrap: nowrap;
+            
+        }
+        img {
+            width: 20px;
+            padding-left: 10px;
+
+        }
+
+    }
+}
+        
