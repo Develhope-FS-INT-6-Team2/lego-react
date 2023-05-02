@@ -1,18 +1,19 @@
 import React from "react";
 import OneSet from "./OneSet";
+import "./FeaturedSets.css";
+import sets from"./FeaturedSetsProducts" ;
+
 import {Swiper, SwiperSlide} from "swiper/react";
 import { FreeMode, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import "./FeaturedSets.css";
 import "swiper/css/navigation";
-import sets from"./FeaturedSetsProducts" ;
 
 function FeaturedSets(){
 
      let products = sets.map(item =>(
         <SwiperSlide>
-            <OneSet images={item.image} titles={item.title} prices={item.price} />
+            <OneSet image={item.image} title={item.title} price={item.price} />
         </SwiperSlide>
     ))
 
@@ -34,19 +35,24 @@ function FeaturedSets(){
                     spaceBetween:20
                 },
                 600:{
-                    slidesPerView:2.3,
+                    slidesPerView:2.2,
                     spaceBetween:20
+                },
+                900:{
+                    slidesPerView:2.5,
+                    spaceBetween:30
                 },
                 
                 1200:{
                     slidesPerView:4,
-                    spaceBetween:30
+                    spaceBetween:10
                 },
                 
                 
             }}
         >
               {products}
+             
         </Swiper>
     </div>
     )

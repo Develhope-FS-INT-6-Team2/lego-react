@@ -35,16 +35,16 @@ let sets =[
      title:"Van Gogh",
      price:"39.99$"},
 
-     {image:"../assets/images/featured-sets/cat-hotel.png",
-     title:"cat hotel",
+     {image:"../assets/images/featured-sets/hogwarts-room-of-requirement.png",
+     title:"Hogwarts Room of Requirements",
      price:"59.99$"},
 
-     {image:"../assets/images/featured-sets/cat-hotel.png",
-     title:"cat hotel",
+     {image:"../assets/images/featured-sets/temple-of-the-golden-idol.png",
+     title:"Temple of The Golden Idol",
      price:"59.99$"},
 
-     {image:"../assets/images/featured-sets/cat-hotel.png",
-     title:"cat hotel",
+     {image:"../assets/images/featured-sets/the-razor-crest.png",
+     title:"The Razor Crest",
      price:"59.99$"}
 ]
 export default sets;
