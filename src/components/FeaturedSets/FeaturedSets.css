@@ -16,6 +16,8 @@
     padding: 1rem;
     width: 1200px;
     max-width: 90%;
+    display: flex;
+    position: relative;
 }
 .featured-sets h1{
     padding: 1rem;
@@ -111,10 +113,6 @@
     }
 
 }
-
-
-
-
 .one-product h2{
     margin-left: 0.5rem;
     color: rgb(0, 0, 0);
@@ -140,4 +138,39 @@
 }
 .one-product input:hover {
     background-color: white;
+}
+
+/* buttons */
+button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid rgb(177, 177, 177);
+    background-color: white;
+    
+    
+  }
+button:hover {
+    background-color: #c7c5c5;
+  }
+button img {
+    width: 1rem;
+    height: 1rem;
+}
+.featured-sets-left-arrow{
+    position: absolute;
+    top: 30%;
+    left: 5px;
+    z-index: 2;
+
+}
+.featured-sets-right-arrow{
+    position: absolute;
+    top: 30%;
+    right: 5px;
+    z-index: 2;
 }

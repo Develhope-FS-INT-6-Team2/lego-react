@@ -2,12 +2,15 @@ import React from "react";
 import OneSet from "./OneSet";
 import "./FeaturedSets.css";
 import sets from"./FeaturedSetsProducts" ;
+import FeaturedSetsButtons from "./FeaturedSetsLeftButton";
 
 import {Swiper, SwiperSlide} from "swiper/react";
 import { FreeMode, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
+import FeaturedSetsLeftButton from "./FeaturedSetsLeftButton";
+import FeaturedSetsRightButton from "./FeaturedSetsRightButton";
 
 function FeaturedSets(){
 
@@ -24,8 +27,11 @@ function FeaturedSets(){
         <Swiper
             freeMode={true}
             grabCursor={true}
+            navigation={{
+                nextEl:".featured-sets-right-arrow",
+                prevEl:".featured-sets-left-arrow"
+            }}
             modules={[FreeMode,Navigation]}
-            navigation
             className="featured-sets-slider"
             slidesPerView={4}
             spaceBetween={10}
@@ -52,7 +58,9 @@ function FeaturedSets(){
             }}
         >
               {products}
-             
+              
+            <FeaturedSetsLeftButton />
+            <FeaturedSetsRightButton />
         </Swiper>
     </div>
     )
