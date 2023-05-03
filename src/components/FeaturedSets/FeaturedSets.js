@@ -1,20 +1,22 @@
 import React from "react";
-import OneSet from "./OneSet";
 import "./FeaturedSets.css";
-import sets from"./FeaturedSetsProducts" ;
-import FeaturedSetsButtons from "./FeaturedSetsLeftButton";
 
+import OneSet from "./featured-sets-components/OneSet";
+import FeaturedSetsLeftButton from "./featured-sets-components/FeaturedSetsLeftButton";
+import FeaturedSetsRightButton from "./featured-sets-components/FeaturedSetsRightButton";
+import data from"./featured-sets-components/Products.json" ;
+
+//library
 import {Swiper, SwiperSlide} from "swiper/react";
 import { FreeMode, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
-import FeaturedSetsLeftButton from "./FeaturedSetsLeftButton";
-import FeaturedSetsRightButton from "./FeaturedSetsRightButton";
+
 
 function FeaturedSets(){
 
-     let products = sets.map(item =>(
+    let products = data.sets.map(item =>(
         <SwiperSlide>
             <OneSet image={item.image} title={item.title} price={item.price} />
         </SwiperSlide>
