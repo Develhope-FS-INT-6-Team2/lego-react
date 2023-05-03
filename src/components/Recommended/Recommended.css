@@ -1,0 +1,188 @@
+@import url('https://fonts.cdnfonts.com/css/cera-round-pro');
+
+
+.recommended-sets{
+    font-family: 'Cera Pro', sans-serif;
+    width: 100%;
+    max-width: 100%;
+    
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.recommended-sets-slider{
+    padding: 1rem;
+  
+    width: 1200px;
+    max-width: 90%;
+    display: flex;
+    position: relative;
+}
+.recommended-sets h1{
+    padding: 1rem;
+    width: 1300px;
+    max-width: 90%;
+    font-size: 2rem;
+    line-height: 2.6875rem;  
+    font-weight: lighter;
+}
+
+/* for the product */
+.one-product{
+    height: 450px;
+    width: 99%;
+  
+    display: flex;
+    flex-direction: column;
+    
+}
+.recommended-product-upper-section p:first-child{
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    z-index: 1;
+}
+.recommended-product-upper-section p:last-child{
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    background-color: yellow;
+    text-align: center;
+    width: 2.3rem;
+    padding: 0.2rem;
+    position: absolute;
+    bottom: 0.3rem;
+    left: 0.3rem;
+    z-index: 1;
+}
+.recommended-product-upper-section{
+    width: 100%;
+    border: 1px solid rgb(181, 179, 179);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    height: 60%;
+    
+
+}
+.product-icon{
+  background-color: #f8f8f8;
+ width: 10%;
+  border: none;
+  padding: 5px 5px;
+  border-radius: 50%;
+  
+}
+
+.recommended-product-upper-section img{
+    max-width:200px;
+    max-height: 200px;
+    /* display: none; */
+}
+.recommended-product-upper-section img:hover{
+    max-width:230px;
+    max-height: 230px;
+    /* display: none; */
+    transition: 300ms;
+}
+.img-sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width:1200px) {
+    .recommended-recommended-product-upper-section img{
+        max-width:200px;
+        max-height: 200px;
+    }
+    .one-product{
+        height: 600px;
+       
+        
+    }
+
+}
+@media screen and (max-width:900px) {
+    .one-product{
+        height: 450px;
+        
+        
+    }
+}
+@media screen and (max-width:600px) {
+    .one-product{
+        height: 600px;
+        
+        
+    }
+
+}
+.one-product h2{
+    margin-left: 0.5rem;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    line-height: 1.5625rem;
+    font-weight: lighter;
+}
+.one-product .price{
+    font-weight: 600;
+}
+.one-product input {
+    font-size: 1rem;
+    line-height: 1.5625rem;
+    background-color: rgb(253, 128, 36);
+    border: 2px solid rgb(253, 128, 36);
+    width: 100%;
+    padding: 0.9375rem;
+    border-style: solid;
+    border-radius: 4px;
+    border-collapse: collapse;
+    text-align: center;
+    font-weight: medium;
+}
+.one-product input:hover {
+    background-color: white;
+}
+
+/* buttons */
+button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid rgb(177, 177, 177);
+    background-color: white;
+    
+    
+  }
+button:hover {
+    background-color: #c7c5c5;
+  }
+button img {
+    width: 1rem;
+    height: 1rem;
+}
+.recommended-sets-left-arrow{
+    position: absolute;
+    top: 30%;
+    left: 5px;
+    z-index: 2;
+
+}
+.recommended-sets-right-arrow{
+    position: absolute;
+    top: 30%;
+    right: 5px;
+    z-index: 2;
+}
