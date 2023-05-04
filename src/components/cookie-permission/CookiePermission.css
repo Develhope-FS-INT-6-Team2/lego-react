@@ -1,0 +1,86 @@
+.cookie-permission-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.cookie-permission-container .cookie-image {
+  margin: 0.5rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.cookie-permission-container .cookie-image img {
+  height: 100px;
+}
+@media screen and (max-width: 600px) {
+  .cookie-permission-container .cookie-image:last-child {
+    display: none;
+  }
+}
+
+.cookie-permission-content {
+  width: auto;
+  max-width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  background: rgb(230, 243, 255);
+  border-radius: 3.3125rem;
+}
+@media screen and (max-width: 600px) {
+  .cookie-permission-content {
+    border-radius: 1rem;
+  }
+}
+.cookie-permission-content .cookie-permission-text-container {
+  display: inline-flex;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.cookie-permission-content .cookie-permission-text-container .cookie-permission-text-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cookie-permission-content .cookie-permission-text-container .cookie-permission-text-section h2 {
+  font-size: 1.125rem;
+  line-height: 1.5625rem;
+  font-weight: 700;
+  margin: 0;
+}
+@media screen and (max-width: 900px) {
+  .cookie-permission-content .cookie-permission-text-container .cookie-permission-text-section h2 {
+    font-size: 1rem;
+  }
+}
+.cookie-permission-content .cookie-permission-text-container .cookie-permission-text-section p {
+  line-height: 1.5625rem;
+  font-weight: 400;
+  font-size: 0.875rem;
+  margin: 0;
+}
+@media screen and (max-width: 900px) {
+  .cookie-permission-content .cookie-permission-text-container .cookie-permission-text-section p {
+    font-size: 0.75rem;
+  }
+}
+.cookie-permission-content .cookie-permission-text-container .cookie-permission-text-section .cookie-links {
+  margin-top: 0.5rem;
+}
+.cookie-permission-content .cookie-permission-text-container .cookie-permission-text-section .cookie-links a {
+  line-height: 1.5625rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #006db7;
+}
+@media screen and (max-width: 900px) {
+  .cookie-permission-content .cookie-permission-text-container .cookie-permission-text-section .cookie-links a {
+    font-size: 0.75rem;
+  }
+}
+.cookie-permission-content .cookie-permission-text-container .cookie-permission-text-section .cookie-links a:last-child {
+  margin-left: 1rem;
+}
+
+/*# sourceMappingURL=CookiePermission.css.map */

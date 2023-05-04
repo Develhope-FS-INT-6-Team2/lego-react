@@ -53,6 +53,7 @@
     padding-bottom: 20px;
     background-color: rgb(255, 238, 122);
     width: 100%;
+    margin-left: 0;
   }
 }
 .banner-two-container .banner-two-upside .banner-two-upside-text a {
@@ -109,6 +110,7 @@
     background-color: rgb(64, 186, 96);
     width: 100%;
     padding-bottom: 20px;
+    margin-left: 0;
   }
 }
 .banner-two-downside-text a {

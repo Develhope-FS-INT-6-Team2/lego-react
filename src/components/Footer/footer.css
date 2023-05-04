@@ -61,12 +61,14 @@
 .footer-container .footer-main .footer-sub-email .footer-email-input-area {
   width: 90%;
 }
+.footer-container .footer-main .footer-sub-email .email-button {
+  height: 50px;
+}
 @media screen and (max-width: 900px) {
   .footer-container .footer-main .footer-sub-email {
     display: flex;
-    padding-left: 0;
-    margin-left: 1.5rem;
-    width: 95%;
+    padding-left: 1.5rem;
+    width: 90%;
   }
 }
 .footer-container .footer-main .footer-main-part-logo {
@@ -319,6 +321,7 @@
   color: rgb(0, 0, 0);
   position: relative;
   border-width: 2px;
+  height: 50px;
 }
 .footer-sub-email .footer-email-input-area .email-button img {
   width: 1rem;
