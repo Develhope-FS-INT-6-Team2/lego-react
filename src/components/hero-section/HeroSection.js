@@ -8,7 +8,7 @@ import landRoverIcon from "./images/landRoverIcon.jpg";
 
 function HeroSection(){
     return(
-    <div className="hero-section-container">
+    <div id="hello" className="hero-section-container">
         <div className="hero-section-img-container">
             <img
                 className="small-img-hero-section"

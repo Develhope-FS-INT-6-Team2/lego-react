@@ -4,13 +4,16 @@
             "image": "../assets/images/featured-sets/cat-hotel.png",
             "title": "Cat hotel",
             "price": "59.99$",
-            "category": "Pets"
+            "category": "Pets",
+            "id":1
         },
         {
             "image": "../assets/images/featured-sets/jazz-club.png",
             "title": "Jazz-club",
             "price": "79.99$",
-            "category": "Music"
+            "category": "Music",
+            "id":2
+
         },
         {
             "image": "../assets/images/featured-sets/golden-ultra-dragon.png",

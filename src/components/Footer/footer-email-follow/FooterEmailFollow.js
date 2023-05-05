@@ -3,6 +3,7 @@ import {React, useRef} from "react";
 
 function FooterEmailFollow(){
   const emailRef = useRef("");
+  let mailArray = [];
 
   function takeEmail(){
     if (emailRef.current.value === "example@email.com"){
