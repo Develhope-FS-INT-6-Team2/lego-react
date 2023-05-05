@@ -5,7 +5,11 @@ import HeroSection from './components/hero-section/HeroSection';
 import CategoryNavbar from './components/category-navbar/CategoryNavbar';
 import BannerTwo from "./components/banner-2/BannerTwo";
 import FeaturedSets from './components/FeaturedSets/FeaturedSets';
+
 import Recommended from './components/Recommended/Recommended';
+
+import { CookiePermission } from './components/cookie-permission/CookiePermission';
+
 
 
 function App() {
@@ -16,6 +20,7 @@ function App() {
       <Recommended/>
       <BannerTwo/>
       <FeaturedSets/>
+      <CookiePermission/>
       <FanFavourites/>
       <Footer/>
     </div>

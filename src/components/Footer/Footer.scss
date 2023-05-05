@@ -58,11 +58,14 @@
             .footer-email-input-area{
                 width: 90%;
             }
+            .email-button{
+                height: 50px;
+            }
             @include mQmax(900px){
                 display: flex;
-                padding-left: 0;
-                margin-left: 1.5rem;
-                width: 95%;
+                padding-left: 1.5rem;
+                
+                width: 90%;
             }
         }
         .footer-main-part-logo{
@@ -153,11 +156,6 @@
                         display: block;
                     }
                 }
-                // @include mQmin(900px){
-                //     ul{
-                //         display: block;
-                //     }
-                // }
                 @include mQmax(900px){
                     width: 100%;
                     li{
@@ -327,6 +325,7 @@
             color: rgb(0, 0, 0);
             position: relative;
             border-width: 2px;
+            height: 50px;
             img{
                 width: 1rem;
                 display: block;
