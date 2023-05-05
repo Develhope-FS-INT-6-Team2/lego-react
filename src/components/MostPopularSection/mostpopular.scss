@@ -1,5 +1,14 @@
-@import '/lego-react/src/components/mixins.scss';
-
+@mixin respond2($breakpoint) {
+    @if $breakpoint == tablet {
+      @media screen and (max-width: 900px) { @content; }
+    }
+    @if $breakpoint == mobile {
+      @media screen and (max-width: 600px) { @content; }
+    }
+    @if $breakpoint == large-desktop {
+      @media screen and (min-width: 1200px) { @content; }
+    }
+  }
 
 $font-family: Cera Pro, sans-serif;
 
@@ -26,29 +35,83 @@ $font-family: Cera Pro, sans-serif;
 }
 
 //resetting css
+.carousel-container,
 .most-popular-section {
-    font-family: Cera Pro;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: Cera Pro;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-// Main container for the most popular section
 .most-popular-section {
-    display: flex;
-    padding: 0 65px;
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh;
+  display: flex;
+  padding: 0 65px;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
 }
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.carousel {
+    flex-grow: 1;
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding-bottom: 3rem;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      height: 5px;
+      margin: 70px 20px;
+      scroll-behavior: smooth;
+    }
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.15);
+      margin-inline-end: 100px;
+      margin-inline-start: 100px;
+      scroll-behavior: smooth;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.55);
+      scroll-behavior: smooth;
+      &:hover {
+        background-color: black;
+        cursor: pointer;
+      }
+    }
+  }
+
+
+  .arrow-button {
+    font-size: 1.2rem;
+    width: 45px;
+    height: 45px;
+    border: 1px solid gainsboro;
+    background: rgb(253, 253, 253);
+    border-radius: 50%;
+    display: inline-block;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    &.left {
+      margin-right: 10px;
+    }
+    &.right {
+      margin-left: 10px;
+    }
+  }
 
 // Navigation arrows for the most popular section
 .most-popular-wrapper {
-    max-width: 100%;
+    max-width: 1280px;
     position: relative;
     padding-bottom: 30px;
-    
-    scrollbar-width: none;  
+    scrollbar-width: none;
+
+    scrollbar-width: none;
     & i {
         top: 35%;
         position: absolute;
@@ -63,21 +126,17 @@ $font-family: Cera Pro, sans-serif;
         border-radius: 50%;
         transform: translateY(-50%);
     }
-    
-}
-// Navigation arrows for the most popular section
-.most-popular-wrapper {
-    
-    // max-width: 100%;
+
     & i:first-child {
         left: -60px;
-        display: none;
+        display: inline-block;
     }
 
     & i:last-child {
         right: -60px;
     }
 }
+
 
 // Carousel wrapper for the most popular sets
 .most-popular-wrapper {
@@ -88,34 +147,32 @@ $font-family: Cera Pro, sans-serif;
         scroll-behavior: smooth;
         overflow-x: scroll;
         padding-bottom: 3rem;
-        
+
         &.active {
             cursor: grab;
-          }
-          &::-webkit-scrollbar {
+        }
+        &::-webkit-scrollbar {
             height: 5px;
             margin: 70px 20px;
             scroll-behavior: smooth;
-          }
-        
-          &::-webkit-scrollbar-track {
+        }
+
+        &::-webkit-scrollbar-track {
             background: rgba(0, 0, 0, 0.15);
             margin-inline-end: 100px;
             margin-inline-start: 100px;
             scroll-behavior: smooth;
-          }
-        
-          &::-webkit-scrollbar-thumb {
+        }
+
+        &::-webkit-scrollbar-thumb {
             background-color: rgba(0, 0, 0, 0.55);
             scroll-behavior: smooth;
             &:hover {
-              background-color: black;
-              cursor: pointer;
+                background-color: black;
+                cursor: pointer;
             }
-          }
-
+        }
     }
-    
 }
 
 // Carousel item dragging style
@@ -134,16 +191,15 @@ $font-family: Cera Pro, sans-serif;
     right: 0;
     height: 8px;
     background-color: rgba(0, 0, 0, 0.1);
-  }
-  
-  .scrollbar-thumb {
+}
+
+.scrollbar-thumb {
     position: absolute;
     height: 100%;
     width: 0;
     background-color: rgba(0, 0, 0, 0.4);
     cursor: pointer;
-  }
-  
+}
 
 // Styling for the set image and logos
 .img-plus-logo {
@@ -171,15 +227,14 @@ $font-family: Cera Pro, sans-serif;
 
 // Styling for carousel items
 .carousel-mps {
-
     &.hide-scrollbar {
         &::-webkit-scrollbar {
-          display: none;
+            display: none;
         }
-      
+
         scrollbar-width: none;
-      }
-    
+    }
+
     & img {
         width: 100%;
         height: auto;
@@ -219,17 +274,16 @@ $font-family: Cera Pro, sans-serif;
             gap: 0.2rem;
         }
         @include respond2(tablet) {
+            width: calc(100% / 3);
+        }
+
+        @include respond2(mobile) {
             width: calc(100% / 2);
-          }
-      
-          @include respond2(mobile) {
-            width: calc(100% / 1);
-          }
-      
-          @include respond2(large-desktop) {            
-            width: 18rem;
-          }
-        
+        }
+
+        @include respond2(large-desktop) {
+            width: 20rem;
+        }
     }
 }
 
@@ -238,7 +292,7 @@ $font-family: Cera Pro, sans-serif;
     margin-left: 0px;
 }
 
-// Set some font-weight 
+// Set some font-weight
 .shop-now,
 .most-popular-sets,
 .item-info-first-line {
@@ -250,4 +304,3 @@ $font-family: Cera Pro, sans-serif;
         text-decoration: underline;
     }
 }
-
