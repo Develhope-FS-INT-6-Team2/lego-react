@@ -1,5 +1,5 @@
 import React from "react";
-import heart from "./images/icons8-favorite-48.png"
+import heart from "../images/icons8-favorite-48.png"
 
 function Card(props){
     let{image, title, price} = props;

@@ -1,4 +1,25 @@
 let sets =[
+    
+    {image:"../assets/images/featured-sets/titanic.png",
+     title:"Titanic",
+     price:"79.99$"},
+
+     {image:"../assets/images/featured-sets/van-gogh.png",
+     title:"Van Gogh",
+     price:"39.99$"},
+
+     {image:"../assets/images/featured-sets/hogwarts-room-of-requirement.png",
+     title:"Hogwarts Room of Requirements",
+     price:"59.99$"},
+
+     {image:"../assets/images/featured-sets/temple-of-the-golden-idol.png",
+     title:"Temple of The Golden Idol",
+     price:"59.99$"},
+
+     {image:"../assets/images/featured-sets/the-razor-crest.png",
+     title:"The Razor Crest",
+     price:"59.99$"},
+     
     {image:"../assets/images/featured-sets/cat-hotel.png",
      title:"Cat hotel",
      price:"59.99$"},
@@ -27,24 +48,6 @@ let sets =[
      title:"Eiffel Tower",
      price:"109.99$"},
 
-     {image:"../assets/images/featured-sets/titanic.png",
-     title:"Titanic",
-     price:"79.99$"},
-
-     {image:"../assets/images/featured-sets/van-gogh.png",
-     title:"Van Gogh",
-     price:"39.99$"},
-
-     {image:"../assets/images/featured-sets/hogwarts-room-of-requirement.png",
-     title:"Hogwarts Room of Requirements",
-     price:"59.99$"},
-
-     {image:"../assets/images/featured-sets/temple-of-the-golden-idol.png",
-     title:"Temple of The Golden Idol",
-     price:"59.99$"},
-
-     {image:"../assets/images/featured-sets/the-razor-crest.png",
-     title:"The Razor Crest",
-     price:"59.99$"}
+     
 ]
 export default sets;
