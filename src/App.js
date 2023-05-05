@@ -1,30 +1,23 @@
 import './App.css';
-import Footer from './components/Footer/Footer';
-import FanFavourites from './components/fan-favourites/FanFavourites';
-import HeroSection from './components/hero-section/HeroSection';
-import CategoryNavbar from './components/category-navbar/CategoryNavbar';
-import BannerTwo from "./components/banner-2/BannerTwo";
-import FeaturedSets from './components/FeaturedSets/FeaturedSets';
-
-import Recommended from './components/Recommended/Recommended';
-
-import { CookiePermission } from './components/cookie-permission/CookiePermission';
-
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import HomePage from './components/page-components/HomePage/HomePage';
+import LoginForm from "./components/login-page/LoginPage";
 
 
 function App() {
   return (
-    <div className="App">
-      <HeroSection/>
-      <CategoryNavbar/>
-      <Recommended/>
-      <BannerTwo/>
-      <FeaturedSets/>
-      <CookiePermission/>
-      <FanFavourites/>
-      <Footer/>
-    </div>
-  );
+    <Router>
+      <div>
+        
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/LoginPage" element={<LoginForm />} />
+        </Routes>
+        
+      </div>
+    </Router>
+  )
 }
 
 export default App;
+
