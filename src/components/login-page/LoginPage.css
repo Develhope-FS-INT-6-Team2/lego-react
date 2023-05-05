@@ -1,0 +1,327 @@
+@import url("https://fonts.cdnfonts.com/css/cera-round-pro");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+.login-page {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  flex-direction: column;
+  background-color: #e0e8ed;
+}
+.login-page .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3rem;
+  margin-top: 1.2rem;
+}
+.login-page .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vh;
+}
+.login-page .main .avatar-logo {
+  height: 5rem;
+  width: 5rem;
+  margin-bottom: 1rem;
+  border-radius: 100%;
+  margin-top: -1.9rem;
+}
+.login-page .main .breaker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  width: 668px;
+}
+.login-page .main .breaker-line {
+  flex: 1;
+  width: 100%;
+  border-top: 2px double #badbf4;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  margin: 0 10px;
+}
+.login-page .main .breaker-or {
+  font-size: 14px;
+}
+.login-page .main .form-container {
+  font-family: "Cera Round Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin-top: -5%;
+}
+@media screen and (max-width: 900px) {
+  .login-page .main .form-container {
+    width: 560px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .login-page .main .form-container {
+    width: 460px;
+  }
+}
+@media screen and (max-width: 433px) {
+  .login-page .main .form-container {
+    width: 400px;
+  }
+}
+.login-page .main .form-container .input, .login-page .main .form-container .create-section, .login-page .main .form-container .reminder, .login-page .main .form-container .help-section {
+  display: flex;
+  flex-direction: column;
+  width: 668px;
+}
+@media screen and (max-width: 900px) {
+  .login-page .main .form-container .input, .login-page .main .form-container .create-section, .login-page .main .form-container .reminder, .login-page .main .form-container .help-section {
+    width: 560px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .login-page .main .form-container .input, .login-page .main .form-container .create-section, .login-page .main .form-container .reminder, .login-page .main .form-container .help-section {
+    width: 460px;
+  }
+}
+@media screen and (max-width: 433px) {
+  .login-page .main .form-container .input, .login-page .main .form-container .create-section, .login-page .main .form-container .reminder, .login-page .main .form-container .help-section {
+    width: 400px;
+  }
+}
+.login-page .main .form-container .input #pw-label, .login-page .main .form-container .create-section #pw-label, .login-page .main .form-container .reminder #pw-label, .login-page .main .form-container .help-section #pw-label {
+  margin-top: 20px;
+}
+.login-page .main .form-container .input .input-info, .login-page .main .form-container .create-section .input-info, .login-page .main .form-container .reminder .input-info, .login-page .main .form-container .help-section .input-info {
+  color: #333333;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  float: left;
+}
+.login-page .main .form-container .input input, .login-page .main .form-container .create-section input, .login-page .main .form-container .reminder input, .login-page .main .form-container .help-section input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #CCCCCC;
+  font-size: 1rem;
+  height: 30px;
+  border: 2px solid #c9c9c9;
+}
+.login-page .main .form-container .input input::-moz-placeholder, .login-page .main .form-container .create-section input::-moz-placeholder, .login-page .main .form-container .reminder input::-moz-placeholder, .login-page .main .form-container .help-section input::-moz-placeholder {
+  font-size: 14px;
+  font-family: "Cera Round Pro", sans-serif;
+}
+.login-page .main .form-container .input input::placeholder, .login-page .main .form-container .create-section input::placeholder, .login-page .main .form-container .reminder input::placeholder, .login-page .main .form-container .help-section input::placeholder {
+  font-size: 14px;
+  font-family: "Cera Round Pro", sans-serif;
+}
+.login-page .main .form-container .input .error-message, .login-page .main .form-container .create-section .error-message, .login-page .main .form-container .reminder .error-message, .login-page .main .form-container .help-section .error-message {
+  display: flex;
+  margin-top: -6px;
+  font-size: 14px;
+  color: red;
+  justify-content: flex-start;
+}
+.login-page .main .form-container #remember-me {
+  margin-left: -0.9rem;
+  width: 10%;
+  height: 55%;
+}
+.login-page .main .form-container #remember-text {
+  color: #006cb6;
+  margin-top: 4px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  margin-left: -0.6rem;
+}
+.login-page .main .form-container .remember-me-checkbox {
+  display: flex;
+  flex-direction: row;
+  margin-left: -0.5rem;
+  flex: 1;
+  width: 100%;
+  justify-content: flex-start;
+}
+.login-page .main .form-container .remember-me-innerbox {
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+}
+.login-page .main .form-container button[type=submit] {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #006cb7;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  margin-top: 1rem;
+  height: 4rem;
+  width: 19rem;
+  border-radius: 9999px;
+  margin: 0 auto;
+  margin-bottom: -0.8rem;
+}
+.login-page .main .form-container button[type=submit]:hover {
+  background-color: #007FFF;
+}
+.login-page .main .form-container .help-section {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  text-align: center;
+  margin: 25px 0px;
+}
+.login-page .main .form-container .help-section a {
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 16px;
+  color: #006cb7;
+  text-decoration: none;
+}
+.login-page .main .form-container .help-section a:hover {
+  text-decoration: underline;
+}
+.login-page .main .form-container .help-section a:not(:last-child) {
+  margin-right: 1rem;
+}
+.login-page .main .form-container .help-section span {
+  height: 21px;
+  display: inline-block;
+  border-right: 1px solid #979797;
+  margin-top: 0.8rem;
+  position: absolute;
+}
+.login-page .main .form-container .reminder p {
+  font-size: 12px;
+}
+.login-page .main .form-container p {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #707070;
+  text-align: center;
+}
+.login-page .main .form-container .create-section {
+  display: flex;
+  align-items: center;
+}
+.login-page .main .form-container .create-section p {
+  font-size: 12px;
+}
+.login-page .main .form-container .create-section a {
+  color: #006cb7;
+  font-size: 14px;
+  text-decoration: none;
+}
+.login-page .main .form-container .create-section a:hover {
+  text-decoration: underline;
+}
+.login-page .main .buttons-container {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-direction: column;
+}
+@media screen and (max-width: 900px) {
+  .login-page .main .buttons-container {
+    width: 560px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .login-page .main .buttons-container {
+    width: 460px;
+  }
+}
+@media screen and (max-width: 433px) {
+  .login-page .main .buttons-container {
+    width: 400px;
+  }
+}
+.login-page .main .buttons-container .facebook-button {
+  max-width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 668px;
+  height: 50px;
+  border: 1px solid #1877f2;
+  background-color: #1877f2;
+  border-radius: 4px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+.login-page .main .buttons-container .facebook-button::before {
+  content: "";
+  margin: 11px 20px 11px 11px;
+  width: 24px;
+  height: 24px;
+  background-size: 24px 24px;
+  background-image: url("./images/facebook.png");
+}
+.login-page .main .buttons-container .google-button {
+  max-width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 668px;
+  height: 50px;
+  border: 1px solid #979797;
+  border-radius: 4px;
+  font-size: 18px;
+  color: black;
+  cursor: pointer;
+}
+.login-page .main .buttons-container .google-button::before {
+  content: "";
+  margin: 11px 20px 11px 11px;
+  width: 24px;
+  height: 24px;
+  background-size: 24px 24px;
+  background-image: url("./images/google.svg");
+}
+.login-page .main .buttons-container .apple-button {
+  max-width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 668px;
+  height: 50px;
+  border: none;
+  border-radius: 4px;
+  background-color: black;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+.login-page .main .buttons-container .apple-button::before {
+  content: "";
+  margin: 11px 20px 11px 11px;
+  width: 24px;
+  height: 24px;
+  background-size: 24px 24px;
+  background-image: url("./images/apple.svg");
+}/*# sourceMappingURL=LoginPage.css.map */
