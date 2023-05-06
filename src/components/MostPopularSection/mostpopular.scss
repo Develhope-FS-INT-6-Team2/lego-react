@@ -1,14 +1,20 @@
 @mixin respond2($breakpoint) {
     @if $breakpoint == tablet {
-      @media screen and (max-width: 900px) { @content; }
+        @media screen and (max-width: 900px) {
+            @content;
+        }
     }
     @if $breakpoint == mobile {
-      @media screen and (max-width: 600px) { @content; }
+        @media screen and (max-width: 600px) {
+            @content;
+        }
     }
     @if $breakpoint == large-desktop {
-      @media screen and (min-width: 1200px) { @content; }
+        @media screen and (min-width: 1200px) {
+            @content;
+        }
     }
-  }
+}
 
 $font-family: Cera Pro, sans-serif;
 
@@ -37,24 +43,24 @@ $font-family: Cera Pro, sans-serif;
 //resetting css
 .carousel-container,
 .most-popular-section {
-  font-family: Cera Pro;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    font-family: Cera Pro;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .most-popular-section {
-  display: flex;
-  padding: 0 65px;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh;
+    display: flex;
+    padding: 0 65px;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
 }
 
 .carousel-container {
-  position: relative;
-  display: flex;
-  align-items: center;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .carousel {
@@ -64,45 +70,56 @@ $font-family: Cera Pro, sans-serif;
     padding-bottom: 3rem;
     scrollbar-width: none;
     &::-webkit-scrollbar {
-      height: 5px;
-      margin: 70px 20px;
-      scroll-behavior: smooth;
+        height: 5px;
+        margin: 70px 20px;
+        scroll-behavior: smooth;
     }
     &::-webkit-scrollbar-track {
-      background: rgba(0, 0, 0, 0.15);
-      margin-inline-end: 100px;
-      margin-inline-start: 100px;
-      scroll-behavior: smooth;
+        background: rgba(0, 0, 0, 0.15);
+        margin-inline-end: 100px;
+        margin-inline-start: 100px;
+        scroll-behavior: smooth;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0.55);
-      scroll-behavior: smooth;
-      &:hover {
-        background-color: black;
-        cursor: pointer;
-      }
+        background-color: rgba(0, 0, 0, 0.55);
+        scroll-behavior: smooth;
+        &:hover {
+            background-color: black;
+            cursor: pointer;
+        }
     }
-  }
+}
 
-
-  .arrow-button {
-    font-size: 1.2rem;
+.arrow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 45px;
     height: 45px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 45px;
     border: 1px solid gainsboro;
     background: rgb(253, 253, 253);
     border-radius: 50%;
     display: inline-block;
     &:hover {
-      background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.1);
     }
     &.left {
-      margin-right: 10px;
+        margin-right: 10px;
     }
     &.right {
-      margin-left: 10px;
+        margin-left: 10px;
     }
-  }
+
+    @include respond2(mobile) {
+        .arrow-button {
+            display: none;
+        }
+    }
+}
 
 // Navigation arrows for the most popular section
 .most-popular-wrapper {
@@ -113,7 +130,7 @@ $font-family: Cera Pro, sans-serif;
 
     scrollbar-width: none;
     & i {
-        top: 35%;
+        top: 25%;
         position: absolute;
         height: 45px;
         width: 45px;
@@ -136,7 +153,6 @@ $font-family: Cera Pro, sans-serif;
         right: -60px;
     }
 }
-
 
 // Carousel wrapper for the most popular sets
 .most-popular-wrapper {
@@ -175,9 +191,11 @@ $font-family: Cera Pro, sans-serif;
     }
 }
 
+
+
 // Carousel item dragging style
 .carousel-mps.dragging {
-    cursor: grab;
+    cursor: grabbing;
     scroll-behavior: auto;
     & img {
         pointer-events: none;

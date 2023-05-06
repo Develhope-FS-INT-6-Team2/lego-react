@@ -16,7 +16,7 @@ const PopularSetItem = (props) => {
         />
         <div className="img-logo">
           <img src={logo1} alt="img-logo" />
-          <img src={logo2} alt="img-logo" />
+          {/* <img src={logo2} alt="img-logo" /> */}
         </div>
       </div>
       <div className="set-details">

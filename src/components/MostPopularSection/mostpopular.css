@@ -69,9 +69,15 @@
 }
 
 .arrow-button {
-  font-size: 1.2rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   width: 45px;
   height: 45px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 45px;
   border: 1px solid gainsboro;
   background: rgb(253, 253, 253);
   border-radius: 50%;
@@ -86,6 +92,11 @@
 .arrow-button.right {
   margin-left: 10px;
 }
+@media screen and (max-width: 600px) {
+  .arrow-button .arrow-button {
+    display: none;
+  }
+}
 
 .most-popular-wrapper {
   max-width: 1280px;
@@ -95,7 +106,7 @@
   scrollbar-width: none;
 }
 .most-popular-wrapper i {
-  top: 35%;
+  top: 25%;
   position: absolute;
   height: 45px;
   width: 45px;
@@ -148,7 +159,7 @@
 }
 
 .carousel-mps.dragging {
-  cursor: grab;
+  cursor: grabbing;
   scroll-behavior: auto;
 }
 .carousel-mps.dragging img {
