@@ -1,5 +1,6 @@
 import React from "react";
 import "./CategoryNavbar.css";
+import { Link } from "react-router-dom";
 //images
 import news from "./images/news.jpg";
 import exclusives from "./images/exclusives.jpg";
@@ -20,13 +21,13 @@ function CategoryNavbar(){
             />
             <p>New</p>
         </a>
-        <a href="#" className="category-navbar-one-category">
+        <Link to="./LoginPage" className="category-navbar-one-category">
             <img
                 src={exclusives}
                 alt="exclusives-category"
             />
             <p>Exclusives</p>
-        </a>
+        </Link>
         <a href="#" className="category-navbar-one-category">
             <img
                 src={offers}
