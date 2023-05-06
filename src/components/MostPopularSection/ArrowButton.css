@@ -1,0 +1,15 @@
+.arrow-button {
+    top: 35%;
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 45px;
+    border: 1px solid gainsboro;
+    background: rgb(253, 253, 253);
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  
