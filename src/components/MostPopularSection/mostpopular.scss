@@ -1,0 +1,324 @@
+@mixin respond2($breakpoint) {
+    @if $breakpoint == tablet {
+        @media screen and (max-width: 900px) {
+            @content;
+        }
+    }
+    @if $breakpoint == mobile {
+        @media screen and (max-width: 600px) {
+            @content;
+        }
+    }
+    @if $breakpoint == large-desktop {
+        @media screen and (min-width: 1200px) {
+            @content;
+        }
+    }
+}
+
+$font-family: Cera Pro, sans-serif;
+
+@font-face {
+    font-family: Cera Pro;
+    src: url(https://assets.lego.com/fonts/v3/cera-pro/CeraPro-Bold.woff2);
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: Cera Pro;
+    src: url(https://assets.lego.com/fonts/v3/cera-pro/CeraPro-Medium.woff2);
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: Cera Pro;
+    src: url(https://assets.lego.com/fonts/v3/cera-pro/CeraPro-Regular.woff2);
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+//resetting css
+.carousel-container,
+.most-popular-section {
+    font-family: Cera Pro;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.most-popular-section {
+    display: flex;
+    padding: 0 65px;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel {
+    flex-grow: 1;
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding-bottom: 3rem;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        height: 5px;
+        margin: 70px 20px;
+        scroll-behavior: smooth;
+    }
+    &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.15);
+        margin-inline-end: 100px;
+        margin-inline-start: 100px;
+        scroll-behavior: smooth;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.55);
+        scroll-behavior: smooth;
+        &:hover {
+            background-color: black;
+            cursor: pointer;
+        }
+    }
+}
+
+.arrow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 45px;
+    border: 1px solid gainsboro;
+    background: rgb(253, 253, 253);
+    border-radius: 50%;
+    display: inline-block;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    &.left {
+        margin-right: 10px;
+    }
+    &.right {
+        margin-left: 10px;
+    }
+
+    @include respond2(mobile) {
+        .arrow-button {
+            display: none;
+        }
+    }
+}
+
+// Navigation arrows for the most popular section
+.most-popular-wrapper {
+    max-width: 1280px;
+    position: relative;
+    padding-bottom: 30px;
+    scrollbar-width: none;
+
+    scrollbar-width: none;
+    & i {
+        top: 25%;
+        position: absolute;
+        height: 45px;
+        width: 45px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        text-align: center;
+        line-height: 45px;
+        border: 1px solid gainsboro;
+        background: rgb(253, 253, 253);
+        border-radius: 50%;
+        transform: translateY(-50%);
+    }
+
+    & i:first-child {
+        left: -60px;
+        display: inline-block;
+    }
+
+    & i:last-child {
+        right: -60px;
+    }
+}
+
+// Carousel wrapper for the most popular sets
+.most-popular-wrapper {
+    & .carousel-mps {
+        cursor: pointer;
+        white-space: nowrap;
+        overflow: hidden;
+        scroll-behavior: smooth;
+        overflow-x: scroll;
+        padding-bottom: 3rem;
+
+        &.active {
+            cursor: grab;
+        }
+        &::-webkit-scrollbar {
+            height: 5px;
+            margin: 70px 20px;
+            scroll-behavior: smooth;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.15);
+            margin-inline-end: 100px;
+            margin-inline-start: 100px;
+            scroll-behavior: smooth;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.55);
+            scroll-behavior: smooth;
+            &:hover {
+                background-color: black;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+
+// Carousel item dragging style
+.carousel-mps.dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+    & img {
+        pointer-events: none;
+    }
+}
+
+.scrollbar-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.scrollbar-thumb {
+    position: absolute;
+    height: 100%;
+    width: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+// Styling for the set image and logos
+.img-plus-logo {
+    position: relative;
+}
+
+.img-logo {
+    pointer-events: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    position: absolute;
+    max-height: 3.125rem;
+    min-height: 1.875rem;
+    bottom: 0.7rem;
+    right: 0.625rem;
+    left: 0.625rem;
+    & img {
+        max-width: 32%;
+        max-height: 100%;
+    }
+}
+
+// Styling for carousel items
+.carousel-mps {
+    &.hide-scrollbar {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        scrollbar-width: none;
+    }
+
+    & img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        margin-left: 14px;
+    }
+
+    .popular-set-item {
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: top;
+        width: calc(100% / 3);
+
+        // Truncate text for all text elements inside the carousel item
+        span,
+        p,
+        .shop-now,
+        h3 {
+            white-space: normal;
+            word-wrap: break-word;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        // Center-align the text in the set details section
+        .set-details {
+            text-align: center;
+        }
+
+        // Create a flex container for the shop now button and arrow
+        .shop-now-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.2rem;
+        }
+        @include respond2(tablet) {
+            width: calc(100% / 3);
+        }
+
+        @include respond2(mobile) {
+            width: calc(100% / 2);
+        }
+
+        @include respond2(large-desktop) {
+            width: 20rem;
+        }
+    }
+}
+
+// Remove left margin for the first carousel image
+.carousel-mps img:first-child {
+    margin-left: 0px;
+}
+
+// Set some font-weight
+.shop-now,
+.most-popular-sets,
+.item-info-first-line {
+    font-weight: 500;
+}
+// Add underline to shop now text on hover
+.popular-set-item:hover {
+    & .shop-now {
+        text-decoration: underline;
+    }
+}
