@@ -7,7 +7,7 @@ import BannerTwo from "../../banner-2/BannerTwo";
 import FeaturedSets from '../../FeaturedSets/FeaturedSets';
 import Recommended from "../../Recommended/Recommended"
 import { CookiePermission } from '../../cookie-permission/CookiePermission';
-
+import MostPopularSection from '../../MostPopularSection/MostPopularSection';
 
 
 function HomePage() {
@@ -17,6 +17,7 @@ function HomePage() {
       <CategoryNavbar/>
       <Recommended/>
       <BannerTwo/>
+      <MostPopularSection/>
       <FeaturedSets/>
       <CookiePermission/>
       <FanFavourites/>
