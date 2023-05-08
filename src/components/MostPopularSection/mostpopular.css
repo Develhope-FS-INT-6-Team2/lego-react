@@ -30,9 +30,11 @@
 .most-popular-section {
   display: flex;
   padding: 0 65px;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   min-height: 80vh;
+  width: 100%;
 }
 
 .carousel-container {
@@ -268,6 +270,11 @@
 .most-popular-sets,
 .item-info-first-line {
   font-weight: 500;
+}
+
+.most-popular-sets {
+  align-self: flex-start;
+  margin-bottom: 20px;
 }
 
 .popular-set-item:hover .shop-now {

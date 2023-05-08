@@ -76,20 +76,22 @@ const MostPopularSection = () => {
   ];
   
   return (
-    
     <div className="most-popular-section">
-      <Carousel>
-        {popularItemsData.map((item) => (
-          <PopularSetItem
-            key={item.id}
-            imageUrl={item.imageUrl}
-            logo1={item.logo1}
-            logo2={item.logo2}
-            title={item.title}
-            description={item.description}
-          />
-        ))}
-      </Carousel>
+      <div className="title-and-carousel-container">
+        <h2 className="most-popular-sets">Most Popular Sets</h2>
+        <Carousel>
+          {popularItemsData.map((item) => (
+            <PopularSetItem
+              key={item.id}
+              imageUrl={item.imageUrl}
+              logo1={item.logo1}
+              logo2={item.logo2}
+              title={item.title}
+              description={item.description}
+            />
+          ))}
+        </Carousel>
+      </div>
     </div>
   );
   
