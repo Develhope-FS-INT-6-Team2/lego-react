@@ -1,0 +1,393 @@
+@import "../mixins.scss";
+@import url('https://fonts.cdnfonts.com/css/cera-round-pro');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+.login-page {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+    background-color: #e0e8ed;
+
+
+
+
+
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 3rem;
+        margin-top: 1.2rem;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vh;
+
+
+        .avatar-logo {
+            height: 5rem;
+            width: 5rem;
+            margin-bottom: 1rem;
+            border-radius: 100%;
+            margin-top: -1.9rem;
+        }
+
+        .breaker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            width: 668px;
+        }
+
+        .breaker-line {
+            flex: 1;
+            width: 100%;
+
+            border-top: 2px double #badbf4;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom: 0px;
+            margin: 0 10px;
+        }
+
+        .breaker-or {
+            font-size: 14px;
+
+
+        }
+
+        .form-container {
+
+            font-family: 'Cera Round Pro', sans-serif;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 1000px;
+            margin-top: -5%;
+
+            @include mQmax(900px) {
+                width: 560px;
+            }
+
+            @include mQmax(600px) {
+                width: 460px;
+            }
+
+            @include mQmax(433px) {
+                width: 400px;
+            }
+
+            .input {
+                display: flex;
+                flex-direction: column;
+                width: 668px;
+
+                @include mQmax(900px) {
+                    width: 560px;
+                }
+
+                @include mQmax(600px) {
+                    width: 460px;
+                }
+
+                @include mQmax(433px) {
+                    width: 400px;
+                }
+
+                #pw-label {
+                    margin-top: 20px;
+                }
+
+                .input-info {
+                    color: #333333;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    text-align: left;
+                    margin-bottom: 0.5rem;
+                    font-size: 14px;
+                    float: left;
+                }
+
+                input {
+
+
+                    padding: 0.5rem;
+                    margin-bottom: 1rem;
+                    border-radius: 5px;
+                    border: 1px solid #CCCCCC;
+                    font-size: 1rem;
+                    height: 30px;
+                    border: 2px solid #c9c9c9;
+
+                }
+
+                input::placeholder {
+                    font-size: 14px;
+                    font-family: 'Cera Round Pro', sans-serif;
+                }
+
+                .error-message {
+                    display: flex;
+                    margin-top: -6px;
+                    font-size: 14px;
+
+                    color: red;
+                    justify-content: flex-start;
+                }
+            }
+
+
+            #remember-me {
+                margin-left: -0.9rem;
+                width: 10%;
+                height: 55%;
+            }
+
+            #remember-text {
+                color: #006cb6;
+                margin-top: 4px;
+                font-size: .875rem;
+                font-family: inherit;
+                margin-left: -0.6rem;
+
+            }
+
+            .remember-me-checkbox {
+                display: flex;
+                flex-direction: row;
+                margin-left: -0.5rem;
+                flex: 1;
+                width: 100%;
+                justify-content: flex-start;
+
+            }
+
+            .remember-me-innerbox {
+                display: flex;
+                justify-content: flex-start;
+                flex: 1;
+            }
+
+
+
+
+
+            button[type="submit"] {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                background-color: #006cb7;
+                color: white;
+                padding: 0.5rem 1rem;
+                border-radius: 5px;
+                border: none;
+                font-size: 25px;
+                cursor: pointer;
+                margin-top: 1rem;
+                height: 4rem;
+                width: 19rem;
+                border-radius: 9999px;
+                margin: 0 auto; // Add this line to center the button horizontally
+                margin-bottom: -0.8rem;
+
+                &:hover {
+                    background-color: #007FFF;
+                }
+            }
+
+            .help-section {
+                display: flex;
+                justify-content: space-around;
+                flex-direction: row;
+                text-align: center;
+                margin: 25px 0px;
+                @extend .input;
+
+                a {
+
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 1rem;
+                    font-size: 16px;
+                    color: #006cb7;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+
+                    &:not(:last-child) {
+                        margin-right: 1rem;
+                    }
+
+                }
+
+                span {
+
+                    height: 21px;
+                    display: inline-block;
+                    border-right: 1px solid #979797;
+                    margin-top: 0.8rem;
+                    position: absolute;
+
+                }
+
+
+            }
+
+
+            .reminder {
+
+                @extend .input;
+
+                p {
+                    font-size: 12px;
+                }
+            }
+
+            p {
+                margin-top: 1rem;
+                font-size: 0.8rem;
+                color: #707070;
+                text-align: center;
+            }
+
+            .create-section {
+                display: flex;
+                align-items: center;
+                @extend .input;
+
+                p {
+                    font-size: 12px;
+                }
+
+                a {
+                    color: #006cb7;
+                    font-size: 14px;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+            }
+        }
+
+
+        .buttons-container {
+            max-width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-direction: column;
+            @include mQmax(900px) {
+                width: 560px;
+            }
+
+            @include mQmax(600px) {
+                width: 460px;
+            }
+
+            @include mQmax(433px) {
+                width: 400px;
+            }
+
+            .facebook-button {
+                max-width: 100%;
+                font-family: 'Roboto', sans-serif;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                width: 668px;
+                height: 50px;
+                border: 1px solid #1877f2;
+                background-color: #1877f2;
+                border-radius: 4px;
+                font-size: 18px;
+                color: white;
+                cursor: pointer;
+
+
+                &::before {
+                    content: "";
+                    margin: 11px 20px 11px 11px;
+                    width: 24px;
+                    height: 24px;
+                    background-size: 24px 24px;
+                    background-image: url("./images/facebook.png");
+
+                }
+            }
+
+            .google-button {
+                max-width: 100%;
+                font-family: 'Roboto', sans-serif;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                width: 668px;
+                height: 50px;
+                border: 1px solid #979797;
+                border-radius: 4px;
+                font-size: 18px;
+                color: black;
+                cursor: pointer;
+
+                &::before {
+                    content: "";
+                    margin: 11px 20px 11px 11px;
+                    width: 24px;
+                    height: 24px;
+                    background-size: 24px 24px;
+                    background-image: url("./images/google.svg");
+                }
+            }
+
+            .apple-button {
+                max-width: 100%;
+                font-family: 'Roboto', sans-serif;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                width: 668px;
+                height: 50px;
+                border: none;
+                border-radius: 4px;
+                background-color: black;
+                font-size: 18px;
+                color: white;
+                cursor: pointer;
+
+                &::before {
+                    content: "";
+                    margin: 11px 20px 11px 11px;
+                    width: 24px;
+                    height: 24px;
+                    background-size: 24px 24px;
+                    background-image: url("./images/apple.svg");
+
+                }
+            }
+        }
+    }
+}
