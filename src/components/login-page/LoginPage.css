@@ -3,11 +3,12 @@
 .login-page {
   display: flex;
   align-items: center;
-  height: 100vh;
+ 
   width: 100%;
   font-family: Arial, sans-serif;
   flex-direction: column;
-  background-color: #e0e8ed;
+
+  background: linear-gradient(2deg,  #e0e8ed 86%, #f2f5f7 14%);
 }
 .login-page .header {
   display: flex;
@@ -15,7 +16,9 @@
   align-items: center;
   padding-bottom: 3rem;
   margin-top: 1.2rem;
+  margin-right: 18px;
 }
+
 .login-page .main {
   display: flex;
   flex-direction: column;
@@ -316,6 +319,7 @@
   font-size: 18px;
   color: white;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 .login-page .main .buttons-container .apple-button::before {
   content: "";

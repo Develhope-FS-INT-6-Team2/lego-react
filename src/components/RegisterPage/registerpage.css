@@ -1,0 +1,441 @@
+@import url("https://fonts.cdnfonts.com/css/cera-round-pro");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+.register-page {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-family: Cera Pro, sans-serif;
+  flex-direction: column;
+  background: linear-gradient(4deg, #e1e8ec 50%, #f2f5f7 50%);
+}
+.register-page .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  margin-top: 1.2rem;
+}
+.register-page .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vh;
+}
+.register-page .main h1 {
+  font-family: inherit;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.375rem;
+}
+.register-page .main .image-container .desk-logo {
+  height: 295px;
+  width: 330px;
+  margin-bottom: 1rem;
+}
+.register-page .main .breaker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  width: 668px;
+}
+.register-page .main .breaker-line {
+  flex: 1;
+  width: 100%;
+  border-top: 2px double #badbf4;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  margin: 0 10px;
+}
+.register-page .main .breaker-or {
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: #333;
+  font-weight: 500;
+  border-collapse: separate;
+  line-height: 17px;
+  text-align: center;
+  white-space: nowrap;
+}
+.register-page .main .create-section-register {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.register-page .main .create-section-register p {
+  font-size: 0.875rem;
+}
+.register-page .main .create-section-register a {
+  color: #006cb7;
+  font-size: 14px;
+  text-decoration: none;
+}
+.register-page .main .create-section-register a:hover {
+  text-decoration: underline;
+}
+.register-page .main .form-container {
+  font-family: "Cera Round Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin-left: 10%;
+  margin-top: -5%;
+}
+@media screen and (max-width: 1200px) {
+  .register-page .main .form-container {
+    margin-left: 10%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .register-page .main .form-container {
+    width: 560px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .register-page .main .form-container {
+    width: 460px;
+  }
+}
+@media screen and (max-width: 433px) {
+  .register-page .main .form-container {
+    width: 400px;
+  }
+}
+.register-page .main .form-container .terms {
+  width: 80%;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: #333;
+  font-weight: 400;
+  margin-bottom: 26px;
+  text-align: left;
+}
+.register-page .main .form-container .terms label {
+  flex-direction: row;
+  cursor: pointer;
+  font-family: inherit;
+  color: #006cb6;
+  padding-top: 1px;
+  line-height: 1.333rem;
+}
+.register-page .main .form-container .terms .terms-content p {
+  text-align: left;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: #333;
+  font-weight: 400;
+}
+.register-page .main .form-container .dob-title {
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: #646464;
+  font-weight: 400;
+  display: inline-block;
+}
+.register-page .main .form-container .dob-form {
+  display: flex;
+  flex-direction: row;
+}
+.register-page .main .form-container .dob-form .dob-section {
+  display: flex;
+  flex-direction: column;
+  margin-right: 9%;
+}
+@media screen and (max-width: 900px) {
+  .register-page .main .form-container .dob-form .dob-section {
+    width: 30%;
+    margin-right: 5%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .register-page .main .form-container .dob-form .dob-section {
+    width: 23%;
+    margin-right: 5%;
+  }
+}
+@media screen and (max-width: 433px) {
+  .register-page .main .form-container .dob-form .dob-section {
+    width: 20%;
+    margin-right: 5%;
+  }
+}
+.register-page .main .form-container .dob-form .dob-section .input-dob {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #CCCCCC;
+  font-size: 1rem;
+  height: 30px;
+  border: 2px solid #c9c9c9;
+}
+.register-page .main .form-container .dob-form .dob-section .dob-subtitle {
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: #333;
+  font-weight: 400;
+  display: inline-block;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.register-page .main .form-container .input-register, .register-page .main .form-container .reminder, .register-page .main .form-container .help-section {
+  display: flex;
+  flex-direction: column;
+  width: 668px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 900px) {
+  .register-page .main .form-container .input-register, .register-page .main .form-container .reminder, .register-page .main .form-container .help-section {
+    width: 560px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .register-page .main .form-container .input-register, .register-page .main .form-container .reminder, .register-page .main .form-container .help-section {
+    width: 460px;
+  }
+}
+@media screen and (max-width: 433px) {
+  .register-page .main .form-container .input-register, .register-page .main .form-container .reminder, .register-page .main .form-container .help-section {
+    width: 400px;
+  }
+}
+.register-page .main .form-container .input-register #pw-label, .register-page .main .form-container .reminder #pw-label, .register-page .main .form-container .help-section #pw-label {
+  margin-top: 20px;
+}
+.register-page .main .form-container .input-register .input-register-info, .register-page .main .form-container .reminder .input-register-info, .register-page .main .form-container .help-section .input-register-info {
+  color: #333333;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  float: left;
+}
+.register-page .main .form-container .input-register input, .register-page .main .form-container .reminder input, .register-page .main .form-container .help-section input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #CCCCCC;
+  font-size: 1rem;
+  height: 30px;
+  border: 2px solid #c9c9c9;
+}
+.register-page .main .form-container .input-register select, .register-page .main .form-container .reminder select, .register-page .main .form-container .help-section select {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #c9c9c9;
+  outline: none;
+  font-size: 0.875rem;
+  color: #333;
+  font-weight: 400;
+  font-family: inherit;
+  height: 50px;
+  line-height: 45px;
+  width: 100%;
+  padding: 0 16px;
+}
+.register-page .main .form-container .input-register input::placeholder, .register-page .main .form-container .reminder input::placeholder, .register-page .main .form-container .help-section input::placeholder {
+  font-size: 14px;
+  font-family: "Cera Round Pro", sans-serif;
+}
+.register-page .main .form-container .input-register .error-message, .register-page .main .form-container .reminder .error-message, .register-page .main .form-container .help-section .error-message {
+  display: flex;
+  margin-top: -6px;
+  font-size: 14px;
+  color: red;
+  justify-content: flex-start;
+}
+.register-page .main .form-container #remember-me {
+  margin-left: -0.9rem;
+  width: 10%;
+  height: 55%;
+}
+.register-page .main .form-container #remember-text {
+  color: #006cb6;
+  margin-top: 4px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  margin-left: -0.6rem;
+}
+.register-page .main .form-container .remember-me-checkbox {
+  display: flex;
+  flex-direction: row;
+  margin-left: -0.5rem;
+  flex: 1;
+  width: 100%;
+  justify-content: flex-start;
+}
+.register-page .main .form-container .remember-me-innerbox {
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+}
+.register-page .main .form-container button[type=submit] {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #006cb7;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  margin-top: 1rem;
+  height: 4rem;
+  width: 19rem;
+  border-radius: 9999px;
+  margin: 0 auto;
+  margin-bottom: -0.8rem;
+}
+.register-page .main .form-container button[type=submit]:hover {
+  background-color: #007FFF;
+}
+.register-page .main .form-container .help-section {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  text-align: center;
+  margin: 25px 0px;
+}
+.register-page .main .form-container .help-section a {
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 16px;
+  color: #006cb7;
+  text-decoration: none;
+}
+.register-page .main .form-container .help-section a:hover {
+  text-decoration: underline;
+}
+.register-page .main .form-container .help-section a:not(:last-child) {
+  margin-right: 1rem;
+}
+.register-page .main .form-container .help-section span {
+  height: 21px;
+  display: inline-block;
+  border-right: 1px solid #979797;
+  margin-top: 0.8rem;
+  position: absolute;
+}
+.register-page .main .form-container .reminder p {
+  font-size: 12px;
+}
+.register-page .main .form-container p {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #707070;
+  text-align: center;
+}
+.register-page .main .buttons-container {
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  justify-content: center;
+  flex-direction: row;
+}
+@media screen and (max-width: 900px) {
+  .register-page .main .buttons-container {
+    width: 560px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .register-page .main .buttons-container {
+    width: 460px;
+  }
+}
+@media screen and (max-width: 433px) {
+  .register-page .main .buttons-container {
+    width: 400px;
+  }
+}
+.register-page .main .buttons-container .facebook-button-icon {
+  max-width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 56px;
+  margin-right: 12px;
+  height: 50px;
+  border: 1px solid #1877f2;
+  background-color: #1877f2;
+  border-radius: 4px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+.register-page .main .buttons-container .facebook-button-icon::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  margin-left: 11px;
+  background-size: 24px 24px;
+  background-image: url("../login-page/images/facebook.png");
+}
+.register-page .main .google-button-icon {
+  max-width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 56px;
+  margin-right: 12px;
+  height: 50px;
+  border: 1px solid #979797;
+  border-radius: 4px;
+  font-size: 18px;
+  color: black;
+  cursor: pointer;
+}
+.register-page .main .google-button-icon::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  margin-left: 11px;
+  background-size: 24px 24px;
+  background-image: url("../login-page/images/google.svg");
+}
+.register-page .main .apple-button-icon {
+  max-width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 56px;
+  margin-right: 12px;
+  height: 50px;
+  border: none;
+  border-radius: 4px;
+  background-color: black;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+.register-page .main .apple-button-icon::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  margin-left: 11px;
+  background-size: 24px 24px;
+  background-image: url("../login-page/images/apple.svg");
+}
+
+/*# sourceMappingURL=registerpage.css.map */
