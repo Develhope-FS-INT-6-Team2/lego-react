@@ -89,7 +89,13 @@
   padding: 2rem;
   border-radius: 10px;
   max-width: 1000px;
+  margin-left: 10%;
   margin-top: -5%;
+}
+@media screen and (max-width: 1200px) {
+  .register-page .main .form-container {
+    margin-left: 10%;
+  }
 }
 @media screen and (max-width: 900px) {
   .register-page .main .form-container {

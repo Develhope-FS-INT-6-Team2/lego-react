@@ -121,14 +121,20 @@
             padding: 2rem;
             border-radius: 10px;
             max-width: 1000px;
+            margin-left: 10%;
             margin-top: -5%;
-
+            @include mQmax(1200px) {
+                
+                margin-left: 10%;
+            }
             @include mQmax(900px) {
                 width: 560px;
+               
             }
 
             @include mQmax(600px) {
                 width: 460px;
+               
             }
 
             @include mQmax(433px) {
