@@ -6,12 +6,8 @@
   background-color: #f8f8f8;
 }
 
-.playzone-btn-div > button {
-  padding: 10px 100px;
-}
-
 .play-zone-btn {
-  padding: 20px;
+  padding: 0px 50px;
   background-color: #abd9ff;
   white-space: nowrap;
   border-radius: 3px;
