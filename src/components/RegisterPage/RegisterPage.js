@@ -179,45 +179,48 @@ function RegisterForm() {
             </select>
           </div>
 
-          <label className='dob-title'>Your date of birth</label>
+          <label className="dob-title">Your date of birth</label>
 
           <div className="dob-form">
-            <div className='dob-section'>
-              <label  className='dob-subtitle'>Day</label>
+            <div className="dob-section">
+              <label className="dob-subtitle">Day</label>
               <input
                 className="input-dob"
                 type="text"
                 value={day}
+                inputMode="numeric"
                 pattern="[0-9]*"
                 placeholder="DD"
-                onChange={(e) => setDay(e.target.value)}
+                onChange={(e) => setDay(e.target.value.replace(/\D/, ""))}
                 required
                 maxLength={2}
               />
             </div>
-            <div className='dob-section'>
-              <label className='dob-subtitle'>Month</label>
+            <div className="dob-section">
+              <label className="dob-subtitle">Month</label>
               <input
                 className="input-dob"
                 type="text"
                 value={month}
+                inputMode="numeric"
                 pattern="[0-9]*"
                 placeholder="MM"
-                onChange={(e) => setMonth(e.target.value)}
+                onChange={(e) => setMonth(e.target.value.replace(/\D/, ""))}
                 required
                 maxLength={2}
               />
             </div>
 
-            <div className='dob-section'>
-              <label  className='dob-subtitle'>Year</label>
+            <div className="dob-section">
+              <label className="dob-subtitle">Year</label>
               <input
                 className="input-dob"
                 type="text"
                 value={year}
+                inputMode="numeric"
                 pattern="[0-9]*"
                 placeholder="YYYY"
-                onChange={(e) => setYear(e.target.value)}
+                onChange={(e) => setYear(e.target.value.replace(/\D/, ""))}
                 required
                 maxLength={4}
               />
@@ -227,11 +230,8 @@ function RegisterForm() {
           </div>
 
           <br />
-          
-              
-          
-       
-          <div className='terms'>
+
+          <div className="terms">
             <label>
               <input
                 type="checkbox"
@@ -241,16 +241,15 @@ function RegisterForm() {
               />
               I accept the terms and conditions.{" "}
             </label>
-            <div className='terms-content'>
-            <p>
-            When you agree to the <a href=''>Terms and Conditions</a> you also consent to our use of 
-            your personal information to process and operate your LEGO® Account.
-            To see how to control your personal data, please see our privacy policy.
-            </p>
+            <div className="terms-content">
+              <p>
+                When you agree to the <a href="">Terms and Conditions</a> you
+                also consent to our use of your personal information to process
+                and operate your LEGO® Account. To see how to control your
+                personal data, please see our privacy policy.
+              </p>
             </div>
-            
           </div>
-         
 
           <br />
           <button type="submit">Next</button>
