@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import accountLogo from "../login-page/images/account.svg"
-import avatarLogo from "../login-page/images/avatar.png"
+import avatarLogo from "../RegisterPage/Register_pics/lego_desk.png"
 import "./registerpage.css"
 
 function RegisterForm() {
@@ -63,7 +63,8 @@ function RegisterForm() {
     return emailPattern.test(email);
   };
 
-  const countries = ['Country A', 'Country B', 'Country C'];
+  const countries = [ "Australia","Brazil","Canada","Denmark","France","Germany",
+  "Italy","Japan","Mexico","New Zealand", "Spain", "Turkey", "United Kingdom", "United States",];
   
   
   const handleSubmit = (event) => {
@@ -92,37 +93,41 @@ function RegisterForm() {
   };
 
   return (
-    <div className='login-page'>
-      <header className='header'>
-        <img className='login-account-logo' src={accountLogo} alt="Account Logo" />
+    <div className="register-page">
+      <header className="header">
+        <img
+          className="login-account-logo"
+          src={accountLogo}
+          alt="Account Logo"
+        />
       </header>
 
-      <div className='main'>
+      <div className="main">
         <h1> Create your adult LEGO® Account</h1>
-        <div className='create-section'>
+        <div className="create-section-register">
           <p>Already have an account?</p>
-          <a href=''>Log in</a>
+          <a href="">Log in</a>
         </div>
 
         <div className="buttons-container">
-          <button className="facebook-button">Continue with Facebook</button>
-          <button className="google-button">Continue with Google</button>
-          <button className="apple-button">Continue with Apple</button>
+          <button className="facebook-button-icon"></button>
+          <button className="google-button-icon"></button>
+          <button className="apple-button-icon"></button>
         </div>
 
         <div className="breaker">
           <hr className="breaker-line" />
-          <span className="breaker-or">Or</span>
+          <span className="breaker-or">Or use your email</span>
           <hr className="breaker-line" />
         </div>
 
-        <div>
-          <img className='avatar-logo' src={avatarLogo} alt="Avatar Logo" />
+        <div className="image-container">
+          <img className="desk-logo" src={avatarLogo} alt="Avatar Logo" />
         </div>
 
-        <form onSubmit={handleSubmit}>
-          <label>
-            Email:
+        <form className="form-container" onSubmit={handleSubmit}>
+          <div className="input-register">
+            <label className="input-register-info">Email: </label>
             <input
               type="email"
               placeholder="Email"
@@ -134,19 +139,18 @@ function RegisterForm() {
               onBlur={handleBlur}
               required
             />
-            {emailTouched && emailError  && (
-              <p className='error-message'>{emailError}</p>
-              
+            {emailTouched && emailError && (
+              <p className="error-message">{emailError}</p>
             )}
-          </label>
+          </div>
           <br />
-          <label>
-            Password:
+          <div className="input-register">
+            <label className="input-register-info">Password: </label>
             <input
-              type='password'
-              placeholder='Password'
-              id='password'
-              name='password'
+              type="password"
+              placeholder="Password"
+              id="password"
+              name="password"
               value={password}
               onChange={handleChange}
               onFocus={handleFocus}
@@ -154,13 +158,17 @@ function RegisterForm() {
               required
             />
             {passwordTouched && passwordError && (
-              <p className='error-message'>{passwordError}</p>
+              <p className="error-message">{passwordError}</p>
             )}
-          </label>
+          </div>
           <br />
-          <label>
-            Country:
-            <select value={country} onChange={(e) => setCountry(e.target.value)} required>
+          <div className="input-register">
+            <label className="input-register-info">Where do you live? </label>
+            <select
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+              required
+            >
               <option value="">Select Country</option>
               {countries.map((countryOption) => (
                 <option value={countryOption} key={countryOption}>
@@ -168,21 +176,66 @@ function RegisterForm() {
                 </option>
               ))}
             </select>
-          </label>
+          </div>
+
+          <label className='dob-title'>Your date of birth</label>
+
+          <div className="dob-form">
+            <div className='dob-section'>
+              <label  className='dob-subtitle'>Day</label>
+              <input
+                className="input-dob"
+                type="text"
+                value={day}
+                pattern="[0-9]*"
+                placeholder="DD"
+                onChange={(e) => setDay(e.target.value)}
+                required
+                maxLength={2}
+              />
+            </div>
+            <div className='dob-section'>
+              <label className='dob-subtitle'>Month</label>
+              <input
+                className="input-dob"
+                type="text"
+                value={month}
+                pattern="[0-9]*"
+                placeholder="MM"
+                onChange={(e) => setMonth(e.target.value)}
+                required
+                maxLength={2}
+              />
+            </div>
+
+            <div className='dob-section'>
+              <label  className='dob-subtitle'>Year</label>
+              <input
+                className="input-dob"
+                type="text"
+                value={year}
+                pattern="[0-9]*"
+                placeholder="YYYY"
+                onChange={(e) => setYear(e.target.value)}
+                required
+                maxLength={4}
+              />
+            </div>
+
+            {dobError && <p className="error-message">{dobError}</p>}
+          </div>
+
           <br />
           <label>
-            Date of Birth:
-            <input type="text" value={day} pattern="[0-9]*" placeholder="DD" onChange={(e) => setDay(e.target.value)} required maxLength={2} />
-            <input type="text" value={month} pattern="[0-9]*" placeholder="MM" onChange={(e) => setMonth(e.target.value)} required maxLength={2} />
-            <input type="text" value={year}pattern="[0-9]*"  placeholder="YYYY" onChange={(e) => setYear(e.target.value)} required maxLength={4} />
-            
+            <input
+              type="checkbox"
+              checked={acceptedTerms}
+              onChange={(e) => setAcceptedTerms(e.target.checked)}
+              required
+            />
+            I accept the terms and conditions.{" "}
           </label>
-          {dobError && <p className='error-message'>{dobError}</p>}
-          <br />
-          <label>
-            <input type="checkbox" checked={acceptedTerms} onChange={(e) => setAcceptedTerms(e.target.checked)} required />
-            I accept the terms and conditions.
-          </label>
+
           <br />
           <button type="submit">Next</button>
         </form>

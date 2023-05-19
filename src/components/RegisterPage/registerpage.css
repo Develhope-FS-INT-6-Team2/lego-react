@@ -1,43 +1,49 @@
 @import url("https://fonts.cdnfonts.com/css/cera-round-pro");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-.login-page {
+.register-page {
   display: flex;
   align-items: center;
-  height: 100vh;
   width: 100%;
-  font-family: Arial, sans-serif;
+  font-family: Cera Pro, sans-serif;
   flex-direction: column;
-  background-color: #e0e8ed;
+  background: linear-gradient(4deg, #e1e8ec 50%, #f2f5f7 50%);
 }
-.login-page .header {
+.register-page .header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 3rem;
+  padding-bottom: 1.5rem;
   margin-top: 1.2rem;
 }
-.login-page .main {
+.register-page .main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vh;
 }
-.login-page .main .avatar-logo {
-  height: 5rem;
-  width: 5rem;
-  margin-bottom: 1rem;
-  border-radius: 100%;
-  margin-top: -1.9rem;
+.register-page .main h1 {
+  font-family: inherit;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.375rem;
 }
-.login-page .main .breaker {
+.register-page .main .image-container .desk-logo {
+  height: 295px;
+  width: 330px;
+  margin-bottom: 1rem;
+}
+.register-page .main .breaker {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 20px 0;
   width: 668px;
 }
-.login-page .main .breaker-line {
+.register-page .main .breaker-line {
   flex: 1;
   width: 100%;
   border-top: 2px double #badbf4;
@@ -46,10 +52,34 @@
   border-bottom: 0px;
   margin: 0 10px;
 }
-.login-page .main .breaker-or {
-  font-size: 14px;
+.register-page .main .breaker-or {
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: #333;
+  font-weight: 500;
+  border-collapse: separate;
+  line-height: 17px;
+  text-align: center;
+  white-space: nowrap;
 }
-.login-page .main .form-container {
+.register-page .main .create-section-register {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.register-page .main .create-section-register p {
+  font-size: 0.875rem;
+}
+.register-page .main .create-section-register a {
+  color: #006cb7;
+  font-size: 14px;
+  text-decoration: none;
+}
+.register-page .main .create-section-register a:hover {
+  text-decoration: underline;
+}
+.register-page .main .form-container {
   font-family: "Cera Round Pro", sans-serif;
   display: flex;
   flex-direction: column;
@@ -62,44 +92,97 @@
   margin-top: -5%;
 }
 @media screen and (max-width: 900px) {
-  .login-page .main .form-container {
+  .register-page .main .form-container {
     width: 560px;
   }
 }
 @media screen and (max-width: 600px) {
-  .login-page .main .form-container {
+  .register-page .main .form-container {
     width: 460px;
   }
 }
 @media screen and (max-width: 433px) {
-  .login-page .main .form-container {
+  .register-page .main .form-container {
     width: 400px;
   }
 }
-.login-page .main .form-container .input, .login-page .main .form-container .create-section, .login-page .main .form-container .reminder, .login-page .main .form-container .help-section {
+.register-page .main .form-container .dob-title {
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: #646464;
+  font-weight: 400;
+  display: inline-block;
+}
+.register-page .main .form-container .dob-form {
+  display: flex;
+  flex-direction: row;
+}
+.register-page .main .form-container .dob-form .dob-section {
+  display: flex;
+  flex-direction: column;
+  margin-right: 9%;
+}
+@media screen and (max-width: 900px) {
+  .register-page .main .form-container .dob-form .dob-section {
+    width: 30%;
+    margin-right: 5%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .register-page .main .form-container .dob-form .dob-section {
+    width: 23%;
+    margin-right: 5%;
+  }
+}
+@media screen and (max-width: 433px) {
+  .register-page .main .form-container .dob-form .dob-section {
+    width: 20%;
+    margin-right: 5%;
+  }
+}
+.register-page .main .form-container .dob-form .dob-section .input-dob {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #CCCCCC;
+  font-size: 1rem;
+  height: 30px;
+  border: 2px solid #c9c9c9;
+}
+.register-page .main .form-container .dob-form .dob-section .dob-subtitle {
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: #333;
+  font-weight: 400;
+  display: inline-block;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.register-page .main .form-container .input-register, .register-page .main .form-container .reminder, .register-page .main .form-container .help-section {
   display: flex;
   flex-direction: column;
   width: 668px;
+  margin-bottom: 20px;
 }
 @media screen and (max-width: 900px) {
-  .login-page .main .form-container .input, .login-page .main .form-container .create-section, .login-page .main .form-container .reminder, .login-page .main .form-container .help-section {
+  .register-page .main .form-container .input-register, .register-page .main .form-container .reminder, .register-page .main .form-container .help-section {
     width: 560px;
   }
 }
 @media screen and (max-width: 600px) {
-  .login-page .main .form-container .input, .login-page .main .form-container .create-section, .login-page .main .form-container .reminder, .login-page .main .form-container .help-section {
+  .register-page .main .form-container .input-register, .register-page .main .form-container .reminder, .register-page .main .form-container .help-section {
     width: 460px;
   }
 }
 @media screen and (max-width: 433px) {
-  .login-page .main .form-container .input, .login-page .main .form-container .create-section, .login-page .main .form-container .reminder, .login-page .main .form-container .help-section {
+  .register-page .main .form-container .input-register, .register-page .main .form-container .reminder, .register-page .main .form-container .help-section {
     width: 400px;
   }
 }
-.login-page .main .form-container .input #pw-label, .login-page .main .form-container .create-section #pw-label, .login-page .main .form-container .reminder #pw-label, .login-page .main .form-container .help-section #pw-label {
+.register-page .main .form-container .input-register #pw-label, .register-page .main .form-container .reminder #pw-label, .register-page .main .form-container .help-section #pw-label {
   margin-top: 20px;
 }
-.login-page .main .form-container .input .input-info, .login-page .main .form-container .create-section .input-info, .login-page .main .form-container .reminder .input-info, .login-page .main .form-container .help-section .input-info {
+.register-page .main .form-container .input-register .input-register-info, .register-page .main .form-container .reminder .input-register-info, .register-page .main .form-container .help-section .input-register-info {
   color: #333333;
   display: flex;
   flex-direction: row;
@@ -109,7 +192,7 @@
   font-size: 14px;
   float: left;
 }
-.login-page .main .form-container .input input, .login-page .main .form-container .create-section input, .login-page .main .form-container .reminder input, .login-page .main .form-container .help-section input {
+.register-page .main .form-container .input-register input, .register-page .main .form-container .reminder input, .register-page .main .form-container .help-section input {
   padding: 0.5rem;
   margin-bottom: 1rem;
   border-radius: 5px;
@@ -118,30 +201,44 @@
   height: 30px;
   border: 2px solid #c9c9c9;
 }
-.login-page .main .form-container .input input::placeholder, .login-page .main .form-container .create-section input::placeholder, .login-page .main .form-container .reminder input::placeholder, .login-page .main .form-container .help-section input::placeholder {
+.register-page .main .form-container .input-register select, .register-page .main .form-container .reminder select, .register-page .main .form-container .help-section select {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #c9c9c9;
+  outline: none;
+  font-size: 0.875rem;
+  color: #333;
+  font-weight: 400;
+  font-family: inherit;
+  height: 50px;
+  line-height: 45px;
+  width: 100%;
+  padding: 0 16px;
+}
+.register-page .main .form-container .input-register input::placeholder, .register-page .main .form-container .reminder input::placeholder, .register-page .main .form-container .help-section input::placeholder {
   font-size: 14px;
   font-family: "Cera Round Pro", sans-serif;
 }
-.login-page .main .form-container .input .error-message, .login-page .main .form-container .create-section .error-message, .login-page .main .form-container .reminder .error-message, .login-page .main .form-container .help-section .error-message {
+.register-page .main .form-container .input-register .error-message, .register-page .main .form-container .reminder .error-message, .register-page .main .form-container .help-section .error-message {
   display: flex;
   margin-top: -6px;
   font-size: 14px;
   color: red;
   justify-content: flex-start;
 }
-.login-page .main .form-container #remember-me {
+.register-page .main .form-container #remember-me {
   margin-left: -0.9rem;
   width: 10%;
   height: 55%;
 }
-.login-page .main .form-container #remember-text {
+.register-page .main .form-container #remember-text {
   color: #006cb6;
   margin-top: 4px;
   font-size: 0.875rem;
   font-family: inherit;
   margin-left: -0.6rem;
 }
-.login-page .main .form-container .remember-me-checkbox {
+.register-page .main .form-container .remember-me-checkbox {
   display: flex;
   flex-direction: row;
   margin-left: -0.5rem;
@@ -149,12 +246,12 @@
   width: 100%;
   justify-content: flex-start;
 }
-.login-page .main .form-container .remember-me-innerbox {
+.register-page .main .form-container .remember-me-innerbox {
   display: flex;
   justify-content: flex-start;
   flex: 1;
 }
-.login-page .main .form-container button[type=submit] {
+.register-page .main .form-container button[type=submit] {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -173,17 +270,17 @@
   margin: 0 auto;
   margin-bottom: -0.8rem;
 }
-.login-page .main .form-container button[type=submit]:hover {
+.register-page .main .form-container button[type=submit]:hover {
   background-color: #007FFF;
 }
-.login-page .main .form-container .help-section {
+.register-page .main .form-container .help-section {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   text-align: center;
   margin: 25px 0px;
 }
-.login-page .main .form-container .help-section a {
+.register-page .main .form-container .help-section a {
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
@@ -191,73 +288,60 @@
   color: #006cb7;
   text-decoration: none;
 }
-.login-page .main .form-container .help-section a:hover {
+.register-page .main .form-container .help-section a:hover {
   text-decoration: underline;
 }
-.login-page .main .form-container .help-section a:not(:last-child) {
+.register-page .main .form-container .help-section a:not(:last-child) {
   margin-right: 1rem;
 }
-.login-page .main .form-container .help-section span {
+.register-page .main .form-container .help-section span {
   height: 21px;
   display: inline-block;
   border-right: 1px solid #979797;
   margin-top: 0.8rem;
   position: absolute;
 }
-.login-page .main .form-container .reminder p {
+.register-page .main .form-container .reminder p {
   font-size: 12px;
 }
-.login-page .main .form-container p {
+.register-page .main .form-container p {
   margin-top: 1rem;
   font-size: 0.8rem;
   color: #707070;
   text-align: center;
 }
-.login-page .main .form-container .create-section {
+.register-page .main .buttons-container {
   display: flex;
-  align-items: center;
-}
-.login-page .main .form-container .create-section p {
-  font-size: 12px;
-}
-.login-page .main .form-container .create-section a {
-  color: #006cb7;
-  font-size: 14px;
-  text-decoration: none;
-}
-.login-page .main .form-container .create-section a:hover {
-  text-decoration: underline;
-}
-.login-page .main .buttons-container {
-  max-width: 100%;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  flex-direction: column;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  justify-content: center;
+  flex-direction: row;
 }
 @media screen and (max-width: 900px) {
-  .login-page .main .buttons-container {
+  .register-page .main .buttons-container {
     width: 560px;
   }
 }
 @media screen and (max-width: 600px) {
-  .login-page .main .buttons-container {
+  .register-page .main .buttons-container {
     width: 460px;
   }
 }
 @media screen and (max-width: 433px) {
-  .login-page .main .buttons-container {
+  .register-page .main .buttons-container {
     width: 400px;
   }
 }
-.login-page .main .buttons-container .facebook-button {
+.register-page .main .buttons-container .facebook-button-icon {
   max-width: 100%;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 668px;
+  width: 56px;
+  margin-right: 12px;
   height: 50px;
   border: 1px solid #1877f2;
   background-color: #1877f2;
@@ -266,22 +350,23 @@
   color: white;
   cursor: pointer;
 }
-.login-page .main .buttons-container .facebook-button::before {
+.register-page .main .buttons-container .facebook-button-icon::before {
   content: "";
-  margin: 11px 20px 11px 11px;
   width: 24px;
   height: 24px;
+  margin-left: 11px;
   background-size: 24px 24px;
   background-image: url("../login-page/images/facebook.png");
 }
-.login-page .main .buttons-container .google-button {
+.register-page .main .google-button-icon {
   max-width: 100%;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 668px;
+  width: 56px;
+  margin-right: 12px;
   height: 50px;
   border: 1px solid #979797;
   border-radius: 4px;
@@ -289,22 +374,23 @@
   color: black;
   cursor: pointer;
 }
-.login-page .main .buttons-container .google-button::before {
+.register-page .main .google-button-icon::before {
   content: "";
-  margin: 11px 20px 11px 11px;
   width: 24px;
   height: 24px;
+  margin-left: 11px;
   background-size: 24px 24px;
   background-image: url("../login-page/images/google.svg");
 }
-.login-page .main .buttons-container .apple-button {
+.register-page .main .apple-button-icon {
   max-width: 100%;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 668px;
+  width: 56px;
+  margin-right: 12px;
   height: 50px;
   border: none;
   border-radius: 4px;
@@ -313,11 +399,11 @@
   color: white;
   cursor: pointer;
 }
-.login-page .main .buttons-container .apple-button::before {
+.register-page .main .apple-button-icon::before {
   content: "";
-  margin: 11px 20px 11px 11px;
   width: 24px;
   height: 24px;
+  margin-left: 11px;
   background-size: 24px 24px;
   background-image: url("../login-page/images/apple.svg");
 }

@@ -3,14 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 
-.login-page {
+.register-page {
     display: flex;
     align-items: center;
-    height: 100vh;
+    
     width: 100%;
-    font-family: Arial, sans-serif;
+    font-family: Cera Pro,sans-serif;
     flex-direction: column;
-    background-color: #e0e8ed;
+    background: linear-gradient(4deg,  #e1e8ec 50%, #f2f5f7 50%);
 
 
 
@@ -20,7 +20,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-bottom: 3rem;
+        padding-bottom: 1.5rem;
         margin-top: 1.2rem;
     }
 
@@ -30,15 +30,30 @@
         justify-content: center;
         align-items: center;
         width: 100vh;
-
-
-        .avatar-logo {
-            height: 5rem;
-            width: 5rem;
-            margin-bottom: 1rem;
-            border-radius: 100%;
-            margin-top: -1.9rem;
+        
+        h1{
+            font-family: inherit;
+            font-weight: 500;
+            color: #333;
+            text-align: center;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.375rem;
+            
         }
+        .image-container{
+            
+            
+            .desk-logo {
+                height: 295px;
+                width: 330px;
+                margin-bottom: 1rem;
+               
+                
+            } 
+        }
+
+      
 
         .breaker {
             display: flex;
@@ -60,8 +75,37 @@
         }
 
         .breaker-or {
-            font-size: 14px;
+            font-family: inherit;
+            font-size: .875rem;
+            color: #333;
+            font-weight: 500;
+            border-collapse: separate;
+            line-height: 17px;
+            text-align: center;
+            white-space: nowrap;
 
+
+        }
+        .create-section-register {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 10px;
+           
+
+            p {
+                font-size: .875rem;
+            }
+
+            a {
+                color: #006cb7;
+                font-size: 14px;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
 
         }
 
@@ -90,11 +134,66 @@
             @include mQmax(433px) {
                 width: 400px;
             }
-
-            .input {
+            .dob-title{
+                font-family: inherit;
+                font-size: .875rem;
+                color: #646464;
+                font-weight: 400;
+                display: inline-block;
+            }
+            .dob-form{
+                display: flex;
+                flex-direction: row;
+                
+                .dob-section{
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 9%;
+                    @include mQmax(900px) {
+                        width: 30%;
+                        margin-right: 5%;
+                    }
+        
+                    @include mQmax(600px) {
+                        width: 23%;
+                        margin-right: 5%;
+                    }
+        
+                    @include mQmax(433px) {
+                        width: 20%;
+                        margin-right: 5%;
+                    }
+                
+                    .input-dob{
+                        padding: 0.5rem;
+                        margin-bottom: 1rem;
+                        border-radius: 5px;
+                        border: 1px solid #CCCCCC;
+                        font-size: 1rem;
+                        height: 30px;
+                        
+                        border: 2px solid #c9c9c9;
+                        
+                    }
+                    .dob-subtitle{
+                        font-family: inherit;
+                        font-size: .875rem;
+                        color: #333;
+                        font-weight: 400;
+                        display: inline-block;
+                        padding-top: 5px;
+                        padding-bottom: 10px;
+                    }
+                
+               
+                }  
+            }
+           
+            .input-register {
                 display: flex;
                 flex-direction: column;
                 width: 668px;
+                margin-bottom: 20px;
 
                 @include mQmax(900px) {
                     width: 560px;
@@ -112,7 +211,7 @@
                     margin-top: 20px;
                 }
 
-                .input-info {
+                .input-register-info {
                     color: #333333;
                     display: flex;
                     flex-direction: row;
@@ -134,6 +233,21 @@
                     height: 30px;
                     border: 2px solid #c9c9c9;
 
+                }
+                
+                select {
+                    background-color: #fff;
+                    border-radius: 5px;
+                    border: 2px solid #c9c9c9;
+                    outline: none;
+                    font-size: .875rem;
+                    color: #333;
+                    font-weight: 400;
+                    font-family: inherit;
+                    height: 50px;
+                    line-height: 45px;
+                    width: 100%;
+                    padding: 0 16px;
                 }
 
                 input::placeholder {
@@ -217,7 +331,7 @@
                 flex-direction: row;
                 text-align: center;
                 margin: 25px 0px;
-                @extend .input;
+                @extend .input-register;
 
                 a {
 
@@ -254,7 +368,7 @@
 
             .reminder {
 
-                @extend .input;
+                @extend .input-register;
 
                 p {
                     font-size: 12px;
@@ -268,35 +382,18 @@
                 text-align: center;
             }
 
-            .create-section {
-                display: flex;
-                align-items: center;
-                @extend .input;
-
-                p {
-                    font-size: 12px;
-                }
-
-                a {
-                    color: #006cb7;
-                    font-size: 14px;
-                    text-decoration: none;
-
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-
-            }
+           
         }
 
 
         .buttons-container {
-            max-width: 100%;
             display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            flex-direction: column;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+            justify-content: center;
+              flex-direction: row;
+            
             @include mQmax(900px) {
                 width: 560px;
             }
@@ -309,14 +406,16 @@
                 width: 400px;
             }
 
-            .facebook-button {
+            .facebook-button-icon {
                 max-width: 100%;
-                font-family: 'Roboto', sans-serif;
+                font-family: "Roboto", sans-serif;
                 font-weight: bold;
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
-                width: 668px;
+                width: 56px;
+                margin-right: 12px;
+
                 height: 50px;
                 border: 1px solid #1877f2;
                 background-color: #1877f2;
@@ -328,23 +427,26 @@
 
                 &::before {
                     content: "";
-                    margin: 11px 20px 11px 11px;
                     width: 24px;
                     height: 24px;
+                    margin-left: 11px;
                     background-size: 24px 24px;
-                    background-image: url("./login-page/mages/facebook.png");
+                    background-image: url("../login-page/images/facebook.png");
+                  }
 
                 }
             }
 
-            .google-button {
+            .google-button-icon {
                 max-width: 100%;
-                font-family: 'Roboto', sans-serif;
+                font-family: "Roboto", sans-serif;
                 font-weight: bold;
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
-                width: 668px;
+                width: 56px;
+                margin-right: 12px;
+              
                 height: 50px;
                 border: 1px solid #979797;
                 border-radius: 4px;
@@ -354,22 +456,24 @@
 
                 &::before {
                     content: "";
-                    margin: 11px 20px 11px 11px;
                     width: 24px;
                     height: 24px;
+                    margin-left: 11px;
                     background-size: 24px 24px;
-                    background-image: url("./login-page/images/google.svg");
+                    background-image: url("../login-page/images/google.svg");
                 }
             }
 
-            .apple-button {
+            .apple-button-icon {
                 max-width: 100%;
-                font-family: 'Roboto', sans-serif;
+                font-family: "Roboto", sans-serif;
                 font-weight: bold;
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
-                width: 668px;
+                width: 56px;
+                margin-right: 12px;
+              
                 height: 50px;
                 border: none;
                 border-radius: 4px;
@@ -380,14 +484,14 @@
 
                 &::before {
                     content: "";
-                    margin: 11px 20px 11px 11px;
-                    width: 24px;
-                    height: 24px;
-                    background-size: 24px 24px;
-                    background-image: url("./login-page/images/apple.svg");
+                width: 24px;
+                height: 24px;
+                margin-left: 11px;
+                background-size: 24px 24px;
+                
+                background-image: url("../login-page/images/apple.svg");
 
                 }
             }
         }
     }
-}
