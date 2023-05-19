@@ -22,7 +22,7 @@
         align-items: center;
         padding-bottom: 1.5rem;
         margin-top: 1.2rem;
-    }
+            }
 
     .main {
         display: flex;
@@ -133,6 +133,38 @@
 
             @include mQmax(433px) {
                 width: 400px;
+            }
+            
+            
+            .terms{
+                
+                width: 80%;
+                font-family: inherit;
+                font-size: .875rem;
+                color: #333;
+                font-weight: 400;
+                margin-bottom: 26px;
+                text-align: left;
+                                
+                label{
+                    flex-direction: row;
+                    cursor: pointer;
+                    font-family: inherit;
+                    color: #006cb6;
+                    padding-top: 1px;
+                    line-height: 1.333rem;
+                }
+                .terms-content{
+                    
+                    p{
+                        text-align: left;
+                        font-family: inherit;
+                        font-size: .875rem;
+                        color: #333;
+                        font-weight: 400;
+                    }
+                }
+                
             }
             .dob-title{
                 font-family: inherit;

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
+import { Link } from 'react-router-dom';
 import accountLogo from "../login-page/images/account.svg"
 import avatarLogo from "../RegisterPage/Register_pics/lego_desk.png"
 import "./registerpage.css"
@@ -106,7 +107,7 @@ function RegisterForm() {
         <h1> Create your adult LEGO® Account</h1>
         <div className="create-section-register">
           <p>Already have an account?</p>
-          <a href="">Log in</a>
+          <Link to="/LoginPage">Log in</Link>
         </div>
 
         <div className="buttons-container">
@@ -226,15 +227,30 @@ function RegisterForm() {
           </div>
 
           <br />
-          <label>
-            <input
-              type="checkbox"
-              checked={acceptedTerms}
-              onChange={(e) => setAcceptedTerms(e.target.checked)}
-              required
-            />
-            I accept the terms and conditions.{" "}
-          </label>
+          
+              
+          
+       
+          <div className='terms'>
+            <label>
+              <input
+                type="checkbox"
+                checked={acceptedTerms}
+                onChange={(e) => setAcceptedTerms(e.target.checked)}
+                required
+              />
+              I accept the terms and conditions.{" "}
+            </label>
+            <div className='terms-content'>
+            <p>
+            When you agree to the <a href=''>Terms and Conditions</a> you also consent to our use of 
+            your personal information to process and operate your LEGO® Account.
+            To see how to control your personal data, please see our privacy policy.
+            </p>
+            </div>
+            
+          </div>
+         
 
           <br />
           <button type="submit">Next</button>

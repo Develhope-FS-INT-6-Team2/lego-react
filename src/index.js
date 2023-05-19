@@ -8,7 +8,7 @@ import RegisterForm from './components/RegisterPage/RegisterPage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RegisterForm />
+    <App />
   </React.StrictMode>
 );
 
