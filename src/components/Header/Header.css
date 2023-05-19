@@ -1,0 +1,96 @@
+.top-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 55px;
+  background-color: #f8f8f8;
+}
+
+.playzone-btn-div > button {
+  padding: 10px 100px;
+}
+
+.play-zone-btn {
+  padding: 20px;
+  background-color: #abd9ff;
+  white-space: nowrap;
+  border-radius: 3px;
+  border: none;
+  box-shadow: rgba(48, 85, 181, 0.44) 0px 1px 4px 0px;
+}
+
+.play-zone-btn:hover {
+  background-color: white;
+}
+
+.top-header-slider {
+  display: flex;
+  align-items: center;
+}
+
+.top-header-slider > button {
+  border: none;
+  background-color: inherit;
+  margin: 0 50px;
+}
+
+.top-header-slider > p {
+  font-size: 12px;
+}
+
+.top-header-slider a {
+  text-decoration: none;
+}
+
+.top-header-container button:hover {
+  cursor: pointer;
+}
+
+.account-section {
+  display: flex;
+  align-items: center;
+}
+
+.account-section *:hover {
+  cursor: pointer;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+}
+
+.vip {
+  display: flex;
+  align-items: center;
+}
+
+.cross-section {
+  display: none;
+}
+
+.close-btn {
+  background-color: inherit;
+  border: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .account-section span {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .play-zone-btn {
+    display: none;
+  }
+  .account-section {
+    display: none;
+  }
+  .cross-section {
+    display: flex;
+  }
+  .top-header-slider {
+    margin: auto;
+  }
+}
