@@ -5,8 +5,8 @@ function FooterLinks(){
     return(
         <div>
             <div className="footer-links">
-                <a>Privacy</a>
-                <a>Policy</a>
+                <a href="#hello">Privacy</a>
+                <a href="#hello">Policy</a>
                 <a>Legal notice</a>
                 <a>Terms of Use</a>
                 <a>Digital wellbeing</a>
@@ -14,7 +14,7 @@ function FooterLinks(){
                 <a>Cookie Settings</a>
             </div>
     
-            <div className="footer-copyright">
+            <div  className="footer-copyright">
                 <p>
                     LEGO System A/S, DK-7190 Billund, Denmark. Must be 18 years or older
                     to purchase online. LEGO, the LEGO logo, the Minifigure, DUPLO,
