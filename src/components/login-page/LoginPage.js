@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import accountLogo from "./images/account.svg"
 import avatarLogo from "./images/avatar.png"
 import "./LoginPage.css"
@@ -135,7 +136,7 @@ function LoginForm() {
 
           <div className='create-section'>
             <p>Don’t have a LEGO® Account?</p>
-            <a href=''>Create account</a>
+            <Link to='/RegisterPage'>Create account</Link>
           </div>
         </form>
         <div class="breaker">

@@ -4,6 +4,7 @@ import HomePage from './components/page-components/HomePage/HomePage';
 import ProductPage from './components/page-components/ProductPage/ProductPage';
 
 import LoginForm from "./components/login-page/LoginPage";
+import RegisterForm from './components/RegisterPage/RegisterPage';
 
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/LoginPage" element={<LoginForm />} />
           <Route path="/product/:id" element={<ProductPage/>} />
+          <Route path="/RegisterPage" element={<RegisterForm/>}/>
+
         </Routes>
         
       </div>
