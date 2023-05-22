@@ -18,7 +18,7 @@ function FeaturedSets(){
 
     let products = data.sets.map(item =>(
         <SwiperSlide>
-            <OneSet image={item.image} title={item.title} price={item.price} />
+            <OneSet id={item.id} image={item.image} title={item.title} price={item.price} />
         </SwiperSlide>
     ))
 

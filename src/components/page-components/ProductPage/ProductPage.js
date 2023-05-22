@@ -1,18 +1,22 @@
 import { useParams, Link } from 'react-router-dom';
+import "./ProductPage.css";
+
+import data from "../../FeaturedSets/featured-sets-components/Products.json"
+import Footer from '../../Footer/Footer';
+import ProductPageItem from '../../product-page-item/ProductPageItem';
 
 export default function ProductDetail() {
-  const { id } = useParams();
+  let { id } = useParams();
+  
+  let foundItem = data.sets.find(item => item.id === Number(id));
 
-  // Fetch the product details based on the id parameter
-  // ...
-
+  // console.log((foundItem));
   return (
-    <div>
-      <h1>Product Detail</h1>
-      <p>Product ID: {id}</p>
-      {/* Render the product details */}
-      // ...
-      <Link to={"/product/:"+(id+1)}>Product 5</Link>
+    <div className='product-page'>
+      <h1>{id}</h1>
+      <ProductPageItem  image={foundItem.image} title={foundItem.title} price={foundItem.price} id={id} />
+      
+      <Footer/>
 
     </div>
   );

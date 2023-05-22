@@ -1,13 +1,4 @@
 @import url("https://fonts.cdnfonts.com/css/cera-round-pro");
-.featured-sets-out{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-
-}
-
 .featured-sets {
   display: flex;
   flex-direction: column;
@@ -71,6 +62,7 @@
   position: absolute;
   left: 0.3rem;
   z-index: 1;
+  color: black;
 }
 .one-product .product-upper-section p:first-child {
   top: 0.3rem;
@@ -111,6 +103,13 @@
   font-size: 1rem;
   line-height: 1.5625rem;
   font-weight: lighter;
+  text-decoration: none;
+}
+.one-product .product-title {
+  text-decoration: none;
+}
+.one-product .product-title :hover {
+  text-decoration: underline;
 }
 .one-product .price {
   font-weight: 600;
