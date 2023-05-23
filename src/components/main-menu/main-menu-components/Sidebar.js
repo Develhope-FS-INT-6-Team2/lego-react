@@ -1,0 +1,31 @@
+import React from "react";
+
+function Sidebar() {
+  const data = [
+    { id: 1, title: "LOGO", image: "../assets/icons/main-menu/logo.PNG" },
+    { id: 2, title: "SHOP" },
+    { id: 3, title: "DISCOVER" },
+    { id: 4, title: "HELP" },
+  ];
+
+  return (
+    <div className="sidebar">
+      {data.map((item) => (
+        <div className="sidebar-items" key={item.id}>
+          {item.image && (
+            <img
+              className="sidebar-item-img"
+              src={item.image}
+              alt={item.title}
+            />
+          )}
+          {!item.image && (
+            <span className="sidebar-item-title">{item.title}</span>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Sidebar;
