@@ -1,6 +1,7 @@
 import { func } from "prop-types";
 import React from "react";
 import { Link } from "react-router-dom";
+import Popup from "../../pop-up-login/popUp";
 
 function Account() {
   return (
@@ -11,7 +12,7 @@ function Account() {
           height="36"
           width="36"
         />
-        <Link to="/LoginPage">Account</Link>
+        <Popup/>
       </div>
       <img
         src="../assets/icons/header/vertical-divider-icon.png"
