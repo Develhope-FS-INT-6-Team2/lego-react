@@ -7,11 +7,7 @@ function Account() {
   return (
     <div className="account-section">
       <div className="account">
-        <img
-          src="../assets/icons/header/account-icon.png"
-          height="36"
-          width="36"
-        />
+       
         <Popup/>
       </div>
       <img
