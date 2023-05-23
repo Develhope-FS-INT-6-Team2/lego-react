@@ -20,7 +20,7 @@ function Account() {
       />
       <div className="vip">
         <img src="../assets/icons/header/vip-icon.png" height="18" width="26" />
-        <span>VIP</span>
+        <Link to="/vip">VIP</Link>
       </div>
     </div>
   );
