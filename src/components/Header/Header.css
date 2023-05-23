@@ -27,11 +27,11 @@
 .top-header-slider > button {
   border: none;
   background-color: inherit;
-  margin: 0 50px;
+  margin: 100px;
 }
 
 .top-header-slider > p {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .top-header-slider a {
