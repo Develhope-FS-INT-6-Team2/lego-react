@@ -9,11 +9,13 @@ import Recommended from "../../Recommended/Recommended";
 import { CookiePermission } from "../../cookie-permission/CookiePermission";
 import MostPopularSection from "../../MostPopularSection/MostPopularSection";
 import Header from "../../Header/Header";
+import MainMenu from "../../main-menu/MainMenu";
 
 function HomePage() {
   return (
     <div className="home-page">
       <Header />
+      <MainMenu />
       <HeroSection />
       <CategoryNavbar />
       <Recommended />
