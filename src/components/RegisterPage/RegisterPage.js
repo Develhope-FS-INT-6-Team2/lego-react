@@ -17,6 +17,11 @@ function RegisterForm() {
   const [emailTouched, setEmailTouched] = useState(false);
   const [passwordTouched, setPasswordTouched] = useState(false);
   const [dobError,setDobError]= useState('');
+  const [registeredUser, setRegisteredUser] = useState(null);
+  const [error, setError] = useState(null);
+  
+  
+  
   const handleBlur = (event) => {
     const name = event.target.name;
     if (name === 'email') {
@@ -70,6 +75,29 @@ function RegisterForm() {
   
   const handleSubmit = (event) => {
     event.preventDefault();
+    const user = {
+      email,
+      password,
+    }
+    const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Check if the user already exists
+    const userExists = existingUsers.some(existingUser => existingUser.email === user.email);
+
+    if (userExists) {
+      setError('User with this email already exists.');
+      return;
+    }
+
+    // Add the new user to the existing users array
+    existingUsers.push(user);
+
+    // Save the updated users array to localStorage
+    localStorage.setItem('users', JSON.stringify(existingUsers));
+
+    setRegisteredUser(user);
+    setError(null);
+ 
 
     const currentDate = new Date();
     const dobDate = new Date(`${year}-${month}-${day}`);
@@ -91,6 +119,8 @@ function RegisterForm() {
     setMonth('');
     setYear('');
     setDobError('');
+    setRegisteredUser(user);
+    setError(null);
   };
 
   return (
@@ -255,7 +285,17 @@ function RegisterForm() {
           <button type="submit">Next</button>
         </form>
       </div>
+      {registeredUser && (
+        <div>
+          <p>Registration successful!</p>
+          <p>Email: {registeredUser.email}</p>
+          <p>Password: {registeredUser.password}</p>
+        </div>
+      )}
+
+      {error && <p>{error}</p>}
     </div>
+    
   );
 }
 
