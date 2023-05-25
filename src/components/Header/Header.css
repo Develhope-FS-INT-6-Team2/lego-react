@@ -28,12 +28,13 @@
 .top-header-slider > button {
   border: none;
   background-color: inherit;
-  margin: 100px;
 }
 
 .top-header-slider > p {
   font-size: 14px;
   white-space: nowrap;
+  width: 400px;
+  text-align: center;
 }
 
 .top-header-slider a {
