@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import DesktopMenu from "../../sidemenus/DesktopMenu"; // Import the DesktopMenu component
 
 function Sidebar() {
   const data = [
@@ -8,10 +9,25 @@ function Sidebar() {
     { id: 4, title: "HELP" },
   ];
 
+  // New state variable for tracking the visibility of the desktop menu
+  const [isDesktopMenuVisible, setDesktopMenuVisible] = useState(false);
+
+  // New function for handling click on the sidebar items
+  const handleSidebarItemClick = (item) => {
+    console.log("Sidebar item clicked", item);
+    if (item.title === "SHOP") {
+      setDesktopMenuVisible(true);
+    }
+  };
+
   return (
     <div className="sidebar">
       {data.map((item) => (
-        <div className="sidebar-items" key={item.id}>
+        <div
+          className="sidebar-items"
+          key={item.id}
+          onClick={() => handleSidebarItemClick(item)} // Register the click event
+        >
           {item.image && (
             <img
               className="sidebar-item-img"
@@ -24,6 +40,10 @@ function Sidebar() {
           )}
         </div>
       ))}
+
+      {isDesktopMenuVisible && <DesktopMenu onClose={() => setDesktopMenuVisible(false)} />} 
+      {/* Display the DesktopMenu when isDesktopMenuVisible is true, and pass the onClose prop */}
+      
     </div>
   );
 }

@@ -10,7 +10,7 @@ import { CookiePermission } from "../../cookie-permission/CookiePermission";
 import MostPopularSection from "../../MostPopularSection/MostPopularSection";
 import Header from "../../Header/Header";
 import MainMenu from "../../main-menu/MainMenu";
-import DesktopMenu from "../../sidemenus/DesktopMenu";
+
 
 function HomePage() {
   return (
