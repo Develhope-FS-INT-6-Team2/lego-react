@@ -27,14 +27,14 @@
 
 .top-header-slider > button {
   border: none;
+  margin: 0;
   background-color: inherit;
 }
 
 .top-header-slider > p {
   font-size: 14px;
-  white-space: nowrap;
-  width: 400px;
   text-align: center;
+  width: 400px;
 }
 
 .top-header-slider a {
@@ -95,5 +95,8 @@
   }
   .top-header-slider {
     margin: auto;
+  }
+  .top-header-slider > p {
+    width: 300px;
   }
 }
