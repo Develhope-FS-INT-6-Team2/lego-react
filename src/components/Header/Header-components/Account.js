@@ -7,8 +7,7 @@ function Account() {
   return (
     <div className="account-section">
       <div className="account">
-       
-        <Popup/>
+        <Popup />
       </div>
       <img
         src="../assets/icons/header/vertical-divider-icon.png"
@@ -17,7 +16,7 @@ function Account() {
       />
       <div className="vip">
         <img src="../assets/icons/header/vip-icon.png" height="18" width="26" />
-        <Link to="/vip">VIP</Link>
+        <span>VIP</span>
       </div>
     </div>
   );
