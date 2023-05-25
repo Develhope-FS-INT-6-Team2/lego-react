@@ -1,22 +1,33 @@
-import { func } from "prop-types";
-import React from "react";
+
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Popup from "../../pop-up-login/popUp";
+import { LoginContext } from '../../context/LoginContext';
 
 function Account() {
+  const { isLoggedIn, logout } = useContext(LoginContext);
+
   return (
     <div className="account-section">
-      <div className="account">
-       
-        <Popup/>
-      </div>
+      {!isLoggedIn && <Popup />} {/* Display the Popup only if the user is not logged in */}
+
+      {/* Display the dropdown only if the user is logged in */}
+      {isLoggedIn && (
+        <div className="account">
+          {/* Your dropdown content */}
+          <button onClick={logout}>Logout</button> {/* Logout button */}
+        </div>
+      )}
+
       <img
         src="../assets/icons/header/vertical-divider-icon.png"
         height="26"
         width="26"
+        alt="divider"
       />
+
       <div className="vip">
-        <img src="../assets/icons/header/vip-icon.png" height="18" width="26" />
+        <img src="../assets/icons/header/vip-icon.png" height="18" width="26" alt="Vip"/>
         <Link to="/vip">VIP</Link>
       </div>
     </div>
