@@ -19,16 +19,9 @@ function Account() {
         </div>
       )}
 
-      <img
-        src="../assets/icons/header/vertical-divider-icon.png"
-        height="26"
-        width="26"
-        alt="divider"
-      />
-
-      <div className="vip">
         <img src="../assets/icons/header/vip-icon.png" height="18" width="26" alt="Vip"/>
         <Link to="/vip">VIP</Link>
+
       </div>
     </div>
   );

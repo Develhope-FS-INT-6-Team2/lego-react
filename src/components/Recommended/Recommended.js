@@ -19,7 +19,7 @@ function Recommended() {
 
   const products = sets.map(item => (
     <SwiperSlide>
-      <Card image={item.image} title={item.title} price={item.price} />
+      <Card image={item.image} title={item.title} price={item.price} id={item.id} />
     </SwiperSlide>
   ));
 
