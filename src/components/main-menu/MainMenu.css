@@ -1,0 +1,155 @@
+.main-menu-container {
+  display: flex;
+  align-items: center;
+  background-color: #ffcf00;
+  height: 75px;
+  justify-content: space-between;
+}
+
+/* -------------- sidebar -------------- */
+.side-bar-main-container {
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+}
+
+.side-bar-main-container > *:hover {
+  cursor: pointer;
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 8px;
+  display: none;
+  margin-right: 30%;
+}
+
+.hamburger-menu > img {
+  width: 20px;
+}
+
+.sidebar {
+  display: flex;
+  align-items: center;
+  gap: 20%;
+}
+
+/* -------------- shopping -------------- */
+
+.shopping-items {
+  display: flex;
+  align-items: center;
+  margin-right: 10%;
+}
+
+.shopping-items img {
+  width: 24px;
+  height: 24px;
+}
+
+.shopping-items > button {
+  border: none;
+  background-color: inherit;
+}
+
+.shopping-items button:hover {
+  cursor: pointer;
+}
+
+.account-btn {
+  display: none;
+}
+
+.account-btn > img {
+  width: 36px;
+  height: 36px;
+}
+
+.shopping {
+  display: flex;
+  align-items: center;
+}
+
+.shopping > button {
+  border: none;
+  background-color: inherit;
+}
+
+.container {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: white;
+  position: relative;
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 40;
+}
+
+.container .icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container .icon .search {
+  font-size: 16px;
+}
+
+.container.active {
+  width: 300px;
+}
+
+.container .input {
+  position: relative;
+  width: 200px;
+  height: 40px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .input input {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 14px;
+  outline: none;
+}
+
+.container .input .clear {
+  position: absolute;
+  right: -45px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: black;
+}
+
+@media screen and (max-width: 900px) {
+  .main-menu-container {
+    height: 52px;
+    background-color: white;
+    border-bottom: 1px solid #ffcf00;
+  }
+  .sidebar-item-img {
+    width: 40px;
+    height: 40px;
+    margin-left: 0;
+  }
+  .hamburger-menu {
+    display: flex;
+  }
+  .sidebar-item-title {
+    display: none;
+  }
+  .account-btn {
+    display: flex;
+  }
+}

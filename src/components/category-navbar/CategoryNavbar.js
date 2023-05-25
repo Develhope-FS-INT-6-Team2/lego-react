@@ -14,7 +14,7 @@ import vip from "./images/vip.jpg";
 function CategoryNavbar(){
     return(
     <div className="category-navbar-container">
-        <a href="#" className="category-navbar-one-category">
+        <a href="/product:5" className="category-navbar-one-category">
             <img
                 src={news}
                 alt="new-category"

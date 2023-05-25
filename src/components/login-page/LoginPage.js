@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React , {useState} from 'react';
+import { Link } from 'react-router-dom';
 import accountLogo from "./images/account.svg"
 import avatarLogo from "./images/avatar.png"
+import { useNavigate } from 'react-router-dom';
 import "./LoginPage.css"
 
-function LoginForm() {
+const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
@@ -11,6 +13,8 @@ function LoginForm() {
   const [passwordError, setPasswordError] = useState('');
   const [usernameTouched, setUsernameTouched] = useState(false);
   const [passwordTouched, setPasswordTouched] = useState(false);
+  const [error, setError] = useState(null);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const handleBlur = (event) => {
     const name = event.target.name;
@@ -41,6 +45,7 @@ function LoginForm() {
       }
     }
   };
+
   const handleFocus = (event) => {
     const name = event.target.name;
     if (name === 'username' && !username) {
@@ -49,21 +54,46 @@ function LoginForm() {
       setPasswordError('This field is required');
     }
   };
+  
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // perform login logic here using username, password, and rememberMe state values
-  };
+  
+    // Check if the user exists in local storage
+    const storedUsers = JSON.parse(localStorage.getItem('users'));
 
+    if (!storedUsers || storedUsers.length === 0) {
+      setError('User does not exist. Please register.');
+      return;
+    }
+  
+    // Check if the provided username and password match any of the stored users' credentials
+    const matchedUser = storedUsers.find(
+      (storedUser) => storedUser.email === username && storedUser.password === password
+    );
+  
+    if (!matchedUser) {
+      setError('Invalid username or password.');
+      return;
+    }
+  
+    // Login successful
+    setLoggedIn(true);
+    setError(null);
+    
+    navigate('/')
+  };
+  
   return (
     <div className='login-page'>
       <header className='header'>
-        <img className='login-account-logo' src={accountLogo} />
+        <img className='login-account-logo' src={accountLogo} alt='Account Logo' />
       </header>
 
       <div className='main'>
         <div>
-          <img className='avatar-logo' src={avatarLogo} />
+          <img className='avatar-logo' src={avatarLogo} alt='Avatar Logo' />
         </div>
 
         <form className='form-container' onSubmit={handleSubmit}>
@@ -102,30 +132,29 @@ function LoginForm() {
               <p className='error-message'>{passwordError}</p>
             )}
           </div>
-          <div className='remember-me-checkbox'>
 
+          <div className='remember-me-checkbox'>
             <div className='remember-me-innerbox'>
               <input
                 type="checkbox"
                 id="remember-me"
                 name="remember-me"
                 checked={rememberMe}
-                onChange={(event) => setRememberMe(event.target.checked)} />
-
+                onChange={(event) => setRememberMe(event.target.checked)}
+              />
               <p id="remember-text">Remember me</p>
             </div>
-
           </div>
 
           <div className='reminder'>
-            <p class="centered">Remember to log out afterwards if you’re using a shared computer, for example in a library or school.</p>
+            <p className="centered">Remember to log out afterwards if you’re using a shared computer, for example in a library or school.</p>
           </div>
 
-          <button
-            type="submit"
-            className='login-button'
-          >Log in</button>
+          <button type="submit" className='login-button'>
+            Log in
+          </button>
 
+          {error && <p className='error-message'>{error}</p>}
 
           <div className='help-section'>
             <a href="#">Forgot username?</a>
@@ -135,23 +164,20 @@ function LoginForm() {
 
           <div className='create-section'>
             <p>Don’t have a LEGO® Account?</p>
-            <a href=''>Create account</a>
+            <Link to='/RegisterPage'>Create account</Link>
           </div>
         </form>
-        <div class="breaker">
-          <hr class="breaker-line" />
-          < span class="breaker-or">Or</span>
-          <hr class="breaker-line" />
+
+        <div className="breaker">
+          <hr className="breaker-line" />
+          <span className="breaker-or">Or</span>
+          <hr className="breaker-line" />
         </div>
 
-
-
-
-
-        <div class="buttons-container">
-          <button class="facebook-button">Continue with Facebook</button>
-          <button class="google-button">Continue with Google</button>
-          <button class="apple-button">Continue with Apple</button>
+        <div className="buttons-container">
+          <button className="facebook-button">Continue with Facebook</button>
+          <button className="google-button">Continue with Google</button>
+          <button className="apple-button">Continue with Apple</button>
         </div>
       </div>
     </div>
