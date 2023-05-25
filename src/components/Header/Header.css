@@ -22,6 +22,7 @@
 .top-header-slider {
   display: flex;
   align-items: center;
+  height: inherit;
 }
 
 .top-header-slider > button {
@@ -32,6 +33,7 @@
 
 .top-header-slider > p {
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .top-header-slider a {
@@ -45,6 +47,10 @@
 .account-section {
   display: flex;
   align-items: center;
+}
+
+.account-section span {
+  text-decoration: none;
 }
 
 .account-section *:hover {

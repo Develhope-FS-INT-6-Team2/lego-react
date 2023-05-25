@@ -333,4 +333,10 @@
   max-width: 100%;
 }
 
+@media screen and (max-width: 1200px) {
+  .account-section span {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=popUp.css.map */
