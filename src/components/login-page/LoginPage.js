@@ -1,20 +1,22 @@
-import React , {useState} from 'react';
-import { Link } from 'react-router-dom';
-import accountLogo from "./images/account.svg"
-import avatarLogo from "./images/avatar.png"
-import { useNavigate } from 'react-router-dom';
-import "./LoginPage.css"
+import React, { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import accountLogo from "./images/account.svg";
+import avatarLogo from "./images/avatar.png";
+
+import { LoginContext } from '../context/LoginContext';
+import "./LoginPage.css";
 
 const LoginForm = () => {
+  const { login } = useContext(LoginContext);
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
   const [usernameError, setUsernameError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [usernameTouched, setUsernameTouched] = useState(false);
   const [passwordTouched, setPasswordTouched] = useState(false);
   const [error, setError] = useState(null);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [rememberMe, setRememberMe] = useState(null);
 
   const handleBlur = (event) => {
     const name = event.target.name;
@@ -54,12 +56,12 @@ const LoginForm = () => {
       setPasswordError('This field is required');
     }
   };
-  
+
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  
+
     // Check if the user exists in local storage
     const storedUsers = JSON.parse(localStorage.getItem('users'));
 
@@ -67,24 +69,24 @@ const LoginForm = () => {
       setError('User does not exist. Please register.');
       return;
     }
-  
+
     // Check if the provided username and password match any of the stored users' credentials
     const matchedUser = storedUsers.find(
       (storedUser) => storedUser.email === username && storedUser.password === password
     );
-  
+
     if (!matchedUser) {
       setError('Invalid username or password.');
       return;
     }
-  
+    alert("you have logged in")
     // Login successful
-    setLoggedIn(true);
+    login(true);
     setError(null);
-    
-    navigate('/')
+
+    navigate('/');
   };
-  
+
   return (
     <div className='login-page'>
       <header className='header'>
