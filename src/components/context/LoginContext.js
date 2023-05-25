@@ -9,16 +9,19 @@ export const LoginProvider = ({ children }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const login = () => {
+  const login = (id) => {
     // Perform login logic here
+    localStorage.setItem('userId',id);
     setIsLoggedIn(true);
   };
 
   const logout = () => {
     // Perform logout logic here
     alert("logout");
+    localStorage.removeItem('userId');
+    /*
     localStorage.removeItem('username'); // Remove username from local storage
-    localStorage.removeItem('password'); // Remove password from local storage
+    localStorage.removeItem('password'); // Remove password from local storage*/
     setIsLoggedIn(false);
   };
 
