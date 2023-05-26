@@ -9,7 +9,8 @@ function Account() {
   const[userId,setUserID] = useState(false);
 
   useEffect(()=>{
-    const value = localStorage.getItem('userID');
+    const value = localStorage.getItem('userId');
+    console.log(value);
     if(value != null){
       setUserID(value);
     }
@@ -33,7 +34,7 @@ function Account() {
           width="36"
           alt="Account"
         />
-        <span className='span-open-button' onClick={logout}>Logout</span>
+        <span className='span-open-button' onClick={()=>{logout(); setUserID(false);}}>Logout</span>
       
           
         </div>
