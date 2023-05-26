@@ -1,3 +1,5 @@
+import React, { useContext } from 'react';
+import { LoginContext } from '../../context/LoginContext';
 import "./HomePage.css";
 import Footer from "../../Footer/Footer";
 import FanFavourites from "../../fan-favourites/FanFavourites";
@@ -12,9 +14,10 @@ import Header from "../../Header/Header";
 import MainMenu from "../../main-menu/MainMenu";
 
 function HomePage() {
+  const { isLoggedIn } = useContext(LoginContext);
   return (
     <div className="home-page">
-      <Header />
+       <Header isLoggedIn={isLoggedIn} />
       <MainMenu />
       <HeroSection />
       <CategoryNavbar />

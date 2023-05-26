@@ -43,7 +43,8 @@ const LoginForm = () => {
       } else {
         setUsernameError('');
       }
-    } else if (name === 'password') {
+    } 
+    else if (name === 'password') {
       setPassword(value);
       if (!value) {
         setPasswordError('This field is required');
@@ -84,9 +85,10 @@ const LoginForm = () => {
       setError('Invalid username or password.');
       return;
     }
+
     alert("you have logged in")
     // Login successful
-    login(true);
+    login(matchedUser.email);
     setError(null);
 
     navigate('/');

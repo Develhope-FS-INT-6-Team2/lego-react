@@ -8,14 +8,16 @@ import { LoginContext } from '../context/LoginContext';
 
 function Header() {
   
+
   const { isLoggedIn } = useContext(LoginContext);
+
 
   return (
     
       <div className="top-header-container">
         <Playzone />
         <HeaderSlider />
-        <Account  isLoggedIn={isLoggedIn} />
+        <Account />
       </div>
     
   );
