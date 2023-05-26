@@ -41,9 +41,10 @@ function Account() {
 
         <img src="../assets/icons/header/vip-icon.png" height="18" width="26" alt="Vip"/>
         <Link to="/vip">VIP</Link>
+</div>
 
-    </div>
 
+  
   );
 }
 
