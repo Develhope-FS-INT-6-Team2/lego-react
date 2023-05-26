@@ -3,13 +3,13 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 45%;
+  width: 40%;
   height: 100vh;
   background-color: #fff;
   z-index: 30;
   padding-top: 8.4375rem;
   padding-bottom: 2.5rem;
-  padding-left: 15rem;
+  padding-left: 21rem;
   animation: slide-in 0.5s ease-in-out;
 }
 .desktop-menu-container .desktop-menu-wrapper {

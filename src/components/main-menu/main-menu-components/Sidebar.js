@@ -1,7 +1,7 @@
-import React, { useState } from "react";
- // Import the DesktopMenu component
+import React from "react";
+import DesktopMenu from '../../sidemenus/DesktopMenu'; 
 
-function Sidebar({ isDesktopMenuVisible, setDesktopMenuVisible }) {
+function Sidebar({ isDesktopMenuVisible, setDesktopMenuVisible, handleSidebarItemClick }) {
   const data = [
     { id: 1, title: "LOGO", image: "../assets/icons/main-menu/logo.PNG" },
     { id: 2, title: "SHOP" },
@@ -9,24 +9,13 @@ function Sidebar({ isDesktopMenuVisible, setDesktopMenuVisible }) {
     { id: 4, title: "HELP" },
   ];
 
-   
-
-  // New function for handling click on the sidebar items
-  const handleSidebarItemClick = (item) => {
-    console.log("Sidebar item clicked", item);
-    if (item.title === "SHOP") {
-      setDesktopMenuVisible(true);
-    }
-  };  
-  
-
   return (
     <div className="sidebar">
       {data.map((item) => (
         <div
           className="sidebar-items"
           key={item.id}
-          onClick={() => handleSidebarItemClick(item)} // Register the click event
+          onClick={() => handleSidebarItemClick(item)}
         >
           {item.image && (
             <img
@@ -40,9 +29,6 @@ function Sidebar({ isDesktopMenuVisible, setDesktopMenuVisible }) {
           )}
         </div>
       ))}
-
-      
-      
     </div>
   );
 }
