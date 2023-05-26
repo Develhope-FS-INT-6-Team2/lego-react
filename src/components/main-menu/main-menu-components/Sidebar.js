@@ -10,25 +10,31 @@ function Sidebar({ isDesktopMenuVisible, setDesktopMenuVisible, handleSidebarIte
   ];
 
   return (
-    <div className="sidebar">
-      {data.map((item) => (
-        <div
-          className="sidebar-items"
-          key={item.id}
-          onClick={() => handleSidebarItemClick(item)}
-        >
-          {item.image && (
-            <img
-              className="sidebar-item-img"
-              src={item.image}
-              alt={item.title}
-            />
-          )}
-          {!item.image && (
-            <span className="sidebar-item-title">{item.title}</span>
-          )}
-        </div>
-      ))}
+    <div className="side-bar-main-container">
+      <div className="hamburger-menu">
+        <img src="../assets/icons/main-menu/menu-alt-lined.png" />
+        <span>MENU</span>
+      </div>
+      <div className="sidebar">
+        {data.map((item) => (
+          <div
+            className="sidebar-items"
+            key={item.id}
+            onClick={() => handleSidebarItemClick(item)}
+          >
+            {item.image && (
+              <img
+                className="sidebar-item-img"
+                src={item.image}
+                alt={item.title}
+              />
+            )}
+            {!item.image && (
+              <span className="sidebar-item-title">{item.title}</span>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

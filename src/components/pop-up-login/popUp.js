@@ -31,12 +31,13 @@ const Popup = () => {
   return (
     <div className="popup-container">
       <a onClick={openPopup} className="open-button">
-      <img
+        <img
           src="../assets/icons/header/account-icon.png"
           height="36"
           width="36"
+          alt="Account"
         />
-       <span className='span-open-button'>Account</span> 
+        <span className='span-open-button'>Account</span>
       </a>
       {isOpen && (
         <div className="popup-overlay">
@@ -63,7 +64,7 @@ const Popup = () => {
                     alt="Close"
                   ></img>
                 </button>
-              </div> 
+              </div>
               <Link to='/LoginPage' className='signin'> Sign In</Link>
               <div className='register'>
                 <p>Don't have an account? </p> <Link to='/RegisterPage'> Register </Link>

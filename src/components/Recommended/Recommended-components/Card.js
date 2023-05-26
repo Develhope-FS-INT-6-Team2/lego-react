@@ -2,10 +2,10 @@ import React from "react";
 import heart from "../images/icons8-favorite-48.png"
 
 function Card(props){
-    let{image, title, price} = props;
+    let{image, title, price, id} = props;
     return(
         <div className="one-product">
-            <div className="recommended-product-upper-section">
+            <a href={"http://localhost:3000/product/"+id} className="recommended-product-upper-section">
                 <img src={heart} alt="wishlist-heart" className="product-icon"/>
                 <div className="img-sec">
                 <img 
@@ -13,7 +13,7 @@ function Card(props){
                     alt="recommended-product-img"/>
                 </div>
                 <p>New</p>
-            </div>
+            </a>
             <h2>{title}</h2>
             <h2 className="price">{price}</h2>
             <input

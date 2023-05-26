@@ -22,16 +22,19 @@
 .top-header-slider {
   display: flex;
   align-items: center;
+  height: inherit;
 }
 
 .top-header-slider > button {
   border: none;
+  margin: 0;
   background-color: inherit;
-  margin: 100px;
 }
 
 .top-header-slider > p {
   font-size: 14px;
+  text-align: center;
+  width: 400px;
 }
 
 .top-header-slider a {
@@ -45,6 +48,10 @@
 .account-section {
   display: flex;
   align-items: center;
+}
+
+.account-section span {
+  text-decoration: none;
 }
 
 .account-section *:hover {
@@ -88,5 +95,8 @@
   }
   .top-header-slider {
     margin: auto;
+  }
+  .top-header-slider > p {
+    width: 300px;
   }
 }

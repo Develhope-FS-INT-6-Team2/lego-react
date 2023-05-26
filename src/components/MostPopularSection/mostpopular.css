@@ -251,15 +251,34 @@
     width: 33.3333333333%;
   }
 }
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 1200px) {
   .carousel-mps .popular-set-item {
     width: 50%;
+  }
+  .most-popular-section{
+    display: block;
+    min-height: 30vh;
+    margin: 20px 20px;
+    padding: 30px 90px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .carousel-mps .popular-set-item {
+    width: 100%;
+  }
+  .most-popular-section{
+    display: block;
+    min-height: 30vh;
+    margin: 20px 20px;
+    padding: 20px 50px;
   }
 }
 @media screen and (min-width: 1200px) {
   .carousel-mps .popular-set-item {
     width: 20rem;
-  }
+  }  
 }
 
 .carousel-mps img:first-child {
