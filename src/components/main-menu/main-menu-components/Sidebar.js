@@ -1,7 +1,6 @@
 import React from "react";
-import DesktopMenu from '../../sidemenus/DesktopMenu'; 
 
-function Sidebar({ isDesktopMenuVisible, setDesktopMenuVisible, handleSidebarItemClick }) {
+function Sidebar() {
   const data = [
     { id: 1, title: "LOGO", image: "../assets/icons/main-menu/logo.PNG" },
     { id: 2, title: "SHOP" },
@@ -17,11 +16,7 @@ function Sidebar({ isDesktopMenuVisible, setDesktopMenuVisible, handleSidebarIte
       </div>
       <div className="sidebar">
         {data.map((item) => (
-          <div
-            className="sidebar-items"
-            key={item.id}
-            onClick={() => handleSidebarItemClick(item)}
-          >
+          <div className="sidebar-items" key={item.id}>
             {item.image && (
               <img
                 className="sidebar-item-img"

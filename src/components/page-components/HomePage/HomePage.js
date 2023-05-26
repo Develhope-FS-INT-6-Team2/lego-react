@@ -11,7 +11,6 @@ import MostPopularSection from "../../MostPopularSection/MostPopularSection";
 import Header from "../../Header/Header";
 import MainMenu from "../../main-menu/MainMenu";
 
-
 function HomePage() {
   return (
     <div className="home-page">
@@ -26,7 +25,6 @@ function HomePage() {
       <CookiePermission />
       <FanFavourites />
       <Footer />
-      
     </div>
   );
 }
