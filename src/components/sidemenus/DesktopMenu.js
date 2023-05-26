@@ -2,20 +2,20 @@ import React, { useState, useEffect } from 'react';
 import './sidebarDesktop.css';
 
 const menuItems = [
-  { id: 1, name: 'Sets by theme' },
-  { id: 2, name: 'AGES' },
-  { id: 3, name: 'Price ranges' },
-  { id: 4, name: 'LEGO Merchandise' },
-  { id: 5, name: 'Interests' },
-  { id: 6, name: 'Pick and Build' },
-  { id: 7, name: 'Exculisives' },
-  { id: 8, name: 'New' },
-  { id: 9, name: 'Bestsellers' },
-  { id: 10, name: 'Home decor' },
-  { id: 11, name: 'Offers & Sale' },
-  { id: 12, name: 'Gift Cards' },
-  { id: 13, name: 'Coming Soon' },
-  { id: 14, name: 'Last chance to buy' },
+  { id: 1, name: 'Sets by theme', hasSubmenu: true },
+  { id: 2, name: 'AGES', hasSubmenu: true },
+  { id: 3, name: 'Price ranges', hasSubmenu: true },
+  { id: 4, name: 'LEGO Merchandise', hasSubmenu: true },
+  { id: 5, name: 'Interests', hasSubmenu: true },
+  { id: 6, name: 'Pick and Build', hasSubmenu: true },
+  { id: 7, name: 'Exclusives', hasSubmenu: false },
+  { id: 8, name: 'New', hasSubmenu: false },
+  { id: 9, name: 'Bestsellers', hasSubmenu: false },
+  { id: 10, name: 'Home decor', hasSubmenu: false },
+  { id: 11, name: 'Offers & Sale', hasSubmenu: false },
+  { id: 12, name: 'Gift Cards', hasSubmenu: false },
+  { id: 13, name: 'Coming Soon', hasSubmenu: false },
+  { id: 14, name: 'Last chance to buy', hasSubmenu: false },
 ];
 
 const DesktopMenu = ({ onClose }) => {
@@ -25,6 +25,19 @@ const DesktopMenu = ({ onClose }) => {
     setIsOpen(false);
     onClose();
   };
+
+  // Prevent scrolling when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen]);
 
   // Handle window resize for padding
   useEffect(() => {
@@ -68,7 +81,9 @@ const DesktopMenu = ({ onClose }) => {
           {menuItems.map((item) => (
             <button className="desktop-menu-item" key={item.id}>
               <span>{item.name}</span>
-              <img src="../assets/icons/header/arrow.svg" width="8" alt={item.name} />
+              {item.hasSubmenu && (
+                <img src="../assets/icons/header/arrow.svg" width="8" alt={item.name} />
+              )}
             </button>
           ))}
         </div>

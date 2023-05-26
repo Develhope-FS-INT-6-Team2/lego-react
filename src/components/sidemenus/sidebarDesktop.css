@@ -3,11 +3,13 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 31.25rem;
+  width: 45%;
   height: 100vh;
   background-color: #fff;
   z-index: 30;
-  padding: 2rem;
+  padding-top: 8.4375rem;
+  padding-bottom: 2.5rem;
+  padding-left: 15rem;
   animation: slide-in 0.5s ease-in-out;
 }
 .desktop-menu-container .desktop-menu-wrapper {
@@ -44,21 +46,27 @@
   width: 14.375rem;
   border: 0;
   background-color: transparent;
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
 }
 .desktop-menu-container .desktop-menu-wrapper .desktop-menu-items .desktop-menu-item span {
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid transparent;  
 }
+
+.desktop-menu-container .desktop-menu-wrapper .desktop-menu-items .desktop-menu-item img {
+  width: 12px;
+  height: 12px;
+}
+
 .desktop-menu-container .desktop-menu-wrapper .desktop-menu-items .desktop-menu-item span:hover {
   border-color: #000000;
 }
 .desktop-menu-container .desktop-menu-wrapper .desktop-menu-items .desktop-menu-item-active span {
-  border-color: #000000;
+  border-color: #000000;  
 }
 .desktop-menu-container .desktop-menu-wrapper .desktop-inner-menu-items {
   font-size: 14px;
