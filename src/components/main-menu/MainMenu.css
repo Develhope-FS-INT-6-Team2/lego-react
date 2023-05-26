@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   margin-left: 10%;
+  z-index: 31;
 }
 
 .side-bar-main-container > *:hover {
