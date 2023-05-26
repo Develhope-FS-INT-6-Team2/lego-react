@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const data = [
@@ -18,11 +19,13 @@ function Sidebar() {
         {data.map((item) => (
           <div className="sidebar-items" key={item.id}>
             {item.image && (
-              <img
-                className="sidebar-item-img"
-                src={item.image}
-                alt={item.title}
-              />
+              <Link to="/">
+                <img
+                  className="sidebar-item-img"
+                  src={item.image}
+                  alt={item.title}
+                />
+              </Link>
             )}
             {!item.image && (
               <span className="sidebar-item-title">{item.title}</span>
