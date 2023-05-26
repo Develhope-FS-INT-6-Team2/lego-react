@@ -1,9 +1,14 @@
 import React, { useState, useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import accountLogo from "./images/account.svg";
-import avatarLogo from "./images/avatar.png";
 
 import { LoginContext } from '../context/LoginContext';
+import Avatar from './ChildComponents/Avatar';
+import RememberMeCheckbox from './ChildComponents/RememberMeCheckbox';
+import Reminder from './ChildComponents/Reminder';
+import Error from './ChildComponents/Error';
+import HelpSection from './ChildComponents/HelpSection';
+import CreateSection from './ChildComponents/CreateSection';
 import "./LoginPage.css";
 
 const LoginForm = () => {
@@ -38,7 +43,8 @@ const LoginForm = () => {
       } else {
         setUsernameError('');
       }
-    } else if (name === 'password') {
+    } 
+    else if (name === 'password') {
       setPassword(value);
       if (!value) {
         setPasswordError('This field is required');
@@ -79,9 +85,10 @@ const LoginForm = () => {
       setError('Invalid username or password.');
       return;
     }
+
     alert("you have logged in")
     // Login successful
-    login(true);
+    login(matchedUser.email);
     setError(null);
 
     navigate('/');
@@ -94,9 +101,7 @@ const LoginForm = () => {
       </header>
 
       <div className='main'>
-        <div>
-          <img className='avatar-logo' src={avatarLogo} alt='Avatar Logo' />
-        </div>
+        <Avatar />
 
         <form className='form-container' onSubmit={handleSubmit}>
           <div className='input'>
@@ -135,39 +140,19 @@ const LoginForm = () => {
             )}
           </div>
 
-          <div className='remember-me-checkbox'>
-            <div className='remember-me-innerbox'>
-              <input
-                type="checkbox"
-                id="remember-me"
-                name="remember-me"
-                checked={rememberMe}
-                onChange={(event) => setRememberMe(event.target.checked)}
-              />
-              <p id="remember-text">Remember me</p>
-            </div>
-          </div>
+          <RememberMeCheckbox rememberMe={rememberMe} setRememberMe={setRememberMe} />
 
-          <div className='reminder'>
-            <p className="centered">Remember to log out afterwards if you’re using a shared computer, for example in a library or school.</p>
-          </div>
+          <Reminder />
 
           <button type="submit" className='login-button'>
             Log in
           </button>
 
-          {error && <p className='error-message'>{error}</p>}
+          <Error error={error} />
 
-          <div className='help-section'>
-            <a href="#">Forgot username?</a>
-            <span className='help-section-breaker'></span>
-            <a href="#">Forgot password?</a>
-          </div>
+          <HelpSection />
 
-          <div className='create-section'>
-            <p>Don’t have a LEGO® Account?</p>
-            <Link to='/RegisterPage'>Create account</Link>
-          </div>
+          <CreateSection />
         </form>
 
         <div className="breaker">
