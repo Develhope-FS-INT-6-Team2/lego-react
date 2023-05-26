@@ -1,5 +1,4 @@
 import React from "react";
-import DesktopMenu from '../../sidemenus/DesktopMenu'; 
 
 function Sidebar({ isDesktopMenuVisible, setDesktopMenuVisible, handleSidebarItemClick }) {
   const data = [
