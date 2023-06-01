@@ -1,0 +1,11 @@
+.all-products-page {
+    font-family: 'Cera Pro', sans-serif;
+    color: #333333;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    width: 100%;
+    margin: 0;
+}
