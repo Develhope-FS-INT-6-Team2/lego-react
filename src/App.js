@@ -7,6 +7,7 @@ import LoginForm from "./components/login-page/LoginPage";
 import RegisterForm from './components/RegisterPage/RegisterPage';
 import { LoginProvider } from './components/context/LoginContext';
 import AllProductsPage from './components/page-components/AllProductPage/AllProductsPage';
+import CartPage from './components/page-components/CartPage/CartPage';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,6 +22,7 @@ function App() {
             <Route path="/product/:id" element={<ProductPage />} />
             <Route path="/RegisterPage" element={<RegisterForm />} />
             <Route path="/all-products" element={<AllProductsPage />} />
+            <Route path='/cart' element={<CartPage/>}/>
           </Routes>
         </LoginProvider>
       </div>

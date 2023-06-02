@@ -1,0 +1,23 @@
+@import url("https://fonts.cdnfonts.com/css/cera-round-pro");
+.cart-main-container {
+  font-family: "Cera Pro", sans-serif;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 1600px;
+  max-width: 95%;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.cart-main-container .cart-main-left {
+  width: 70%;
+  background-color: red;
+  height: 100px;
+}
+.cart-main-container .cart-main-right {
+  width: 30%;
+  background-color: yellow;
+  height: 100px;
+}
+
+/*# sourceMappingURL=CartMain.css.map */
