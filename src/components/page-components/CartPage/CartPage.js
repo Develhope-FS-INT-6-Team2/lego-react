@@ -17,7 +17,6 @@ export default function CartPage() {
       <MainMenu />
       <CartMain/>
       <Recommended/>
-      
       <Footer />
     </div>
   );
