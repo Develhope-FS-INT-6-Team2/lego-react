@@ -3,24 +3,41 @@
   align-items: center;
   background-color: #ffcf00;
   height: 75px;
+  justify-content: space-between;
+}
+
+/* -------------- sidebar -------------- */
+.side-bar-main-container {
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+}
+
+.side-bar-main-container > *:hover {
+  cursor: pointer;
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 8px;
+  display: none;
+  margin-right: 30%;
+}
+
+.hamburger-menu > img {
+  width: 20px;
 }
 
 .sidebar {
-  margin-left: 12%;
   display: flex;
   align-items: center;
-  margin-right: auto;
+  gap: 20%;
   z-index: 31;
 }
 
-.sidebar-items {
-  margin-right: 25%;
-}
-
-.sidebar-items span {
-  font-size: 18px;
-  font-weight: bold;
-}
+/* -------------- shopping -------------- */
 
 .shopping-items {
   display: flex;
@@ -28,13 +45,30 @@
   margin-right: 10%;
 }
 
+.shopping-items img {
+  width: 24px;
+  height: 24px;
+}
+
 .shopping-items > button {
   border: none;
   background-color: inherit;
 }
 
+.shopping-items button:hover {
+  cursor: pointer;
+}
+
+.account-btn {
+  display: none;
+}
+
+.account-btn > img {
+  width: 36px;
+  height: 36px;
+}
+
 .shopping {
-  margin-left: 10px;
   display: flex;
   align-items: center;
 }
@@ -42,39 +76,6 @@
 .shopping > button {
   border: none;
   background-color: inherit;
-}
-
-@media screen and (max-width: 900px) {
-  .main-menu-container {
-    height: 52px;
-    background-color: white;
-    border-bottom: 1px solid #ffcf00;
-  }
-  .menu-items {
-    display: none;
-  }
-  .logo {
-    width: 40px;
-    height: 40px;
-    margin-left: 0;
-  }
-  .menu-icon-btn {
-    display: flex;
-  }
-  .main-menu {
-    margin-left: 10px;
-  }
-
-  .shopping {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-  }
-
-  .account-btn {
-    display: flex;
-  }
 }
 
 .container {
@@ -130,4 +131,26 @@
   transform: translate(-50%, -50%);
   font-size: 16px;
   color: black;
+}
+
+@media screen and (max-width: 900px) {
+  .main-menu-container {
+    height: 52px;
+    background-color: white;
+    border-bottom: 1px solid #ffcf00;
+  }
+  .sidebar-item-img {
+    width: 40px;
+    height: 40px;
+    margin-left: 0;
+  }
+  .hamburger-menu {
+    display: flex;
+  }
+  .sidebar-item-title {
+    display: none;
+  }
+  .account-btn {
+    display: flex;
+  }
 }
