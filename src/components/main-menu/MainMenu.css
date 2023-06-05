@@ -6,34 +6,21 @@
   justify-content: space-between;
 }
 
-/* -------------- sidebar -------------- */
-.side-bar-main-container {
-  display: flex;
-  align-items: center;
-  margin-left: 10%;
-}
-
-.side-bar-main-container > *:hover {
-  cursor: pointer;
-}
-
-.hamburger-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 8px;
-  display: none;
-  margin-right: 30%;
-}
-
-.hamburger-menu > img {
-  width: 20px;
-}
-
 .sidebar {
+  margin-left: 12%;
   display: flex;
   align-items: center;
-  gap: 20%;
+  margin-right: auto;
+  z-index: 31;
+}
+
+.sidebar-items {
+  margin-right: 25%;
+}
+
+.sidebar-items span {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /* -------------- shopping -------------- */

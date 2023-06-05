@@ -17,7 +17,11 @@ function Sidebar() {
       </div>
       <div className="sidebar">
         {data.map((item) => (
-          <div className="sidebar-items" key={item.id}>
+          <div
+            className="sidebar-items"
+            key={item.id}
+            onClick={() => handleSidebarItemClick(item)}
+          >
             {item.image && (
               <Link to="/">
                 <img
