@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Sidebar() {
+function Sidebar({ isDesktopMenuVisible, setDesktopMenuVisible, handleSidebarItemClick }) {
   const data = [
     { id: 1, title: "LOGO", image: "../assets/icons/main-menu/logo.PNG" },
     { id: 2, title: "SHOP" },
