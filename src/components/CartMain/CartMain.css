@@ -1,22 +1,24 @@
 @import url("https://fonts.cdnfonts.com/css/cera-round-pro");
+* {
+  box-sizing: border-box;
+}
+
 .cart-main-container {
   font-family: "Cera Pro", sans-serif;
   display: flex;
   align-self: center;
   justify-content: center;
-  gap: 5%;
+  gap: 1.25rem;
   width: 1500px;
   max-width: 95%;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin: 4rem auto;
   background-color: rgb(239, 239, 239);
 }
-.cart-main-container .cart-main-left {
-  width: 65%;
-  background-color: red;
+.cart-main-container .cart-main-left, .cart-main-container .cart-main-right {
+  padding: 0 1.25rem;
 }
 .cart-main-container .cart-main-right {
-  width: 30%;
+  flex: 1;
   background-color: rgb(255, 255, 255);
 }
 .cart-main-container .cart-main-right .cart-right-items {
@@ -40,37 +42,25 @@
   line-height: 1.1875rem;
   font-weight: 400;
 }
-.cart-main-container .cart-main-right .cart-right-items .cart-info {
-  display: flex;
-  width: 100%;
-  position: relative;
-}
-.cart-main-container .cart-main-right .cart-right-items .cart-info :nth-child(2) {
-  right: 5%;
-  position: absolute;
-}
-.cart-main-container .cart-main-right .cart-right-items .congrats-green-text {
-  color: green;
-  display: flex;
-  width: 100%;
-  position: relative;
-  align-items: center;
-}
-.cart-main-container .cart-main-right .cart-right-items .congrats-green-text :nth-child(2) {
-  right: 5%;
-  position: absolute;
-}
+.cart-main-container .cart-main-right .cart-right-items .cart-info,
+.cart-main-container .cart-main-right .cart-right-items .congrats-green-text,
 .cart-main-container .cart-main-right .cart-right-items .total-info {
   display: flex;
   width: 100%;
   position: relative;
 }
-.cart-main-container .cart-main-right .cart-right-items .total-info h1 {
-  font-weight: 600;
-}
+.cart-main-container .cart-main-right .cart-right-items .cart-info :nth-child(2),
+.cart-main-container .cart-main-right .cart-right-items .congrats-green-text :nth-child(2),
 .cart-main-container .cart-main-right .cart-right-items .total-info :nth-child(2) {
   right: 5%;
   position: absolute;
+}
+.cart-main-container .cart-main-right .cart-right-items .congrats-green-text {
+  color: green;
+  align-items: center;
+}
+.cart-main-container .cart-main-right .cart-right-items .total-info h1 {
+  font-weight: 600;
 }
 .cart-main-container .cart-main-right .cart-right-items .checkout {
   text-decoration: none;
@@ -98,6 +88,27 @@
 .cart-main-container .cart-main-right .cart-right-items .checkout button .checkout-icon {
   width: 1.5rem;
   height: 1.5rem;
+}
+.cart-main-container .cart-main-left {
+  flex: 2;
+}
+.cart-main-container .cart-main-left .cart-items-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.cart-main-container .cart-main-left .cart-items-wrapper .cart-items-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  list-style: none;
+  border-bottom: 1px solid rgb(224, 224, 224);
+}
+.cart-main-container .cart-main-left .cart-items-wrapper .cart-items-header h2 {
+  line-height: 1.5625rem;
+  font-weight: 500;
+  text-transform: inherit;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=CartMain.css.map */

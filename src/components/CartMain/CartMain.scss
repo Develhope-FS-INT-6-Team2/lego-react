@@ -1,109 +1,134 @@
 @import "../mixins.scss";
-@import url('https://fonts.cdnfonts.com/css/cera-round-pro');
+@import url("https://fonts.cdnfonts.com/css/cera-round-pro");
 
+* {
+  box-sizing: border-box;
+}
 
-.cart-main-container{
-    font-family: 'Cera Pro', sans-serif;
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    gap: 5%;
-    width: 1500px;
-    max-width: 95%;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    background-color: rgb(239, 239, 239);
-    .cart-main-left{
-        width: 65%;
-        background-color: red;
+.cart-main-container {
+  font-family: "Cera Pro", sans-serif;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  gap: 1.25rem;
+  width: 1500px;
+  max-width: 95%;
+  margin: 4rem auto;
+  background-color: rgb(239, 239, 239);
 
-    }
+  .cart-main-left, .cart-main-right {
+    padding: 0 1.25rem;
+  }  
 
+  .cart-main-right {
+    flex: 1;
+    background-color: rgb(255, 255, 255);
 
+    .cart-right-items {
+      width: 98%;
+      display: flex;
+      flex-direction: column;
+      margin-left: 2%;
+      
+      h1 {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        font-weight: 500;
+      }
 
-    .cart-main-right{
-        width: 30%;
-        background-color: rgb(255, 255, 255);
-        .cart-right-items{
-            width: 98%;
-            display: flex;
-            flex-direction: column;
-            margin-left: 2%;
-            h1{
-                font-size: 1.125rem;
-                line-height: 1.75rem;
-                font-weight: 500;
-            }
-            h3{
-                font-size: 0.875rem;
-                line-height: 1.1875rem;
-                font-weight: 500;
-            }
-            p{
-                font-size: 0.75rem;
-                line-height: 1.1875rem;
-                font-weight: 400;  
-            }
-            .cart-info{
-                display: flex;
-                width: 100%;
-                position: relative;
-                :nth-child(2){          //price
-                    right:5%;
-                    position: absolute;
-                }
-            }
-            .congrats-green-text{
-                color: green;
-                display: flex;
-                width: 100%;
-                position: relative;
-                align-items: center;
-                :nth-child(2){          //price
-                    right:5%;
-                    position: absolute;
-                }
-            }
-            .total-info{
-                display: flex;
-                width: 100%;
-                position: relative;
-                h1{
-                    font-weight: 600;
-                }
-                :nth-child(2){          //price
-                    right:5%;
-                    position: absolute;
-                }
-            }
-            .checkout{
-                    text-decoration: none;
-                .paypal-button{
-                    width: 100%;
-                    background-color: #0070ba;
-                    color: white;
-                    &:hover{
-                        background-color: #004674;
-                    }
-                }
-                button{
-                    display: flex;
-                    gap: 3%;
-                    color: black;
-                    background-color: rgb(235, 113, 20);
-                    width: 95%;
-                    border-radius: 3rem;
-                    height: 3rem;
-                    &:hover{
-                        background-color: rgb(185, 92, 20);
-                    }
-                    .checkout-icon{
-                        width: 1.5rem;
-                        height: 1.5rem;
-                    }
-                }
-                
-            }
+      h3 {
+        font-size: 0.875rem;
+        line-height: 1.1875rem;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 0.75rem;
+        line-height: 1.1875rem;
+        font-weight: 400;
+      }
+
+      .cart-info,
+      .congrats-green-text,
+      .total-info {
+        display: flex;
+        width: 100%;
+        position: relative;
+
+        :nth-child(2) {
+          right: 5%;
+          position: absolute;
         }
+      }
+
+      .congrats-green-text {
+        color: green;
+        align-items: center;
+      }
+
+      .total-info {
+        h1 {
+          font-weight: 600;
+        }
+      }
+
+      .checkout {
+        text-decoration: none;
+
+        .paypal-button {
+          width: 100%;
+          background-color: #0070ba;
+          color: white;
+
+          &:hover {
+            background-color: #004674;
+          }
+        }
+
+        button {
+          display: flex;
+          gap: 3%;
+          color: black;
+          background-color: rgb(235, 113, 20);
+          width: 95%;
+          border-radius: 3rem;
+          height: 3rem;
+
+          &:hover {
+            background-color: rgb(185, 92, 20);
+          }
+
+          .checkout-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+        }
+      }
     }
+  }
+
+  .cart-main-left {    
+    flex: 2;
+    .cart-items-wrapper {
+      display: flex;
+      flex-direction: column;
+    //   align-items: flex-start;      
+
+      .cart-items-header {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;        
+        list-style: none;
+        border-bottom: 1px solid rgb(224, 224, 224);
+
+        h2 {
+          line-height: 1.5625rem;
+          font-weight: 500;
+          text-transform: inherit;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
 }
