@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import InnerMenuItems from "./InnerMenuItems";
 import "./sidebarDesktop.css";
 import data from "./data/menuData.json";
 
 const DesktopMenu = ({ onClose, sidebarItem }) => {
   const [isOpen, setIsOpen] = useState(true);
+  const [selectedMenuItem, setSelectedMenuItem] = useState(null);
+  const [subMenuData, setSubMenuData] = useState([]);
 
   const closeMenu = () => {
     setIsOpen(false);
@@ -23,50 +26,22 @@ const DesktopMenu = ({ onClose, sidebarItem }) => {
     };
   }, [isOpen]);
 
-  // Handle window resize for padding
-  useEffect(() => {
-    const handleResize = () => {
-      const desktopMenuContainer = document.querySelector(
-        ".desktop-menu-container"
-      );
-      const startPadding = 8.5;
-      const width = window.innerWidth;
+  const handleMenuItemClick = (key) => {
+    setSelectedMenuItem(key);
+    setSubMenuData(data[sidebarItem][key]);
+  };
 
-      if (width < 1600) {
-        desktopMenuContainer.style.paddingLeft = `${startPadding}rem`;
-        return;
-      }
-
-      const diff = width - 1600;
-      const diffAsRem = diff / 32;
-
-      if (diff > 0) {
-        desktopMenuContainer.style.paddingLeft = `${
-          diffAsRem + startPadding
-        }rem`;
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // cleanup function
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    console.log("DesktopMenu rendered");
-  }, []);
-
-  if (!isOpen) {
-    return null;
-  }
 
   return (
     <div className="desktop-menu-container">
       <div className="desktop-menu-wrapper">
         <div className="desktop-menu-items">
           {Object.keys(data[sidebarItem]).map((key, index) => (
-            <button className="desktop-menu-item" key={index}>
+            <button
+              className="desktop-menu-item"
+              onClick={() => handleMenuItemClick(key)}
+              key={index}
+            >
               <span>{key}</span>
               {data[sidebarItem][key].length > 0 && (
                 <img
@@ -78,11 +53,10 @@ const DesktopMenu = ({ onClose, sidebarItem }) => {
             </button>
           ))}
         </div>
-        <div className="desktop-menu-seperator"></div>
-        <div className="desktop-inner-menu-items">
-          <p></p>
-          <div className="desktop-inner-menu-items-container"></div>
-        </div>
+        <div className="desktop-menu-seperator"></div>        
+          {selectedMenuItem && subMenuData.length > 0 && (
+            <InnerMenuItems subMenuData={subMenuData} />
+          )}        
       </div>
       <button className="desktop-menu-close" onClick={closeMenu}>
         <img src="../assets/icons/header/xmark.svg" alt="close" />
