@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Order = require('../models/order');
 const Product = require('../models/product');
+const User = require('../models/user')
 mongoose.set('debug', true);
 
 
@@ -19,7 +20,7 @@ async function connectToDatabase() {
 }
 
 connectToDatabase().then(() => {
-  Promise.all([Order.init(), Product.init()])
+  Promise.all([Order.init(), Product.init(), User.init()])
     .then(() => {
       console.log('Schema uploaded successfully');
       process.exit(0);
