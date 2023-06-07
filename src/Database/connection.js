@@ -36,6 +36,8 @@ connectToDatabase().then(async () => {
   try {
     await Product.init();
     console.log('Product schema initialized');
+
+   
     const productsData = [
       {
         image: "../assets/images/featured-sets/cat-hotel.png",
@@ -261,10 +263,14 @@ connectToDatabase().then(async () => {
           date: new Date(),
       }
     ];
-
-    await Product.insertMany(productsData);
+    console.log('Inserting products...');
+    const result = await Product.insertMany(productsData);
     console.log('Products added successfully');
-    
+    console.log('Insert result:', result);
+
+    const insertedProducts = await Product.find();
+    console.log('Inserted products:', insertedProducts);
+
     process.exit(0);
   } catch (error) {
     console.error('Error adding products', error);
