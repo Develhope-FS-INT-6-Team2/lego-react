@@ -10,9 +10,7 @@
 }
 .account-page-main{
     width: 1600px;
-    
     display: flex;
     justify-content: center;
-    align-items: center;
     align-self: center;
 }
