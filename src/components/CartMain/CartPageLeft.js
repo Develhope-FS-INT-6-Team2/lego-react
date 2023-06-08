@@ -23,46 +23,12 @@ function CartPageLeft() {
   const handleRemoveFromCart = (item) => {
     removeFromCart(item.id);
   };
-
-  const addRandomProduct = () => {
-    // Select a random product
-    const randomProduct =
-      productData.sets[Math.floor(Math.random() * productData.sets.length)];
-
-    // Check if the product is already in the cart
-    const existingItem = cartItems.find((item) => item.id === randomProduct.id);
-
-    if (existingItem) {
-      // If the product is already in the cart, increase its quantity
-      updateCartItem(existingItem.id, existingItem.quantity + 1);
-    } else {
-      // If the product is not in the cart, add it
-      addToCart({ ...randomProduct, quantity: 1 });
-    }
-  };
-
+  
   return (
     <div className="cart-main-left">
       <div className="cart-items-wrapper">
         <div className="cart-items-header">
-          <h2>Cart</h2>
-          <button
-            onClick={addRandomProduct}
-            style={{
-              backgroundColor: "#4CAF50" /* Green */,
-              border: "none",
-              color: "white",
-              textAlign: "center",
-              textDecoration: "none",
-              display: "inline-block",
-              fontSize: "15px",
-              cursor: "pointer",
-              height: "50px",
-              width: "150px",
-            }}
-          >
-            Add Random Product
-          </button>
+          <h2>Cart</h2>          
         </div>
         <div className="cart-items-body">
           {cartItems.map((item) => (
