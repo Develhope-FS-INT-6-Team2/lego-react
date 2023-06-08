@@ -1,38 +1,46 @@
-import React, { useState, createContext, useCallback } from 'react';
-
+import React, { useState, createContext } from 'react';
+import productsData from './Products.json';
 export const CartContext = createContext();
 
 export function CartProvider({ children }) {
-  const [cartItems, setCartItems] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = useCallback((item) => {
-    setCartItems(prevItems => {
-      const existingItem = prevItems.find(prevItem => prevItem.id === item.id);
-      if (existingItem) {
-        return prevItems.map(prevItem => 
-          prevItem.id === item.id 
-            ? { ...prevItem, quantity: prevItem.quantity + 1 } 
-            : prevItem
-        );
-      } else {
-        return [...prevItems, { ...item, quantity: 1 }];
-      }
-    });
-  }, []);
+    const findProductById = (id) => {
+        return productsData.sets.find(product => product.id === id);
+    };
 
-  const removeFromCart = useCallback((itemId) => {
-    setCartItems(prevItems => prevItems.filter(item => item.id !== itemId));
-  }, []);
+    const addToCart = (productId) => {
+        const existingCartItem = cartItems.find(item => item.id === productId);
 
-  const updateCartItem = useCallback((itemId, quantity) => {
-    setCartItems(prevItems =>
-      prevItems.map(item => item.id === itemId ? { ...item, quantity } : item)
+        if (existingCartItem) {
+            setCartItems(cartItems.map(item =>
+                item.id === productId
+                    ? { ...item, quantity: item.quantity + 1 }
+                    : item
+            ));
+        } else {
+            const product = findProductById(productId);
+            if (product) {
+                setCartItems([...cartItems, { ...product, quantity: 1 }]);
+            }
+        }
+    };
+
+    const removeFromCart = (productId) => {
+        setCartItems(cartItems.filter(item => item.id !== productId));
+    };
+
+    const updateCartItem = (productId, newQuantity) => {
+        setCartItems(cartItems.map(item =>
+            item.id === productId
+                ? { ...item, quantity: newQuantity }
+                : item
+        ));
+    };
+
+    return (
+        <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateCartItem }}>
+            {children}
+        </CartContext.Provider>
     );
-  }, []);
-
-  return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateCartItem }}>
-      {children}
-    </CartContext.Provider>
-  );
 }
