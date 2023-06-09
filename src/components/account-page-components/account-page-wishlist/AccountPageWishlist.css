@@ -1,0 +1,106 @@
+.create-wish-list-cont {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #F8F8F8;
+  padding: 23px 18px 40px 18px;
+  font-size: 1rem;
+}
+
+.create-wish-list-cont img {
+  width: auto;
+  height: 180px;
+  margin-top: 1%;
+}
+
+.create-wish-list {
+  margin-left: 3%;
+}
+
+.create-wish-list h1 {
+  font-size: 1.25em;
+  font-weight: 500;
+}
+
+.create-wish-list p {
+  font-size: 1.1em;
+  margin-top: -1%;
+  line-height: 30px;
+}
+
+#wish-head {
+  font-weight: normal;
+  font-size: 1.7em;
+  margin-left: 2%;
+}
+
+.account-page-navbar {
+  width: "80%";
+}
+
+.new-list-button {
+  all: revert;
+  display: inline-block;
+  padding: 8.5px 200px;
+  background-color: #016DB6;
+  border: 1px;
+  border-color: #016DB6;
+  border-style: solid;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.new-list-button:hover {
+  background-color: white;
+}
+
+.wish-list-support-block {
+  background-color: #F8F8F8;
+  margin-top: 85px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px 0px 25px;
+}
+
+.wish-list-support-block span {
+  font-size: 1.4em;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.support-block-seperator {
+  border-top: 1px solid #E0E0E0;
+  margin: 10px 0;
+  margin-bottom: 2%;
+  margin-right: 12%;
+}
+
+.support-block-row {
+  display: flex;
+  width: auto;
+  margin-bottom: 2%;
+}
+
+.support-block-row a {
+  flex: 1;
+  text-decoration: none;
+  color: black;
+}
+
+.support-block-row a:hover {
+  text-decoration: underline;
+}
+
+.top-right-img {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  background-size: cover;
+  width: 120px;
+  height: 120px;
+}
+
+/*# sourceMappingURL=AccountPageWishlist.css.map */
