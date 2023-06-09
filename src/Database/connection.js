@@ -5,38 +5,8 @@ const User = require('../models/user')
 mongoose.set('debug', true);
 
 
-async function connectToDatabase() {
-  try {
-      await mongoose.connect('mongodb+srv://tester:1234@lego-db.lssxr4t.mongodb.net/?retryWrites=true&w=majority', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      bufferCommands: false, // Disable the buffering of commands
-      
-    });
-    console.log('Connected to MongoDB');
-  } catch (error) {
-    console.error('Error connecting to MongoDB', error);
-  }
-}
 
-connectToDatabase().then(() => {
-  Promise.all([Order.init(), Product.init(), User.init()])
-    .then(() => {
-      console.log('Schema uploaded successfully');
-      process.exit(0);
-    })
-    .catch((error) => {
-      console.error('Error uploading schema', error);
-      process.exit(1);
-    });
-});
-
-
-connectToDatabase().then(async () => {
-  try {
-    await Product.init();
-    console.log('Product schema initialized');
-    const productsData = [
+const productsData = [
       {
         "image": "../assets/images/featured-sets/cat-hotel.png",
         "title": "Cat hotel",
@@ -262,7 +232,61 @@ connectToDatabase().then(async () => {
       }
     ];
 
-    await Product.insertMany(productsData);
+
+
+async function connectToDatabase() {
+  try {
+      await mongoose.connect('mongodb+srv://tester:1234@lego-db.lssxr4t.mongodb.net/?retryWrites=true&w=majority', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      bufferCommands: false, // Disable the buffering of commands
+      
+    });
+    console.log('Connected to MongoDB');
+  } catch (error) {
+    console.error('Error connecting to MongoDB', error);
+  }
+}
+
+connectToDatabase().then(() => {
+  Promise.all([Order.init(), Product.init(), User.init()])
+    .then(async () => {
+      console.log('Schema uploaded successfully');
+
+      /*await Product.insertMany(productsData).then(()=>{
+        console.log("Added successfully");
+      }).catch((error)=>{
+        console.log("Error");
+
+      });*/
+
+
+      const result = await Product.find({});
+
+      result.forEach((item)=>{ console.log(item)});
+
+      //process.exit(0);
+    })
+    .catch((error) => {
+      console.error('Error uploading schema', error);
+      process.exit(1);
+    });
+});
+
+/*
+connectToDatabase().then(async () => {
+  try {
+    await Product.init();
+    console.log('Product schema initialized');
+    
+
+    await Product.insertMany(productsData).then(()=>{
+      console.log("Added successfully");
+    }).catch((error)=>{
+      console.log("Error");
+
+    });
+
     console.log('Products added successfully');
     
     process.exit(0);
@@ -272,3 +296,4 @@ connectToDatabase().then(async () => {
     process.exit(1);
   }
 });
+*/
