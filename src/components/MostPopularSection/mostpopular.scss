@@ -298,7 +298,8 @@ $font-family: Cera Pro, sans-serif;
         }
 
         @include respond2(mobile) {
-            width: calc(100% / 2);
+            width: calc(60% / 2);
+            padding: 0 10px;
         }
 
         @include respond2(large-desktop) {

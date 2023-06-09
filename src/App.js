@@ -6,7 +6,7 @@ import ProductPage from './components/page-components/ProductPage/ProductPage';
 import LoginForm from "./components/login-page/LoginPage";
 import RegisterForm from './components/RegisterPage/RegisterPage';
 import { LoginProvider } from './components/context/LoginContext';
-import { CartProvider } from './components/CartMain/CartContext';
+import { CartContext } from './components/CartMain/CartContext';
 import AllProductsPage from './components/page-components/AllProductPage/AllProductsPage';
 import CartPage from './components/page-components/CartPage/CartPage';
 
@@ -17,7 +17,7 @@ function App() {
     <Router>
       <div>
         <LoginProvider isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
-          <CartProvider>
+          <CartContext.Provider>
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/LoginPage" element={<LoginForm />} />
@@ -26,7 +26,7 @@ function App() {
               <Route path="/all-products" element={<AllProductsPage />} />
               <Route path='/cart' element={<CartPage/>}/>
             </Routes>
-          </CartProvider>
+          </CartContext.Provider>
         </LoginProvider>
       </div>
     </Router>
