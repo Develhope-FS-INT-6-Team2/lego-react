@@ -15,7 +15,7 @@ function Card(props) {
     
     return (
         <div className="one-product">
-            <a href={"http://localhost:3000/product/" + id} className="recommended-product-upper-section">
+            <a href={"/product/" + id} className="recommended-product-upper-section">
                 <img src={heart} alt="wishlist-heart" className="product-icon" />
                 <div className="img-sec">
                     <img src={image} alt="recommended-product-img" />
