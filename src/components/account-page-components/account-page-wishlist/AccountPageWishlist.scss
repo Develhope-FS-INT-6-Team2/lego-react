@@ -1,3 +1,7 @@
+.account-page-navbar {
+  width: "80%" 
+}
+
 .create-wish-list-cont {
     display: flex;
     justify-content: flex-start ;
@@ -33,9 +37,7 @@
   margin-left: 2%;
 }
 
-.account-page-navbar {
-    width: "80%" 
-  }
+
   
   
   .new-list-button {
@@ -50,8 +52,7 @@
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    cursor: pointer;
-    
+    cursor: pointer;   
   }
   
   .new-list-button:hover{

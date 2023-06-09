@@ -17,9 +17,9 @@ export default function AccountPageWishlist(){
                         You can add or remove products, name the lists to make it easier to track, 
                         and even create and save separate wish lists for different occasions or events.</p>
                 </div>
-                <div className="new-list-button">
-                    <button>+ Create new list</button>
-                </div>
+                <button className="new-list-button">
+                  + Create new list
+                </button>
             </div>
         </div>
         <div className="wish-list-support-block">
