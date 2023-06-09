@@ -17,19 +17,20 @@ export const CartProvider = (props) => {
     fetchProducts();
   }, []);
   
-  const findProductById = (id) => products.find(product => product.id === id);
-  
-  const addToCart = (id) => {
-    const product = findProductById(id);
+  const addToCart = (product) => {
+    console.log("addToCart function called with product:", product);
+    
     if (product) {
       setCartItems(prevCartItems => {
-        const existingCartItem = prevCartItems.find(item => item.id === id);
+        const existingCartItem = prevCartItems.find(item => item.id === product.id);
         if (existingCartItem) {
-          return prevCartItems.map(item => item.id === id ? { ...item, quantity: item.quantity + 1 } : item);
+          return prevCartItems.map(item => item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item);
         } else {
           return [...prevCartItems, { ...product, quantity: 1 }];
         }
       });
+    } else {
+      console.log("No product was passed to addToCart function");
     }
   };
   

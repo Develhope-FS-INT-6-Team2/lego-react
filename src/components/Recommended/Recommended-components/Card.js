@@ -1,21 +1,24 @@
 import React, { useContext } from "react";
-import { CartContext } from '../../CartMain/CartContext'; // Provide the correct path to your CartContext.js file
-import heart from "../images/icons8-favorite-48.png"
+import { CartContext } from '../../CartMain/CartContext';
+import heart from "../images/icons8-favorite-48.png";
 
 function Card(props) {
-    let { image, title, price, id } = props;
-    const { addToCart, products } = useContext(CartContext); // Accessing addToCart function from context
-    
-    const product = products.find(product => product.id === id);
+    const { image, title, price, id } = props;
+    const { addToCart, products } = useContext(CartContext);
 
+    console.log("Card component received product ID:", id);
+    console.log("All products in context:", products);
+
+    const product = products.find(product => String(product.id) === String(id));
+
+    console.log("Product found in Card component with matching ID:", product);
+    
     return (
         <div className="one-product">
             <a href={"http://localhost:3000/product/" + id} className="recommended-product-upper-section">
                 <img src={heart} alt="wishlist-heart" className="product-icon" />
                 <div className="img-sec">
-                    <img
-                        src={image}
-                        alt="recommended-product-img" />
+                    <img src={image} alt="recommended-product-img" />
                 </div>
                 <p>New</p>
             </a>
@@ -25,9 +28,13 @@ function Card(props) {
                 className="add-to-bag-button"
                 type="button"
                 value="Add to Bag"
-                onClick={() => addToCart(product)} // Adding product to cart on button click
+                onClick={() => {
+                    console.log("Attempting to add to cart with product:", product);
+                    addToCart(product);
+                }}
             />
         </div>
     );
 }
+
 export default Card;
