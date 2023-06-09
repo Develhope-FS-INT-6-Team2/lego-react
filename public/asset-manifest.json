@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7125a534.css",
+    "main.js": "/static/js/main.4ac62eea.js",
+    "static/js/787.6c45bd24.chunk.js": "/static/js/787.6c45bd24.chunk.js",
+    "static/media/lego_desk.png": "/static/media/lego_desk.bd723bea1b9e7b2818f7.png",
+    "static/media/landRoverDesktop.jpg": "/static/media/landRoverDesktop.baf66c89f7dbd09c7c48.jpg",
+    "static/media/landRoverBig.png": "/static/media/landRoverBig.b2432805a314fe352f5c.png",
+    "static/media/landRoverMobile.jpg": "/static/media/landRoverMobile.73084cad26f8335bdca9.jpg",
+    "static/media/castleBig.png": "/static/media/castleBig.c8fc3f3b635b12ff76dc.png",
+    "static/media/avatar.png": "/static/media/avatar.0afe645e15a95aeec082.png",
+    "static/media/landRoverSmall.png": "/static/media/landRoverSmall.e85dca628adf64062a5e.png",
+    "static/media/castleSmall.png": "/static/media/castleSmall.3cd6e8b830a8485b1847.png",
+    "static/media/account.svg": "/static/media/account.f97ed7e5cec151fa4a3a4c7f8157a75d.svg",
+    "static/media/apple.svg": "/static/media/apple.9e52bee70ee15cd43176.svg",
+    "index.html": "/index.html",
+    "static/media/google.svg": "/static/media/google.e78ba0621e4b4878a316.svg",
+    "main.7125a534.css.map": "/static/css/main.7125a534.css.map",
+    "main.4ac62eea.js.map": "/static/js/main.4ac62eea.js.map",
+    "787.6c45bd24.chunk.js.map": "/static/js/787.6c45bd24.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7125a534.css",
+    "static/js/main.4ac62eea.js"
+  ]
+}

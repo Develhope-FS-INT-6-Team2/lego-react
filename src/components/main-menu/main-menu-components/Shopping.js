@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from '../../CartMain/CartContext'; // Make sure to provide the correct path to CartContext
 
 function Shopping() {
+  const { cartItems } = useContext(CartContext);
+  
+  // Count the total number of items in the cart
+  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+
   return (
     <div className="shopping-items">
       <div className="container">
@@ -13,19 +20,21 @@ function Shopping() {
         </div>
       </div>
       <button className="account-btn">
-        <img src="../assets/icons/header/account-icon.png" />
+        <img src="../assets/icons/header/account-icon.png" alt="Account" />
       </button>
 
       <button className="fav-btn">
-        <img src="../assets/icons/main-menu/heart-icon.png" />
+        <img src="../assets/icons/main-menu/heart-icon.png" alt="Favorites" />
       </button>
 
       <div className="shopping">
-        <button className="shop-btn">
-          <img src="../assets/icons/main-menu/shopping-bag.png" />
-        </button>
+        <Link to="/cart">
+          <button className="shop-btn">
+            <img src="../assets/icons/main-menu/shopping-bag.png" alt="Cart" />
+          </button>
+        </Link>
 
-        <span>(0)</span>
+        <span>({totalItems})</span>
       </div>
     </div>
   );
