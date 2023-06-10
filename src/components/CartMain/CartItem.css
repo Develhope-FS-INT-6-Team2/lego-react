@@ -38,12 +38,8 @@
 }
 .cart-item .item-details .item-actions .quantity-input {
   display: flex;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
   height: 2.7rem;
-  flex: 0 1 45%;
-  width: auto;
-  margin: 0px 1.25rem;
+  border-radius: 5px;
 }
 .cart-item .item-details .item-actions .quantity-input .quantity-btn {
   position: relative;
@@ -59,7 +55,16 @@
   justify-content: center;
   touch-action: manipulation;
 }
-.cart-item .item-details .item-actions .quantity-input .quantity-display {
+.cart-item .item-details .item-actions .quantity-input .input-display-container {
+  position: relative;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  border-top: thin solid rgb(224, 224, 224);
+  border-bottom: thin solid rgb(224, 224, 224);
+  width: 2.5rem;
+  max-width: 5rem;
+}
+.cart-item .item-details .item-actions .quantity-input .input-display-container .quantity-display {
   background-image: none;
   width: 100%;
   height: 100%;
@@ -94,7 +99,7 @@
   order: 0;
   left: calc(50% - 15px);
   top: 0px;
-  background: #F8F8F8;
+  background: #f8f8f8;
   box-sizing: inherit;
 }
 .cart-item .item-details .item-actions .wishlist-btn-wrapper .wishlist-btn .Wishlist-icon {

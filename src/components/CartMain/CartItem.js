@@ -33,6 +33,7 @@ const CartItem = ({
             >
               -
             </button>
+            <div className='input-display-container' >
             <input
               type="number"
               className="quantity-display"
@@ -42,6 +43,7 @@ const CartItem = ({
               data-test="quantity-value"
               readOnly
             />
+            </div>
             <button
               className="quantity-btn increase"
               onClick={onIncrease}
