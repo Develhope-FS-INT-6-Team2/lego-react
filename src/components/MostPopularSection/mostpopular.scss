@@ -25,6 +25,7 @@ $font-family: Cera Pro, sans-serif;
     font-style: normal;
     font-display: swap;
 }
+
 @font-face {
     font-family: Cera Pro;
     src: url(https://assets.lego.com/fonts/v3/cera-pro/CeraPro-Medium.woff2);
@@ -32,6 +33,7 @@ $font-family: Cera Pro, sans-serif;
     font-style: normal;
     font-display: swap;
 }
+
 @font-face {
     font-family: Cera Pro;
     src: url(https://assets.lego.com/fonts/v3/cera-pro/CeraPro-Regular.woff2);
@@ -41,15 +43,11 @@ $font-family: Cera Pro, sans-serif;
 }
 
 //resetting css
-.carousel-container,
 .most-popular-section {
-    font-family: Cera Pro;
+    font-family: $font-family;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-.most-popular-section {
     display: flex;
     padding: 0 65px;
     flex-direction: column;
@@ -59,38 +57,37 @@ $font-family: Cera Pro, sans-serif;
     width: 100%;
 }
 
-
-
 .carousel-container {
     position: relative;
     display: flex;
     align-items: center;
-}
-
-.carousel {
     flex-grow: 1;
     overflow-x: scroll;
     white-space: nowrap;
     padding-bottom: 3rem;
     scrollbar-width: none;
-    &::-webkit-scrollbar {
-        height: 5px;
-        margin: 70px 20px;
-        scroll-behavior: smooth;
-    }
-    &::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0.15);
-        margin-inline-end: 100px;
-        margin-inline-start: 100px;
-        scroll-behavior: smooth;
-    }
-    &::-webkit-scrollbar-thumb {
-        background-color: rgba(0, 0, 0, 0.55);
-        scroll-behavior: smooth;
-        &:hover {
-            background-color: black;
-            cursor: pointer;
-        }
+}
+
+.carousel-container::-webkit-scrollbar {
+    height: 5px;
+    margin: 70px 20px;
+    scroll-behavior: smooth;
+}
+
+.carousel-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.15);
+    margin-inline-end: 100px;
+    margin-inline-start: 100px;
+    scroll-behavior: smooth;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.55);
+    scroll-behavior: smooth;
+    
+    &:hover {
+        background-color: black;
+        cursor: pointer;
     }
 }
 
@@ -108,22 +105,27 @@ $font-family: Cera Pro, sans-serif;
     background: rgb(253, 253, 253);
     border-radius: 50%;
     display: inline-block;
+    
     &:hover {
         background-color: rgba(0, 0, 0, 0.1);
     }
+
     &.left {
         margin-right: 10px;
     }
+    
     &.right {
         margin-left: 10px;
     }
 
     @include respond2(mobile) {
-        .arrow-button {
-            display: none;
-        }
+        display: none;
     }
 }
+
+// Rest of the styles remains unchanged
+// ...
+
 
 // Navigation arrows for the most popular section
 .most-popular-wrapper {

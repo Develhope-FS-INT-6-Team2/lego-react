@@ -98,6 +98,7 @@
   height: 1.5rem;
 }
 .cart-main-container .cart-main-left {
+  min-height: 300px;
   flex: 2;
 }
 .cart-main-container .cart-main-left .cart-items-wrapper {

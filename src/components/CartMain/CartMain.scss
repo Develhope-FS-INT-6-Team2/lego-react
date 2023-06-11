@@ -118,7 +118,8 @@
     }
   }
 
-  .cart-main-left {    
+  .cart-main-left {   
+    min-height: 300px;    
     flex: 2;
     .cart-items-wrapper {
       display: flex;
