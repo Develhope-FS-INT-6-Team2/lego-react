@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 mongoose.set('debug', true);
 
-
+const bodyParser = require('body-parser');
 const express = require('express');
 const cors = require('cors');
 const userRoutes = require('../Routes/userRoutes');
