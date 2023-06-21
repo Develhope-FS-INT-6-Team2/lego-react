@@ -49,9 +49,8 @@ async function loginUser(req, res) {
       return res.status(401).json({ error: 'Invalid username or password' });
     }
 
-    // Compare the password with the hashed password in the database
-    const passwordMatch = await bcrypt.compare(password, user.password);
-    if (!passwordMatch) {
+    // Compare the password with the password in the database
+    if (user.password !== password) {
       return res.status(401).json({ error: 'Invalid username or password' });
     }
 
@@ -60,7 +59,7 @@ async function loginUser(req, res) {
       message: 'User logged in successfully',
       user: {
         username: user.username,
-        email: user.mail,
+        email: user.email,
         password: user.password,
         wishlist: user.wishlist,
         basket: user.basket,
