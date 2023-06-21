@@ -1,11 +1,23 @@
 const express = require('express');
 const router = express.Router();
+
+
+const session = require('express-session');
+
+
+
 const {
   registerUser,
   loginUser,
   getWishlistByUserID,
   addProductToWishlist
 } = require('../controllers/userController');
+
+router.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: true,
+}));
 
 // Register a new user
 router.post('/register', registerUser);

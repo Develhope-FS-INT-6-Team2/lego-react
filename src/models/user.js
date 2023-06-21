@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-  email: String,
-  password: String,
-  username: String,
-  wishlist: [{ id: String, date: String }],
-  basket: [String],
-  latestOrders: [String],
+  username: { type: String, required: true },
+  password: { type: String, required: true },
+  email: { type: String, required: true },
+  wishlist: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }],
+  basket: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }],
+  latestOrders: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Order' }],
 });
 
 const User = mongoose.model('User', userSchema);

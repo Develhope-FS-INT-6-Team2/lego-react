@@ -1,6 +1,8 @@
 //addOrder
 //cancelOrder
 
+const User = require('../models/user');
+
 const Order = require('../models/order');
 
 // Add an order
@@ -13,6 +15,12 @@ async function addOrder(req, res) {
     const newOrder = await Order.create({ orderId, userId, products, productCounts, date });
 
     console.log('Order added successfully:', newOrder);
+
+    // Find the user in the database and update the latestOrders array
+    const user = await User.findOne({ _id: userId });
+    user.latestOrders.push(newOrder._id);
+    await user.save();
+
     res.json({ message: 'Order added successfully' });
   } catch (error) {
     console.error('Error adding order', error);
@@ -34,6 +42,12 @@ async function cancelOrder(req, res) {
     }
 
     console.log('Order canceled successfully:', deletedOrder);
+
+    // Find the user in the database and remove the order ID from the latestOrders array
+    const user = await User.findOne({ _id: deletedOrder.userId });
+    user.latestOrders = user.latestOrders.filter(id => id.toString() !== deletedOrder._id.toString());
+    await user.save();
+
     res.json({ message: 'Order canceled successfully' });
   } catch (error) {
     console.error('Error canceling order', error);
