@@ -1,0 +1,93 @@
+
+.account-overview-container{
+    width: 80%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    h1{
+        margin-top: 0;
+    }
+    .vip-card-container{
+        display: flex;
+        width: 100%;
+        .vip-card-left{
+            width: 50%;
+            display: flex;
+            background-color: rgb(248, 248, 248);
+            .vip-card-left-img{
+                width: 40%;
+                display: flex;
+                align-items: center;
+                img{
+                    width: 60%;
+                    margin-left: 10%;
+                }
+            }
+            
+            .free-vip-card{
+                width: 55%;
+                display: flex;
+                flex-direction: column;
+                margin-top: 1.5rem;
+                margin-right: 5%;
+                margin-bottom: 5%;
+                // justify-content: center;
+                h2{
+                    margin-bottom: 0.5rem;
+                }
+                p{
+                    margin-top: 0.5rem;
+                }
+                img{
+                    width: 30%;
+                    margin-left: 70%;
+                }
+            }
+        }
+
+
+
+
+        .vip-card-right{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background-color: rgb(10, 77, 173);
+            .account-vip-button{
+                width: 90%;
+                border-radius: 10px;
+                height: 3rem;
+                font-size: 1rem;
+            }
+            h2{
+                font-weight: 200;
+            }
+        }
+    }
+    .order-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(248, 248, 248);
+        min-height: 10rem;
+        .order-start-shopping-button{
+            width: 10rem;
+            border-radius: 10px;
+            height: 3rem;
+            font-size: 1rem;
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid rgb(10, 77, 173);
+            background-color:rgb(10, 77, 173) ;
+            &:hover{
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+    
+}

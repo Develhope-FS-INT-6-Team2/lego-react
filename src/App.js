@@ -8,7 +8,12 @@ import RegisterForm from './components/RegisterPage/RegisterPage';
 import { LoginProvider } from './components/context/LoginContext';
 import { CartProvider } from './components/CartMain/CartContext';
 import AllProductsPage from './components/page-components/AllProductPage/AllProductsPage';
+import AccountPage from './components/page-components/AccountPage/AccountPage';
+import Footer from './components/Footer/Footer';
+import AccountOverview from './components/account-page-components/account-overview/AccountOverview';
+import AccountPageWishlist from './components/account-page-components/account-page-wishlist/AccountPageWishlist';
 import CartPage from './components/page-components/CartPage/CartPage';
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -17,6 +22,7 @@ function App() {
     <Router>
       <div>
         <LoginProvider isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
+
           <CartProvider>
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -25,6 +31,10 @@ function App() {
               <Route path="/RegisterPage" element={<RegisterForm />} />
               <Route path="/all-products" element={<AllProductsPage />} />
               <Route path='/cart' element={<CartPage/>}/>
+              <Route path="/account" element={<AccountPage/>}>
+                <Route index element={<AccountOverview />} />
+                <Route path="wishlist" element={<AccountPageWishlist />} />
+              </Route>
             </Routes>
           </CartProvider>
         </LoginProvider>
