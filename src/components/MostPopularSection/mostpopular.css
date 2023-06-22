@@ -246,6 +246,9 @@
   align-items: center;
   gap: 0.2rem;
 }
+
+
+
 @media screen and (max-width: 900px) {
   .carousel-mps .popular-set-item {
     width: 33.3333333333%;
@@ -258,9 +261,7 @@
   }
   .most-popular-section{
     display: block;
-    min-height: 30vh;
-    margin: 20px 20px;
-    padding: 30px 90px;
+    min-height: 30vh;    
   }
 }
 
@@ -270,10 +271,18 @@
   }
   .most-popular-section{
     display: block;
-    min-height: 30vh;
-    margin: 20px 20px;
-    padding: 20px 50px;
+    min-height: 30vh;    
   }
+
+  .most-popular-wrapper i:first-child {
+    left: -60px;
+    display: block;
+  }
+  .most-popular-wrapper i:last-child {
+    right: -60px;
+    display: block;
+  }
+
 }
 @media screen and (min-width: 1200px) {
   .carousel-mps .popular-set-item {
