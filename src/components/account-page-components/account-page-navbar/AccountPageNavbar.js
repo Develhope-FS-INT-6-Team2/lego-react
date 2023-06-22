@@ -1,4 +1,10 @@
 import { Link } from "react-router-dom";
+import "./AccountPageNavbar.css";
+
+
+
+
+
 
 export default function AccounPageNavbar(){
 
@@ -8,18 +14,12 @@ export default function AccounPageNavbar(){
     return( 
     
     
-    <nav className="account-page-navbar" style={{width: "20%", backgroundColor: "yellow"}}>
+    <nav className="account-page-navbar" >
         
-        <Link to="../account">account overview</Link>
-        <br/>
-        <br/>
-        <br/>
-        <Link to="./wishlist">wishlist</Link>
-        <p>other links</p>
-        <p>other links</p>
-        <p>other links</p>
-        <p>other links</p>
-        <p>other links</p>
+        <Link className="account-category" to="../account">Account overview</Link>
+        
+        <Link className="account-category" to="./wishlist">Wishlist</Link>
+        
 
 
     </nav>

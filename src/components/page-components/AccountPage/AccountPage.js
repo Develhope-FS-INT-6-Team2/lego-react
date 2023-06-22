@@ -4,11 +4,12 @@ import Header from '../../Header/Header';
 import MainMenu from '../../main-menu/MainMenu';
 import { LoginContext } from '../../context/LoginContext';
 import "./AccountPage.css";
-import { ProductItemMain } from '../../product-page-item/ProductItemMain';
-import BannerTwo from '../../banner-2/BannerTwo';
-import { BrowserRouter as Router, Routes, Route, Link, Outlet } from 'react-router-dom';
+
+import { Outlet } from 'react-router-dom';
 import AccounPageNavbar from '../../account-page-components/account-page-navbar/AccountPageNavbar';
 // import { LoginProvider } from '../../context/LoginContext';
+
+
 export default function AccountPage() {
   const { isLoggedIn } = useContext(LoginContext);
 

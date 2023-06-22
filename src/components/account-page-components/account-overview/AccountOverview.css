@@ -1,0 +1,87 @@
+.account-overview-container {
+  width: 80%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.account-overview-container h1 {
+  margin-top: 0;
+}
+.account-overview-container .vip-card-container {
+  display: flex;
+  width: 100%;
+}
+.account-overview-container .vip-card-container .vip-card-left {
+  width: 50%;
+  display: flex;
+  background-color: rgb(248, 248, 248);
+}
+.account-overview-container .vip-card-container .vip-card-left .vip-card-left-img {
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+.account-overview-container .vip-card-container .vip-card-left .vip-card-left-img img {
+  width: 60%;
+  margin-left: 10%;
+}
+.account-overview-container .vip-card-container .vip-card-left .free-vip-card {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+.account-overview-container .vip-card-container .vip-card-left .free-vip-card h2 {
+  margin-bottom: 0.5rem;
+}
+.account-overview-container .vip-card-container .vip-card-left .free-vip-card p {
+  margin-top: 0.5rem;
+}
+.account-overview-container .vip-card-container .vip-card-left .free-vip-card img {
+  width: 30%;
+  margin-left: 70%;
+}
+.account-overview-container .vip-card-container .vip-card-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: rgb(10, 77, 173);
+}
+.account-overview-container .vip-card-container .vip-card-right .account-vip-button {
+  width: 90%;
+  border-radius: 10px;
+  height: 3rem;
+  font-size: 1rem;
+}
+.account-overview-container .vip-card-container .vip-card-right h2 {
+  font-weight: 200;
+}
+.account-overview-container .order-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(248, 248, 248);
+  min-height: 10rem;
+}
+.account-overview-container .order-container .order-start-shopping-button {
+  width: 10rem;
+  border-radius: 10px;
+  height: 3rem;
+  font-size: 1rem;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgb(10, 77, 173);
+  background-color: rgb(10, 77, 173);
+}
+.account-overview-container .order-container .order-start-shopping-button:hover {
+  background-color: white;
+  color: black;
+}
+
+/*# sourceMappingURL=AccountOverview.css.map */

@@ -5,7 +5,7 @@ export default function AccountPageWishlist(){
     return( 
     
     
-    <nav className="account-page-navbar">
+    <nav className="account-page-wishlist">
         <div className="wish-list-cont">
         <h1 id="wish-head">Wish list</h1>
         <div className="create-wish-list-cont">
