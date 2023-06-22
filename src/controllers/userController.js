@@ -1,10 +1,12 @@
 
 
 const User = require('../models/user');
-const path = require('path');
-const Wishlist = require('../models/wishlist');
+
 const fs = require('fs');
 const mongoose = require('mongoose');
+const path = require('path');
+const Product = require('../models/product');
+
 
 const registerUser = async (req, res) => {
   try {
@@ -93,8 +95,8 @@ const addProductToWishlist = async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    const user = await User.findOne({ _id: new mongoose.Types.ObjectId(userID) });
-    
+    const user = await User.findOne({ _id: userID });
+
     if (!user) {
       console.log("User not found:", userID);
       return res.status(404).json({ message: "User not found" });
@@ -102,23 +104,17 @@ const addProductToWishlist = async (req, res) => {
 
     console.log("User found:", user);
 
-    // Load the products data from the JSON file
-    const productsFilePath = path.join(__dirname, '../components/FeaturedSets/featured-sets-components/Products.json');
-    const productsData = fs.readFileSync(productsFilePath, 'utf8');
-    const products = JSON.parse(productsData);
-    console.log("Products:", products);
-    const product = products.sets.find((item) => item._id === parseInt(productID));
-    
+    const product = await Product.findOne({ id: Number(productID) });
     if (!product) {
       console.log("Product not found:", productID);
       return res.status(404).json({ message: "Product not found" });
     }
 
-    if (!product._id) {
-      console.log("Product ID is missing:", product);
-      return res.status(500).json({ message: "Product ID is missing" });
+    // Add the product ID to the user's wishlist
+    if (!user.wishlist) {
+      user.wishlist = [];
     }
-
+   user.wishlist.push(product);
 
     await user.save();
 
@@ -131,40 +127,26 @@ const addProductToWishlist = async (req, res) => {
   }
 };
 
-
 // Get wishlist by user ID
-async function getWishlistByUserID(req, res) {
+const getWishlistByUserID = async (req, res) => {
   try {
     // Extract user ID from request parameters
-    let { userID } = req.params;
+    const { userID } = req.params;
 
-    userID = userID.replace(':', ''); // Remove the colon from the userID
-
-    console.log("User ID:", userID);
-
-    if (!userID) {
-      return res.status(400).json({ message: "User ID is missing" });
-    }
-
-    const user = await User.findOne({ _id: userID });
-
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
-    }
-
-    console.log("User found:", user);
-
-    // Retrieve the wishlist from the user object
+    // Retrieve the user's wishlist from MongoDB
+    const user = await User.findOne({ _id: userID }).populate('wishlist');
     const wishlist = user.wishlist;
+
+    // wishlist will contain an array of product objects with full details
+    console.log("Wishlist Products:", wishlist);
 
     console.log('Wishlist retrieved successfully:', wishlist);
     res.json(wishlist);
   } catch (error) {
     console.error('Error fetching wishlist:', error);
-    res.status(500).json({ message: 'Failed to fetch wishlist' });
+    res.status(500).json({ error: 'Failed to fetch wishlist' });
   }
-}
-
+};
 
 module.exports = {
   registerUser,

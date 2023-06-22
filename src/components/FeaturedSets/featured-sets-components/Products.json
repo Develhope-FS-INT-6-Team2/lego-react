@@ -1,7 +1,7 @@
 {
     "sets": [
         {   
-            "_id":1,
+            "id":1,
             "image": "../assets/images/featured-sets/cat-hotel.png",
             "title": "Cat hotel",
             "price": 59.99,
@@ -10,7 +10,7 @@
             "pieces":233
         },
         {   
-            "_id":2,
+            "id":2,
 
             "image": "../assets/images/featured-sets/jazz-club.png",
             "title": "Jazz-club",
@@ -19,7 +19,7 @@
             
         },
         {   
-            "_id":3,
+            "id":3,
             "image": "../assets/images/featured-sets/golden-ultra-dragon.png",
             "title": "Golden Ultra Dragon",
             "price": 109.99,
@@ -27,7 +27,7 @@
             
         },
         {   
-            "_id":4,
+            "id":4,
             "image": "../assets/images/featured-sets/grand-piano.png",
             "title": "Grand Piano",
             "price": 39.99,
@@ -35,7 +35,7 @@
             
         },
         {   
-            "_id":5,
+            "id":5,
             "image": "../assets/images/featured-sets/star-lord-helmet.png",
             "title": "Star Lord Helmet",
             "price": 45.99,
@@ -43,7 +43,7 @@
             
         },
         {   
-            "_id":6,
+            "id":6,
             "image": "../assets/images/featured-sets/tie-bomber.png",
             "title": "Tie Bomber",
             "price": 59.99,
@@ -51,14 +51,14 @@
             
         },
         {   
-            "_id":7,
+            "id":7,
             "image": "../assets/images/featured-sets/eiffel-tower.png",
             "title": "Eiffel Tower",
             "price": 109.99,
             "category": "Travel"
             
         },
-        {   "_id":8,
+        {   "id":8,
             "image": "../assets/images/featured-sets/titanic.png",
             "title": "Titanic",
             "price": 79.99,
@@ -66,36 +66,39 @@
             
         },
         {   
-            "_id":9,
+            "id":9,
             "image": "../assets/images/featured-sets/van-gogh.png",
             "title": "Van Gogh",
             "price": 39.99,
-            "category": "Art"
+            "category": "Art",
+            "pieces":807
             
         },
         {   
-            "_id":10,
+            "id":10,
             "image": "../assets/images/featured-sets/hogwarts-room-of-requirement.png",
             "title": "Hogwarts Room of Requirements",
             "price": 59.99,
-            "category": "Toys"
+            "category": "Toys",
+            "pieces":213
             
         },
-        {   "_id":11,
-            "image": "../assets/images/featured-sets/temple-of-the-golden-_idol.png",
-            "title": "Temple of The Golden _idol",
+        {   "id":11,
+            "image": "../assets/images/featured-sets/temple-of-the-golden-idol.png",
+            "title": "Temple of The Golden idol",
             "price": 59.99,
-            "category": "Toys"
+            "category": "Toys",
+            "pieces":765
             
         },
-        {    "_id":12,
+        {    "id":12,
             "image": "../assets/images/featured-sets/the-razor-crest.png",
             "title": "The Razor Crest",
             "price": 59.99,
-            "category": "Movies"
-           
+            "category": "Movies",
+            "pieces":327
         },
-        {   "_id":13,
+        {   "id":13,
             "image": "../assets/images/recommended/emperor-throne.png",
             "title": "Emperor's Throne Room™ Diorama",
             "price": 89.99,
@@ -104,7 +107,7 @@
             "pieces":807
         },
         {
-            "_id":14,
+            "id":14,
             "image": "../assets/images/recommended/endor-speeder.png",
             "title": "Endor™ Speeder Chase Diorama",
             "price": 69.99,
@@ -113,7 +116,7 @@
             "pieces":763
         },
         {   
-            "_id":15,
+            "id":15,
             "image": "../assets/images/recommended/mandalorian-fang-figther.png",
             "title": "Mandalorian Fighter vs. TIE™",
             "price": 89.99,
@@ -123,7 +126,7 @@
        
         },
         {
-            "_id":16,
+            "id":16,
             "image": "../assets/images/recommended/starfighter.png",
             "title": "X-Wing Starfighter™",
             "price": 209.99,
@@ -132,16 +135,16 @@
             "pieces":1949
         },
         {
-            "_id":17,
-            "image": "../assets/images/recommended/sp_ider-tank.png",
-            "title": "Sp_ider Tank",
+            "id":17,
+            "image": "../assets/images/recommended/spider-tank.png",
+            "title": "Spider Tank",
             "price": 39.99,
             "category": "Movies",
             
             "pieces":526
         },
         {
-            "_id":18,
+            "id":18,
             "image": "../assets/images/recommended/battle-endor-heros.png",
             "title": "Battle of Endor™ Heroes",
             "price": 39.99,
@@ -151,7 +154,7 @@
         },
      
         {
-            "_id":19,
+            "id":19,
             "image": "../assets/images/recommended/vader-keyring.png",
             "title": "Darth Vader™ Keyring",
             "price": 4.99,
@@ -162,25 +165,25 @@
       
         {
             
-            "_id":20,
-            "image": "../assets/images/recommended/merma_id.png",
-            "title": "The Little Merma_id Royal Clamshell",
+            "id":20,
+            "image": "../assets/images/recommended/mermaid.png",
+            "title": "The Little Mermaid Royal Clamshell",
             "price": 139.99,
             "category": "toys",
             
             "pieces":624
         },
         {
-            "_id":21,
+            "id":21,
             "image": "../assets/images//recommended/peugeot.png",
-            "title": "PEUGEOT 9X8 Hybr_id Hypercar",
+            "title": "PEUGEOT 9X8 Hybrid Hypercar",
             "price": 7169.99,
             "category": "Car",
             
             "pieces":726
         },
         {
-            "_id":22,
+            "id":22,
             "image": "../assets/images/recommended/land-rover.png",
             "title": "Land Rover Classic Defender 90",
             "price": 209.99,
@@ -191,7 +194,7 @@
       
       
         {
-            "_id":23,
+            "id":23,
             "image": "../assets/images/recommended/tales-space.png",
             "title": "Tales of the Space Age",
             "price": 59.99,
@@ -201,7 +204,7 @@
         },
       
         {
-            "_id":24,
+            "id":24,
             "image": "../assets/images/recommended/disney-100.png",
             "title": "LEGO® Minifigures Disney 100",
             "price": 3.99,
