@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const cors = require('cors');
 const userRoutes = require('../Routes/userRoutes');
+const productRoutes = require('../Routes/productRoutes');
 
 const app = express();
 const PORT = 3010;
@@ -31,6 +32,7 @@ async function connectToDatabase() {
 }
 
 app.use('/api/user', userRoutes);
+app.use('/api/product', productRoutes);
 
 app.listen(PORT, ()=>{
   console.log("Server has started at port",PORT,"you can Go to link from here "+`http://localhost:${PORT}`);
