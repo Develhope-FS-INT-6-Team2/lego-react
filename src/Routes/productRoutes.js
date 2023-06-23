@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const orderController = require('../controllers/productController');
+const productController = require('../controllers/productController');
 
 // Add an order
-router.get('/product',productController.getAllProducts);
+router.get('/products',productController.getAllProducts);
 
 // Cancel an order
-router.get('/product/:productId', productController.getProductById);
+router.get('/:productId', productController.getProductById);
 
 module.exports = router;

@@ -5,11 +5,10 @@ async function getAllProducts(req, res) {
   try {
     console.log('Received getAllProducts request');
 
-    await Promise.all([Order.init(), Product.init(), User.init()]);
+    await Product.init();
     
     // Your logic for fetching all products
-    const result = await Product.find({});
-    const products = result.map(item => item.toObject());
+    const products = await Product.find({}).lean();
 
     console.log('Products retrieved successfully');
     res.json(products);
@@ -23,15 +22,19 @@ async function getAllProducts(req, res) {
 async function getProductById(req, res) {
   try {
     console.log('Received getProductById request');
-    
-    await Promise.all([Order.init(), Product.init(), User.init()]);
+
+    await Product.init();
 
     // Extract the product ID from the request parameters
-    const productId = req.params.id;
+    const productId = req.params.productId;
 
     // Your logic for fetching a product by ID
-    const result = await Product.find({ id: productId });
-    const product = result.map(item => item.toObject());
+    const product = await Product.findOne({ id: productId }).lean();
+
+    if (!product) {
+      console.log('Product not found');
+      return res.status(404).json({ error: 'Product not found' });
+    }
 
     console.log('Product retrieved successfully');
     res.json(product);
