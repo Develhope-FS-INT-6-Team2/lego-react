@@ -1,4 +1,5 @@
-
+import { useState ,useEffect} from "react";
+import axios from "axios";
 import React  from "react";
 import "./Recommended.css"
 
@@ -9,15 +10,30 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 
 import Card from './Recommended-components/Card';
-import sets from './Recommended-components/RecommendedSetsProducts';
+
 import RecommendedSetsLeftButton from './Recommended-components/RecommendedSetsLeftButton';
 import RecommendedSetsRightButton from './Recommended-components/RecommendedSetsRightButton';
 
 
 function Recommended() {
- 
+  let [data,setData] = useState([{id:"",image:"",price:"",title:""}])
+    
+  useEffect(() => {
+      fetchData();
+      
+    }, []);
+  
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3010/api/product/products');
+        setData(response.data.slice(12,24));
+        console.log(data)
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
 
-  const products = sets.map(item => (
+  const products = data.map(item => (
     <SwiperSlide>
       <Card image={item.image} title={item.title} price={item.price} id={item.id} />
     </SwiperSlide>
