@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState ,useEffect} from "react";
+import axios from "axios";
 import "./FeaturedSets.css";
 
 import OneSet from "./featured-sets-components/OneSet";
 import FeaturedSetsLeftButton from "./featured-sets-components/FeaturedSetsLeftButton";
 import FeaturedSetsRightButton from "./featured-sets-components/FeaturedSetsRightButton";
-import data from"./featured-sets-components/Products.json" ;
+
 
 //library
 import {Swiper, SwiperSlide} from "swiper/react";
@@ -15,13 +16,29 @@ import "swiper/css/navigation";
 
 
 function FeaturedSets(){
+    let [data,setData] = useState([{id:"",image:"",price:"",title:""}])
+    
+    useEffect(() => {
+        fetchData();
+        
+      }, []);
+    
+      const fetchData = async () => {
+        try {
+          const response = await axios.get('http://localhost:3010/api/product/products');
+          setData(response.data.slice(0,12));
+          console.log(data)
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
 
-    let products = data.sets.map(item =>(
+    let products = data.map(item =>(
         <SwiperSlide>
             <OneSet id={item.id} image={item.image} title={item.title} price={item.price} />
         </SwiperSlide>
     ))
-
+    
 
     return(
     <div className="featured-sets">
