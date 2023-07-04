@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import accountLogo from "./images/account.svg";
-
+import axios from 'axios';
 import { LoginContext } from '../context/LoginContext';
 import Avatar from './ChildComponents/Avatar';
 import RememberMeCheckbox from './ChildComponents/RememberMeCheckbox';
@@ -65,33 +65,28 @@ const LoginForm = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Check if the user exists in local storage
-    const storedUsers = JSON.parse(localStorage.getItem('users'));
+    try {
+      const response = await axios.post('http://localhost:3010/api/user/login', {
+        email: username,
+        password: password,
+      });
 
-    if (!storedUsers || storedUsers.length === 0) {
-      setError('User does not exist. Please register.');
-      return;
-    }
+      const user = response.data.user;
 
-    // Check if the provided username and password match any of the stored users' credentials
-    const matchedUser = storedUsers.find(
-      (storedUser) => storedUser.email === username && storedUser.password === password
-    );
+      alert("You have logged in");
 
-    if (!matchedUser) {
+     console.log("Login successful"); 
+      login(user.email);
+      setError(null);
+
+      navigate('/');
+    } catch (error) {
       setError('Invalid username or password.');
-      return;
+      console.error('Login error:', error);
     }
-
-    alert("you have logged in")
-    // Login successful
-    login(matchedUser.email);
-    setError(null);
-
-    navigate('/');
   };
 
   return (
@@ -105,10 +100,10 @@ const LoginForm = () => {
 
         <form className='form-container' onSubmit={handleSubmit}>
           <div className='input'>
-            <label className='input-info' htmlFor='username'>Username</label>
+            <label className='input-info' htmlFor='username'>Email</label>
             <input
               type='text'
-              placeholder='Username'
+              placeholder='Email'
               id='username'
               name='username'
               value={username}

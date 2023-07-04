@@ -11,14 +11,14 @@ const Product = require('../models/product');
 const registerUser = async (req, res) => {
   try {
     // Extract user data from request body
-    const { username, password, email } = req.body;
-    console.log('Received user data:', { username, password, email });
+    const { email, password } = req.body;
+    console.log('Received user data:', { email, password });
 
     // Create a new user in the database with the plain text password
     const newUser = await User.create({
-      username,
-      password,
       email,
+      password,
+      
       wishlist: [], // Initialize the wishlist as an empty array
     });
 
@@ -31,7 +31,7 @@ const registerUser = async (req, res) => {
     res.json({
       message: 'User registered successfully',
       user: {
-        username: newUser.username,
+       
         email: newUser.email,
         wishlist: newUser.wishlist, // Include the wishlist in the response
         basket: newUser.basket,
@@ -48,10 +48,10 @@ const registerUser = async (req, res) => {
 async function loginUser(req, res) {
   try {
     // Extract login credentials from request body
-    const { username, password } = req.body;
+    const { email, password } = req.body;
 
     // Find the user in the database
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ email });
     const userID = user._id; // Assign the user's ID to the userID variable
 
     // Check if user exists
@@ -71,7 +71,7 @@ async function loginUser(req, res) {
     res.json({
       message: 'User logged in successfully',
       user: {
-        username: user.username,
+       
         email: user.email,
         password: user.password,
         wishlist: user.wishlist,
