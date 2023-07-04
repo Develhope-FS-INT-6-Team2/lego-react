@@ -67,21 +67,27 @@ const LoginForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     try {
       const response = await axios.post('http://localhost:3010/api/user/login', {
         email: username,
         password: password,
       });
-
+  
       const user = response.data.user;
-
+  
       alert("You have logged in");
-
-     console.log("Login successful"); 
-      login(user.email);
+  
+      console.log("Login successful");
+  
+      if (user.email) {
+        login(user.email); // Use email as the user ID
+      } else {
+        console.error('User ID not found in the server response:', user);
+        setError('Invalid user ID');
+      }
+  
       setError(null);
-
       navigate('/');
     } catch (error) {
       setError('Invalid username or password.');

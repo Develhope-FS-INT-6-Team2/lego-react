@@ -8,11 +8,12 @@ export const LoginProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userId, setUserId] = useState('');
 
-  const login = (id) => {
+  const login = (email) => {
     // Perform login logic here
-    localStorage.setItem('userId', id);
+    localStorage.setItem('userId', email);
     setIsLoggedIn(true);
-    setUserId(id);
+    setUserId(email);
+    console.log('User ID:', email);
   };
 
   const logout = () => {
