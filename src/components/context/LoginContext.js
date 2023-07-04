@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect} from 'react';
 
 // Create the LoginContext
 export const LoginContext = createContext();
@@ -8,6 +8,15 @@ export const LoginProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userId, setUserId] = useState('');
 
+  useEffect(() => {
+    const storedUserId = localStorage.getItem('userId');
+    if (storedUserId) {
+      // User was previously logged in
+      setIsLoggedIn(true);
+      setUserId(storedUserId);
+    }
+  }, []);
+  
   const login = (email) => {
     // Perform login logic here
     localStorage.setItem('userId', email);

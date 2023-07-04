@@ -89,16 +89,16 @@ async function loginUser(req, res) {
 
 const addProductToWishlist = async (req, res) => {
   try {
-    const { userID, productID } = req.body;
+    const { email, productID } = req.body;
 
-    if (!userID) {
+    if (!email) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    const user = await User.findOne({ _id: userID });
+    const user = await User.findOne({ _id: email });
 
     if (!user) {
-      console.log("User not found:", userID);
+      console.log("User not found:", email);
       return res.status(404).json({ message: "User not found" });
     }
 
@@ -131,10 +131,10 @@ const addProductToWishlist = async (req, res) => {
 const getWishlistByUserID = async (req, res) => {
   try {
     // Extract user ID from request parameters
-    const { userID } = req.params;
+    const { email } = req.params;
 
     // Retrieve the user's wishlist from MongoDB
-    const user = await User.findOne({ _id: userID }).populate('wishlist');
+    const user = await User.findOne({ email: email }).populate('wishlist');
     const wishlist = user.wishlist;
 
     // wishlist will contain an array of product objects with full details
