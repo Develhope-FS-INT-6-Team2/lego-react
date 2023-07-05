@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./CartItem.css";
-import { is } from "@babel/types";
+import { Link } from "react-router-dom";
 
 const CartItem = ({
+  id,
   image,
   title,
   price,
@@ -15,6 +16,7 @@ const CartItem = ({
   const [isAddedToWishlist, setIsAddedToWishlist] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
   const [showEditButtons, setShowEditButtons] = useState(false);
+  const totalPrice = price * quantity;
 
   const handleWishlistToggle = () => {
     setIsAddedToWishlist(!isAddedToWishlist);
@@ -55,9 +57,11 @@ const CartItem = ({
     <div className="cart-item-wrapper">
       <div className="cart-item">
         <div className="item-image-container" data-test="item-image">
-          <a>
+          <Link to={`/product/${id}`}>
+            {" "}
+            {/* <-- Use the id here */}
             <img src={image} alt={title} className="item-image" />
-          </a>
+          </Link>
         </div>
         <div className="item-info">
           <h3 className="item-title" data-test="item-title">
@@ -73,7 +77,7 @@ const CartItem = ({
               )}
               <div className="price-wrapper" data-test="item-price">
                 <span className="item-price" data-test="item-price">
-                  {price}
+                  ${totalPrice.toFixed(2)}
                 </span>
               </div>
               {!isMobile && (

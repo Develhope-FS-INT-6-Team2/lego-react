@@ -34,6 +34,7 @@ function CartPageLeft() {
           {cartItems.map((item) => (
             <CartItem
               key={item.id}
+              id={item.id}
               title={item.title}
               price={item.price}
               image={item.image}
