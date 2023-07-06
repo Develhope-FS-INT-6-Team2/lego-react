@@ -27,7 +27,7 @@ function Recommended() {
       try {
         const response = await axios.get('http://localhost:3010/api/product/products');
         setData(response.data.slice(12,24));
-        console.log(data)
+    
       } catch (error) {
         console.error('Error fetching data:', error);
       }

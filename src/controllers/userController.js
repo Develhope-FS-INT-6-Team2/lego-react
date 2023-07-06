@@ -95,7 +95,7 @@ const addProductToWishlist = async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    const user = await User.findOne({ _id: email });
+    const user = await User.findOne({ email: email });
 
     if (!user) {
       console.log("User not found:", email);

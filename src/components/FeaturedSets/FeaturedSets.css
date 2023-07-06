@@ -61,11 +61,16 @@
   font-size: 0.8rem;
   position: absolute;
   left: 0.3rem;
-  z-index: 1;
+  z-index: 100;
   color: black;
 }
 .one-product .product-upper-section p:first-child {
   top: 0.3rem;
+}
+.one-product .product-upper-section p:first-child button {
+  width: auto;
+  border-radius: 0%;
+  height: auto;
 }
 .one-product .product-upper-section p:last-child {
   background-color: yellow;
