@@ -26,6 +26,15 @@ async function addOrder(req, res) {
     // Save the order to the database
     await order.save();
 
+    // Find the corresponding user and update the latestOrders field
+    const user = await User.findById(userID);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    user.latestOrders.push(order._id);
+    await user.save();
+
     res.status(201).json({ message: "Order created successfully", order });
   } catch (error) {
     res
