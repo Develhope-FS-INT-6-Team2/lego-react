@@ -32,19 +32,19 @@ function OneSet(props){
         }
      };
 
-     useEffect(() => {
-        const fetchWishlist = async () => {
-          try {
-            const response = await axios.get('http://localhost:3010/api/user/wishlist/nuritest123@gmail.com');
-            console.log(response.data);
+    //  useEffect(() => {
+    //     const fetchWishlist = async () => {
+    //       try {
+    //         const response = await axios.get(`http://localhost:3010/api/user/wishlist/${userId}`);
+    //         console.log(response.data);
             
-          } catch (error) {
-            console.error('Error fetching wishlist:', error);
-          }
-        };
+    //       } catch (error) {
+    //         console.error('Error fetching wishlist:', error);
+    //       }
+    //     };
     
-        fetchWishlist();
-      }, []);
+    //     fetchWishlist();
+    //   }, []);
     
     return(
         <div  className="one-product">
