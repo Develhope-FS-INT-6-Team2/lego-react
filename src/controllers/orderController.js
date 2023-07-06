@@ -8,29 +8,29 @@ const Order = require("../models/order");
 // Add an order
 async function addOrder(req, res) {
   try {
-    const { userID, products, productCounts } = req.body;
+    const { email, products, productCounts } = req.body;
 
-    if (!userID) {
+    if (!email) {
       return res
         .status(400)
-        .json({ message: "Missing userID in the request body" });
+        .json({ message: "Missing email in the request body" });
+    }
+
+    // Find the corresponding user by email
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
     }
 
     // Create a new order instance
     const order = new Order({
-      userID,
+      userID: user._id,
       products,
       productCounts,
     });
 
     // Save the order to the database
     await order.save();
-
-    // Find the corresponding user and update the latestOrders field
-    const user = await User.findById(userID);
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
-    }
 
     user.latestOrders.push(order._id);
     await user.save();
@@ -45,12 +45,18 @@ async function addOrder(req, res) {
 
 // Get all orders by Id
 
-async function getAllOrdersById(req, res) {
+async function getAllOrdersByEmail(req, res) {
   try {
-    const { userID } = req.params;
+    const { email } = req.params;
 
-    // Fetch all orders for the specified userID from the database
-    const orders = await Order.find({ userID });
+    // Find the corresponding user by email
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Find all orders for the user by userID
+    const orders = await Order.find({ userID: user._id });
 
     res.status(200).json({ orders });
   } catch (error) {
@@ -129,7 +135,7 @@ async function cancelOrder(req, res) {
 
 module.exports = {
   addOrder,
-  getAllOrdersById,
+  getAllOrdersByEmail,
   getOrderById,
   updateOrderById,
   cancelOrder,

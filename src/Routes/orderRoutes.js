@@ -5,8 +5,8 @@ const orderController = require("../controllers/orderController");
 // Add an order
 router.post("/orders", orderController.addOrder);
 
-// get allOrders
-router.get("/orders", orderController.getAllOrdersById);
+// get allOrders by email
+router.get("/orders/:email", orderController.getAllOrdersByEmail);
 
 // get a single order
 router.get("/orders/:orderId", orderController.getOrderById);
