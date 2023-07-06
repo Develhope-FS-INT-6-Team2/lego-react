@@ -1,0 +1,11 @@
+.checkmark {
+    position: absolute;
+    top: 1.26rem;
+    right: 0.9375rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    display: block;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="13" viewBox="0 0 20 13" aria-hidden="true"><path d="M0 5.703L7.177 13 20 0h-4.476L7.177 8.442 4.476 5.723H2.238z" fill="rgb(0, 133, 55)" fill-rule="evenodd"></path></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}

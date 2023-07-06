@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import CartItem from "./CartItem";
-import { CartContext } from "./CartContext";
+import { CartContext } from "../context/CartContext";
 import "./CartMain.css";
 import productData from "./Products.json"; // replace with the correct path to your JSON file
 
@@ -34,6 +34,7 @@ function CartPageLeft() {
           {cartItems.map((item) => (
             <CartItem
               key={item.id}
+              id={item.id}
               title={item.title}
               price={item.price}
               image={item.image}

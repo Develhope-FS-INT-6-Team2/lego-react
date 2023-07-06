@@ -1,0 +1,79 @@
+.checkout-header {
+  position: relative;
+  background-color: rgb(255, 207, 0);
+  box-sizing: inherit;
+}
+.checkout-header .DomLink {
+  text-decoration: none;
+  color: inherit;
+}
+.checkout-header .DomLink:hover {
+  text-decoration: underline;
+}
+.checkout-header .MaxWidthContainer {
+  height: 5rem;
+  width: 100%;
+  max-width: 75rem;
+  padding: 0px 0.75rem;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0px auto;
+}
+.checkout-header .MaxWidthContainer .BackToBag-Container {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex: 1 1 0%;
+}
+.checkout-header .MaxWidthContainer .BackToBag-Container .ArrowBack {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  margin-right: 0.75rem;
+}
+.checkout-header .MaxWidthContainer .BackToBag-Container .BackToBag-Text {
+  color: inherit;
+  font-size: 0.875rem;
+  line-height: 1.1875rem;
+  font-weight: 500;
+  text-transform: inherit;
+}
+.checkout-header .MaxWidthContainer .Header-Logo-Container {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  color: rgb(0, 109, 183);
+  padding: 0.75rem;
+}
+.checkout-header .MaxWidthContainer .Header-Logo-Container .Header-logo {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  object-fit: cover;
+  margin-right: 0.75rem;
+  width: 3.0625rem;
+  height: auto;
+}
+.checkout-header .MaxWidthContainer .SecureCheckoutContainer {
+  display: flex;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  align-items: center;
+  flex: 1 1 0%;
+}
+.checkout-header .MaxWidthContainer .SecureCheckoutContainer .SecureCheckout-Icon-Wrapper {
+  margin-right: 0.75rem;
+}
+.checkout-header .MaxWidthContainer .SecureCheckoutContainer .SecureCheckout-Icon-Wrapper h1 {
+  color: inherit;
+  font-size: 0.875rem;
+  line-height: 1.1875rem;
+  font-weight: 500;
+  text-transform: inherit;
+}
+
+/*# sourceMappingURL=CheckoutHeader.css.map */

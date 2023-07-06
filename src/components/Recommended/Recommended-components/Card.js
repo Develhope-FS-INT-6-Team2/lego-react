@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CartContext } from '../../CartMain/CartContext'; // Provide the correct path to your CartContext.js file
+import { CartContext } from '../../context/CartContext'; // Provide the correct path to your CartContext.js file
 import heart from "../images/icons8-favorite-48.png"
 
 function Card(props){

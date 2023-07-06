@@ -1,0 +1,77 @@
+.checkout-header {
+  position: relative;
+  background-color: rgb(255, 207, 0);
+  box-sizing: inherit;
+  .DomLink {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .MaxWidthContainer {
+    height: 5rem;
+    width: 100%;
+    max-width: 75rem;
+    padding: 0px 0.75rem;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0px auto;
+    .BackToBag-Container {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      flex: 1 1 0%;
+      .ArrowBack {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        color: rgb(0, 0, 0);
+        margin-right: 0.75rem;
+      }
+      .BackToBag-Text {
+        color: inherit;
+        font-size: 0.875rem;
+        line-height: 1.1875rem;
+        font-weight: 500;
+        text-transform: inherit;
+      }
+    }
+    .Header-Logo-Container {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      color: rgb(0, 109, 183);
+      padding: 0.75rem;
+      .Header-logo {
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 100%;
+        object-fit: cover;
+        margin-right: 0.75rem;
+        width: 3.0625rem;
+        height: auto;
+      }
+    }
+    .SecureCheckoutContainer {
+      display: flex;
+      justify-content: flex-end;
+      -webkit-box-align: center;
+      align-items: center;
+      flex: 1 1 0%;
+      .SecureCheckout-Icon-Wrapper {
+        margin-right: 0.75rem;
+        h1 {
+          color: inherit;
+          font-size: 0.875rem;
+          line-height: 1.1875rem;
+          font-weight: 500;
+          text-transform: inherit;
+        }
+      }
+    }
+  }
+}
