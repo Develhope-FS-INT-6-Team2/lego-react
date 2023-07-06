@@ -1,34 +1,34 @@
-import React,{ useEffect, useState } from "react";
+import React,{ useEffect, useState ,useContext} from "react";
 import axios from "axios";
 import WishListItem from "./WishlistItem";
-
+import { LoginContext } from '../../context/LoginContext';
 import "./AccountPageWishlist.css";
-import OneSet from "../../FeaturedSets/featured-sets-components/OneSet";
 export default function AccountPageWishlist(){
-    
+    const { userId } = useContext(LoginContext);
     const [data,setData] = useState([{id:"",image:"",price:"",title:""}])
     const [products,setProducts] = useState([])
+   
     useEffect(() => {
+        console.log(userId);
         fetchWishlist();
-        console.log(data);
+        console.log(userId);
       }, []);
 
     
      const fetchWishlist = async () => {
         try {
-        const response = await axios.get('http://localhost:3010/api/user/wishlist/nuritest123@gmail.com');
-        // console.log(response.data);
-        setData(response.data)
-        console.log(data)
-        
-        
-        setTimeout(() => {
-            setProducts(response.data.map(item => (
-              
-                <WishListItem id={item.id} image={item.image} title={item.title} price={item.price} />
-              
-            )));
-          }, 500);
+        await axios.get(`http://localhost:3010/api/user/wishlist/${userId}`,)
+        .then((response)=>{
+        // setData(response.data)aa
+        // console.log(response.data)a
+        setProducts(response.data.map(item => (
+            <WishListItem id={item.id} image={item.image} title={item.title} price={item.price} />   
+        )));
+        }
+
+        )
+        .catch(er=>console.log(er))
+
         
         } catch (error) {
         console.error('Error fetching wishlist:', error);
@@ -37,7 +37,7 @@ export default function AccountPageWishlist(){
     // let products= data.map((item) =>{
     //     <OneSet id={item.id} image={item.image} title={item.title} price={item.price} />
     // })
-    console.log(data)
+    
 
     return( 
     
