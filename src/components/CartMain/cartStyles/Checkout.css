@@ -1,0 +1,400 @@
+.Checkout-Container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: inherit;
+}
+.Checkout-Container .Checkout-Maxwidth {
+  width: 100%;
+  max-width: 75rem;
+  margin: 0px auto;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  padding: 2.5rem 0.75rem;
+  background-color: rgb(245, 245, 245);
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper {
+  flex-flow: row wrap;
+  display: flex;
+  gap: 2.5rem;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .AddressForm-Footer {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 0.9375rem 0.9375rem 0.9375rem 0px;
+  margin-left: auto;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .AddressForm-Footer .AddressForm-Button-Container {
+  display: flex;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .AddressForm-Footer .AddressForm-Button-Container .AddressForm-Button-Wrapper {
+  font-size: 1rem;
+  margin-top: 1.25rem;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .AddressForm-Footer .AddressForm-Button-Container .AddressForm-Button-Wrapper span {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .AddressForm-Footer .AddressForm-Button-Container .AddressForm-Button-Wrapper .AddressForm-Button {
+  display: inline-block;
+  cursor: pointer;
+  height: 45px;
+  width: 155px;
+  border-radius: 480px;
+  padding: 0 16px;
+  background-color: #005595;
+  background: linear-gradient(#0067b2, #0067b2);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  /* Hover effect */
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .AddressForm-Footer .AddressForm-Button-Container .AddressForm-Button-Wrapper .AddressForm-Button:hover {
+  background-color: #004682;
+  background: linear-gradient(#0067b2, #004682);
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .AddressForm-Footer .AddressForm-Button-Container .AddressForm-Button-Wrapper .Payment-Button {
+  display: inline-block;
+  cursor: pointer;
+  height: 45px;
+  width: 200px;
+  border-radius: 480px;
+  padding: 0 16px;
+  background-color: #005595;
+  background: linear-gradient(#0067b2, #0067b2);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  /* Hover effect */
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .AddressForm-Footer .AddressForm-Button-Container .AddressForm-Button-Wrapper .Payment-Button:hover {
+  background-color: #004682;
+  background: linear-gradient(#0067b2, #004682);
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content {
+  flex-basis: 60%;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .HorizontalSeparator {
+  border: 0px solid transparent;
+  background-color: rgb(224, 224, 224);
+  height: 1px;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .Stepstyles-Container {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 0.625rem 0px;
+  box-sizing: inherit;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .Stepstyles-Container .StepBadge-Wrap {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .Stepstyles-Container .StepBadge-Wrap .StepBadge-Icon {
+  width: 1.875rem;
+  height: 1.875rem;
+  background-color: rgb(0, 109, 183);
+  border: 1px solid rgb(0, 109, 183);
+  border-radius: 50%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .Stepstyles-Container .StepBadge-Wrap .StepBadge-Icon .StepBadge-Icon-Text {
+  color: rgb(255, 255, 255);
+  font-size: 1.25rem;
+  line-height: 1.9375rem;
+  font-weight: 500;
+  text-transform: inherit;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .Stepstyles-Container .StepBadge-Title {
+  color: rgb(0, 0, 0);
+  font-size: 1.25rem;
+  line-height: 1.9375rem;
+  font-weight: 500;
+  text-transform: inherit;
+  margin-left: 0.9375rem;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .Delivery-Details-Wrapper {
+  position: relative;
+  pointer-events: auto;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .Delivery-Details-Wrapper h3 {
+  color: inherit;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  text-transform: inherit;
+  margin-bottom: 0px;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .Delivery-Details-Wrapper .address-form {
+  display: flex;
+  flex-flow: row wrap;
+  box-sizing: inherit;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .Delivery-Details-Wrapper .address-form .FormInput-Wrapper {
+  flex-basis: 50%;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .Delivery-Details-Wrapper .address-form .FormInput-Wrapper .FormInput-Input-Wrapper {
+  padding: 0.9375rem 0.9375rem 0.9375rem 0px;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .Delivery-Details-Wrapper .address-form .FormInput-Wrapper .FormInput-Input-Wrapper .FormInput-Label {
+  position: relative;
+  width: 100%;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .Delivery-Details-Wrapper .address-form .FormInput-Wrapper .FormInput-Input-Wrapper .FormInput-Label label {
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  width: 100%;
+  position: relative;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .Delivery-Details-Wrapper .address-form .FormInput-Wrapper .FormInput-Input-Wrapper .FormInput-Label input {
+  flex-grow: 1;
+  background: rgb(255, 255, 255);
+  color: rgb(44, 44, 44);
+  height: 2rem;
+  padding: 1.125rem 2.8125rem 0px 1.25rem;
+  border: 1px solid rgb(224, 224, 224);
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .Delivery-Details-Wrapper .address-form .FormInput-Wrapper .FormInput-Input-Wrapper .FormInput-Label input:focus ~ span, .Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .Delivery-Details-Wrapper .address-form .FormInput-Wrapper .FormInput-Input-Wrapper .FormInput-Label input.input-has-value ~ span {
+  transform: translate(1px, -0.4375rem);
+  font-size: 0.8em;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Content .Delivery-Details-Wrapper .address-form .FormInput-Wrapper .FormInput-Input-Wrapper .FormInput-Label span {
+  appearance: none;
+  display: block;
+  position: absolute;
+  top: 0.9375rem;
+  left: 1.25rem;
+  transform-origin: left top;
+  transition: all 0.1s ease-in-out 0s;
+  transform: translate(0px, 0px);
+  color: rgb(117, 117, 117);
+  font-size: 1em;
+  white-space: nowrap;
+  pointer-events: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 90%;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar {
+  flex-basis: calc(40% - 2.5rem);
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  position: sticky;
+  padding: 1.875rem 0px;
+  height: 100%;
+  top: 0.75rem;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.625rem;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .Loading-Wrapper {
+  position: relative;
+  pointer-events: auto;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .Loading-Wrapper .SidebarSummary {
+  padding: 0px 1.25rem 1.25rem;
+  border: 1px solid rgb(224, 224, 224);
+  margin-bottom: 1.25rem;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .Loading-Wrapper .SidebarSummary h2 {
+  border-bottom: 1px solid rgb(224, 224, 224);
+  padding: 1.25rem 0px 0.9375rem;
+  margin: 0px 0px 1.25rem;
+  color: inherit;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  text-transform: inherit;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .Loading-Wrapper .SidebarSummary .LineText {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .Loading-Wrapper .SidebarSummary .LineText .LineText-Title {
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1.5625rem;
+  font-weight: 400;
+  text-transform: inherit;
+  margin: 0.3125rem 0px;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .Loading-Wrapper .SidebarOrderDetails {
+  border: 1px solid rgb(224, 224, 224);
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .Loading-Wrapper .SidebarOrderDetails .ToggleButton {
+  width: 100%;
+  cursor: pointer;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .Loading-Wrapper .SidebarOrderDetails .ToggleButton .OrderDetailAccordion-Title {
+  width: 100%;
+  max-width: 100rem;
+  margin: 0px auto;
+  padding: 1.25rem 1.25rem 0.9375rem;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .OrderItems {
+  margin-bottom: 0px;
+  padding: 0px 1.25rem;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .OrderItems .Product-Container {
+  border-bottom: none;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 1.25rem 0px;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .OrderItems .Product-Container .Product-Wrapper {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  position: relative;
+  width: calc(100% - 2rem);
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .OrderItems .Product-Container .Product-Wrapper .Product-Image {
+  width: 6rem;
+  margin-right: 2.5rem;
+  height: 100%;
+  text-align: center;
+  flex-shrink: 0;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .OrderItems .Product-Container .Product-Wrapper .Product-Image .Product-Image-Style {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .OrderItems .Product-Container .Product-Wrapper .Product-Info {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .OrderItems .Product-Container .Product-Wrapper .Product-Info .Product-Name {
+  display: flex;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .OrderItems .Product-Container .Product-Wrapper .Product-Info .Product-Name .Product-Name-Style {
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  line-height: 1.5625rem;
+  font-weight: 500;
+  text-transform: inherit;
+  margin: 0.625rem 0px;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .OrderItems .Product-Container .Product-Wrapper .Product-Info .Product-Price {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.Checkout-Container .Checkout-Maxwidth .Checkout-Wrapper .Checkout-Sidebar .OrderItems .Product-Container .Product-Wrapper .Product-Info .Product-Price .Product-Price-Style {
+  width: 100%;
+}
+.Checkout-Container .payment-accordion-wrapper {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(224, 224, 224);
+  margin-top: 0.75rem;
+}
+.Checkout-Container .payment-accordion-wrapper .payment-accordion-header {
+  width: 100%;
+  cursor: pointer;
+  border-width: 0px;
+  border-style: solid;
+  border-color: rgb(224, 224, 224);
+  margin: 0px;
+}
+.Checkout-Container .payment-accordion-wrapper .payment-accordion-header .radio-input-label {
+  display: flex;
+  flex-flow: row wrap;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0.9375rem 0px;
+  cursor: pointer;
+}
+.Checkout-Container .payment-accordion-wrapper .payment-accordion-header .radio-input-label .radio-input-container {
+  margin-right: 1.125rem;
+}
+.Checkout-Container .payment-accordion-wrapper .payment-accordion-header .radio-input-label .radio-input-container .radio-input {
+  border: 1px solid rgb(224, 224, 224);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 1px 1px inset;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.Checkout-Container .payment-accordion-wrapper .payment-accordion-header .payment-accordion-header-content {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  flex: 1 1 0%;
+  overflow: hidden;
+  text-align: left;
+}
+.Checkout-Container .payment-accordion-wrapper .payment-accordion-header .payment-accordion-header-content .payment-accordion-header-title {
+  opacity: 1;
+  transition: opacity 0.3s ease-out 0s;
+}
+.Checkout-Container .payment-accordion-wrapper .payment-accordion-header .payment-accordion-header-content .payment-accordion-icon-container {
+  display: flex;
+  flex: 1 1 0%;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  margin-left: 0.3125rem;
+  margin-bottom: -0.3125rem;
+  height: 100%;
+  overflow: hidden;
+}
+.Checkout-Container .payment-accordion-wrapper .payment-accordion-header .payment-accordion-header-content .payment-accordion-icon-container .custom-coin-logo {
+  display: block;
+  max-height: 100%;
+  height: 1.5625rem;
+  margin-left: 0.3125rem;
+  margin-bottom: 0.3125rem;
+  max-width: 100%;
+  padding-right: 10px;
+}
+
+/*# sourceMappingURL=Checkout.css.map */

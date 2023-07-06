@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineCheck } from "react-icons/ai";
 import { BsCheckCircle } from "react-icons/bs";
-import { CartContext } from "./CartContext"; // make sure to import CartContext
+import { CartContext } from "../context/CartContext"; // make sure to import CartContext
 
 function CartPageRight() {
   const { cartItems } = useContext(CartContext);
@@ -34,7 +34,7 @@ function CartPageRight() {
           <h1>${totalPrice}</h1> {/* now it's dynamic */}
         </div>
 
-        <Link to="/LoginPage" className="checkout">
+        <Link to="/checkout" className="checkout">
           <button>
             <BsCheckCircle className="checkout-icon" />
             <h1>Checkout Securely</h1>

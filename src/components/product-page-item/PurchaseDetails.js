@@ -4,7 +4,7 @@ import { GrNext } from "react-icons/gr";
 import { BsBoxSeam } from "react-icons/bs";
 import { SiReacthookform } from "react-icons/si";
 import { BiErrorAlt } from "react-icons/bi";
-import { CartContext } from "../CartMain/CartContext";
+import { CartContext } from "../context/CartContext";
 
 export function PurchaseDetails(props) {
   let { title, price, id } = props;

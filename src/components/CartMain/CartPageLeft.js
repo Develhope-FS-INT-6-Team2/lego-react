@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import CartItem from "./CartItem";
-import { CartContext } from "./CartContext";
+import { CartContext } from "../context/CartContext";
 import "./CartMain.css";
 import productData from "./Products.json"; // replace with the correct path to your JSON file
 
