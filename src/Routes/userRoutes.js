@@ -26,7 +26,7 @@ router.post('/register', registerUser);
 router.post('/login', loginUser);
 
 // Get wishlist by user ID
-router.get('/wishlist/:userID', getWishlistByUserID);
+router.get('/wishlist/:email', getWishlistByUserID);
 
 // Add a product to the wishlist
 router.post('/wishlist/add', addProductToWishlist);

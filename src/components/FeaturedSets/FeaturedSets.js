@@ -1,12 +1,11 @@
-import React, { useState ,useEffect} from "react";
+import React, { useState ,useEffect, useContext} from "react";
 import axios from "axios";
 import "./FeaturedSets.css";
 
 import OneSet from "./featured-sets-components/OneSet";
 import FeaturedSetsLeftButton from "./featured-sets-components/FeaturedSetsLeftButton";
 import FeaturedSetsRightButton from "./featured-sets-components/FeaturedSetsRightButton";
-
-
+import { LoginContext } from '../context/LoginContext';
 //library
 import {Swiper, SwiperSlide} from "swiper/react";
 import { FreeMode, Navigation } from "swiper";
@@ -17,17 +16,17 @@ import "swiper/css/navigation";
 
 function FeaturedSets(){
     let [data,setData] = useState([{id:"",image:"",price:"",title:""}])
-    
+    const { userId } = useContext(LoginContext);
     useEffect(() => {
         fetchData();
-        
+        console.log(userId)
       }, []);
     
       const fetchData = async () => {
         try {
           const response = await axios.get('http://localhost:3010/api/product/products');
           setData(response.data.slice(0,12));
-          console.log(data)
+          
         } catch (error) {
           console.error('Error fetching data:', error);
         }
