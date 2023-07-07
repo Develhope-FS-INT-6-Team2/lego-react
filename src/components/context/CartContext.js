@@ -31,6 +31,26 @@ export function CartProvider({ children }) {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
+  const createOrder = async (email, products, productCounts) => {
+    try {
+      for (let i = 0; i < products.length; i++) {
+        const product = products[i];
+        const productCount = productCounts[i];
+  
+        const response = await axios.post("http://localhost:3010/api/order/orders", {
+          email,
+          products: product,
+          productCounts: productCount,
+        });
+  
+        console.log("Order created successfully for product:", product, response.data);
+      }
+    } catch (error) {
+      console.error("Error creating order:", error);
+    }
+  };
+  
+
   const findProductById = (id) => {
     const product = products.find(
       (product) => String(product.id) === String(id)
@@ -87,7 +107,13 @@ export function CartProvider({ children }) {
 
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, updateCartItem }}
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        updateCartItem,
+        createOrder,
+      }}
     >
       {children}
     </CartContext.Provider>
