@@ -27,13 +27,13 @@ function Account() {
       {/* Display the dropdown only if the user is logged in */}
       {userId && (
         <div className="account">
-         
-        <img
+        <Link to="/account"><img
           src="../assets/icons/header/account-icon.png"
           height="36"
           width="36"
           alt="Account"
-        />
+        /></Link>
+        
         <span className='span-open-button' onClick={()=>{logout(); setUserID(false);}}>Logout</span>
       
         {/* onClick={()=>{logout(); setUserID(false);}} */}
