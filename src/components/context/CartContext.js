@@ -31,6 +31,26 @@ export function CartProvider({ children }) {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
+  const createOrder = async (email, products, productCounts) => {
+    try {
+      for (let i = 0; i < products.length; i++) {
+        const product = products[i];
+        const productCount = productCounts[i];
+  
+        const response = await axios.post("http://localhost:3010/api/order/orders", {
+          email,
+          products: product,
+          productCounts: productCount,
+        });
+  
+        console.log("Order created successfully for product:", product, response.data);
+      }
+    } catch (error) {
+      console.error("Error creating order:", error);
+    }
+  };
+  
+
   const findProductById = (id) => {
     const product = products.find(
       (product) => String(product.id) === String(id)
@@ -60,6 +80,7 @@ export function CartProvider({ children }) {
       if (product) {
         setCartItems([...cartItems, { ...product, quantity: 1 }]);
         console.log("Product added to cart:", product);
+        alert("Product added to cart:", product);
       } else {
         console.log("Product not found, cannot add to cart");
       }
@@ -68,7 +89,7 @@ export function CartProvider({ children }) {
 
   const removeFromCart = (productId) => {
     setCartItems(cartItems.filter((item) => item.id !== productId));
-    console.log("Product removed from cart with ID:", productId);
+    console.log("Product removed from cart with ID:", productId);    
   };
 
   const updateCartItem = (productId, newQuantity) => {
@@ -87,7 +108,13 @@ export function CartProvider({ children }) {
 
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, updateCartItem }}
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        updateCartItem,
+        createOrder,
+      }}
     >
       {children}
     </CartContext.Provider>
