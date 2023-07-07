@@ -24,7 +24,7 @@ async function addOrder(req, res) {
     // Create a new order instance
     const order = new Order({
       userID: user._id,
-      products, // Expecting an array of product objects
+      products: products
     });
 
     // Save the order to the database

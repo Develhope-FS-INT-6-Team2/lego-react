@@ -80,6 +80,7 @@ export function CartProvider({ children }) {
       if (product) {
         setCartItems([...cartItems, { ...product, quantity: 1 }]);
         console.log("Product added to cart:", product);
+        alert("Product added to cart:", product);
       } else {
         console.log("Product not found, cannot add to cart");
       }
@@ -88,7 +89,7 @@ export function CartProvider({ children }) {
 
   const removeFromCart = (productId) => {
     setCartItems(cartItems.filter((item) => item.id !== productId));
-    console.log("Product removed from cart with ID:", productId);
+    console.log("Product removed from cart with ID:", productId);    
   };
 
   const updateCartItem = (productId, newQuantity) => {

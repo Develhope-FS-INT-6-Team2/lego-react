@@ -12,7 +12,7 @@ export default function AccountPageWishlist(){
         console.log(userId);
         fetchWishlist();
         console.log(userId);
-      }, []);
+      },[]);
 
     
      const fetchWishlist = async () => {
