@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function RegistrationForm({ onRegistration, registeredUser, error }) {
+function RegistrationForm({ onRegistration, registeredUser, error  }) {
+  
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [country, setCountry] = useState('');
@@ -110,6 +113,8 @@ function RegistrationForm({ onRegistration, registeredUser, error }) {
     setYear('');
     setDobError('');
     alert('Your account has been registered successfully');
+    
+    navigate('/LoginPage'); 
   };
 
   return (
