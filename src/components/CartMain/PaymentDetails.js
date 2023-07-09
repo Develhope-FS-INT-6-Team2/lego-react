@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 
 function PaymentDetails() {
-  const { cartItems, createOrder } = useContext(CartContext);
+  const { cartItems, setCartItems} = useContext(CartContext);
   const { userId } = useContext(LoginContext);
   const navigate = useNavigate();  
 
@@ -47,6 +47,10 @@ function PaymentDetails() {
 
       console.log("Order created successfully:", response.data);
       alert("Order created successfully!");
+
+      // Empty the cart
+      setCartItems([]); // Empty the cart after order creation
+
       // Redirect to /account
       navigate("/account");
     } catch (error) {

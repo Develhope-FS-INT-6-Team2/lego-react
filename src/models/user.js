@@ -1,3 +1,4 @@
+//user.js
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
@@ -5,7 +6,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
 
   wishlist: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
-  basket: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
+  cart: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Cart' }],
   latestOrders: [{ type: mongoose.Schema.Types.ObjectId, ref: "Order" }],
 });
 

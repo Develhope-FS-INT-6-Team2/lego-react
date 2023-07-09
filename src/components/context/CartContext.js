@@ -1,6 +1,7 @@
-//CartContext.js
-import React, { useState, createContext, useEffect } from "react";
+// CartContext.js
+import React, { useState, createContext, useEffect, useContext } from "react";
 import axios from "axios";
+import { LoginContext } from "../context/LoginContext";
 
 export const CartContext = createContext();
 
@@ -8,9 +9,56 @@ export function CartProvider({ children }) {
   const initialCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
   const [cartItems, setCartItems] = useState(initialCartItems);
   const [products, setProducts] = useState([]);
+  const { userId, isLoggedIn } = useContext(LoginContext);
 
   useEffect(() => {
-    // Fetch all products from API when component mounts
+    if (!isLoggedIn) {
+      setCartItems(JSON.parse(localStorage.getItem("cartItems")) || []);
+    }
+  }, [isLoggedIn]);
+
+  useEffect(() => {
+    const fetchCartItems = async () => {
+      if (userId) {
+        try {
+          const response = await axios.get(
+            `http://localhost:3010/api/cart/${userId}`
+          );
+          setCartItems(response.data); // updated here
+        } catch (error) {
+          console.error("Error fetching cart items:", error);
+        }
+      } else {
+        const localCartItems =
+          JSON.parse(localStorage.getItem("cartItems")) || [];
+        setCartItems(localCartItems);
+      }
+    };
+
+    fetchCartItems();
+  }, [userId]);
+
+  useEffect(() => {
+    if (userId) {
+      const updateCartItems = async () => {
+        try {
+          console.log("userId:", userId);
+          console.log("cartItems:", cartItems);
+          await axios.put(`http://localhost:3010/api/cart/${userId}`, {
+            cartItems: cartItems,
+          });
+        } catch (error) {
+          console.error("Error updating cart items:", error);
+        }
+      };
+
+      updateCartItems();
+    } else {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }
+  }, [cartItems, userId]);
+
+  useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
@@ -27,33 +75,19 @@ export function CartProvider({ children }) {
   }, []);
 
   useEffect(() => {
-    // Save cartItems to localStorage whenever it changes
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    if (!isLoggedIn) {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }
   }, [cartItems]);
 
-  const createOrder = async (email, products, productCounts) => {
-    try {
-      for (let i = 0; i < products.length; i++) {
-        const product = products[i];
-        const productCount = productCounts[i];
-  
-        const response = await axios.post("http://localhost:3010/api/order/orders", {
-          email,
-          products: product,
-          productCounts: productCount,
-        });
-  
-        console.log("Order created successfully for product:", product, response.data);
-      }
-    } catch (error) {
-      console.error("Error creating order:", error);
-    }
+  const clearCart = () => {
+    setCartItems([]);
+    localStorage.removeItem("cartItems");
   };
-  
 
   const findProductById = (id) => {
     const product = products.find(
-      (product) => String(product.id) === String(id)
+      (product) => String(product.id) === String(id) // kept as is
     );
     console.log("Product found by ID:", product);
     return product;
@@ -63,13 +97,13 @@ export function CartProvider({ children }) {
     console.log("Adding product to cart with ID:", productId);
 
     const existingCartItem = cartItems.find(
-      (item) => String(item.id) === String(productId)
+      (item) => String(item.id) === String(productId) // kept as is
     );
 
     if (existingCartItem) {
       setCartItems(
         cartItems.map((item) =>
-          String(item.id) === String(productId)
+          String(item.id) === String(productId) // kept as is
             ? { ...item, quantity: item.quantity + 1 }
             : item
         )
@@ -88,14 +122,15 @@ export function CartProvider({ children }) {
   };
 
   const removeFromCart = (productId) => {
-    setCartItems(cartItems.filter((item) => item.id !== productId));
-    console.log("Product removed from cart with ID:", productId);    
+    setCartItems(cartItems.filter((item) => item.id !== productId)); // kept as is
+    console.log("Product removed from cart with ID:", productId);
   };
 
   const updateCartItem = (productId, newQuantity) => {
     setCartItems(
-      cartItems.map((item) =>
-        item.id === productId ? { ...item, quantity: newQuantity } : item
+      cartItems.map(
+        (item) =>
+          item.id === productId ? { ...item, quantity: newQuantity } : item // kept as is
       )
     );
     console.log(
@@ -113,7 +148,8 @@ export function CartProvider({ children }) {
         addToCart,
         removeFromCart,
         updateCartItem,
-        createOrder,
+        setCartItems,
+        clearCart,
       }}
     >
       {children}
