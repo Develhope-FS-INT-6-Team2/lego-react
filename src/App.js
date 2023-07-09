@@ -22,7 +22,7 @@ function App() {
   return (
     <Router>
       <div>
-        <LoginProvider isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
+        <LoginProvider isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} >
 
           <CartProvider>
             <Routes>
@@ -46,7 +46,6 @@ function App() {
 }
 
 export default App;
-
 
 
 
