@@ -1,0 +1,113 @@
+.ModalWindow {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  transform: scale(1) translateY(0px);
+  height: auto;
+  width: auto;
+  max-height: 95%;
+  max-width: 82.5rem;
+  background-color: rgb(255, 255, 255);
+  overflow-y: auto;
+  box-sizing: inherit;
+  &__CloseButtonWrapper {
+    position: absolute;
+    right: 0px;
+    z-index: 2;
+    &__StyledButton {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      color: inherit;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+  &__Content {
+    width: 36.5rem;
+    &__Header {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      padding: 0.9375rem 1.25rem;
+      &__AddedIcon {
+        color: rgb(255, 255, 255);
+        border-radius: 50%;
+        border: 2px solid rgb(255, 255, 255);
+        background-color: rgb(0, 133, 55);
+        padding: 0.4375rem;
+        height: 2.1875rem;
+        width: 2.1875rem;
+        margin-right: 0.75rem;
+      }
+      &__Title {
+        font-size: 1.25rem;
+        line-height: 1.9375rem;
+        margin: 0px;
+        font-weight: 400;
+        text-transform: inherit;
+      }
+    }
+    &__Body {
+      background-color: rgb(248, 248, 248);
+      padding: 1.25rem;
+      margin-bottom: 0px;
+      &__ItemRow {
+        display: flex;
+        margin-bottom: 0.9375rem;
+        &__ImageContainer {
+          width: 6.25rem;
+          height: 6.25rem;
+          border: 1px solid rgb(224, 224, 224);
+          padding: 0.3125rem;
+          margin-right: 0.75rem;
+          background-color: rgb(255, 255, 255);
+          &__ProductImage {
+            height: 100%;
+            width: 100%;
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 100%;
+            object-fit: contain;
+          }
+        }
+        &__ProductTitle {
+          margin: 0px 0px 0.625rem;
+          color: rgb(0, 0, 0);
+          font-size: 1rem;
+          line-height: 1.5625rem;
+          font-weight: 500;
+          text-transform: inherit;
+          span {
+            color: rgb(0, 0, 0);
+            font-size: 1rem;
+            line-height: 1.5625rem;
+            font-weight: 500;
+            text-transform: inherit;
+          }
+        }
+      }
+      &__ActionsContainer {
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        box-sizing: inherit;
+        &__StyledButton {
+          display: inline-block;
+          width: calc(50% - 0.9375rem);
+          max-width: 16.25rem;
+          margin-right: 0.9375rem;
+          margin-bottom: 0px;
+        }
+        &__StyledLink {
+          display: inline-block;
+          width: calc(50% - 0.9375rem);
+          max-width: 16.25rem;
+        }
+      }
+    }
+  }
+}
