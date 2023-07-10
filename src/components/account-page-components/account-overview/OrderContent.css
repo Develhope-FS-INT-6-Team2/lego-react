@@ -1,11 +1,12 @@
 .OrderItems {
   margin-bottom: 0px;
   padding: 0px 1.25rem;
+  cursor: pointer;
 }
 .OrderItems .Product-Container {
   display: flex;
   justify-content: space-between;
-  gap: 10rem;
+  gap: 2rem;
   border-bottom: none;
   -webkit-box-align: center;
   align-items: center;
@@ -30,6 +31,7 @@
   background-color: rgb(0, 109, 183);
   color: rgb(255, 255, 255);
   border-color: rgb(0, 109, 183);
+  margin-right: 1rem;
 }
 .OrderItems .Product-Container .OrderInformation {
   flex: 1;
@@ -46,6 +48,7 @@
   flex-direction: column;
   margin-bottom: 10px;
   gap: 1rem;
+  border-top: 1px solid grey;
 }
 .OrderItems .Product-Container .OrderInformation .OrderContainer .OrderHeader .OrderId,
 .OrderItems .Product-Container .OrderInformation .OrderContainer .OrderHeader .OrderDate {
@@ -55,10 +58,12 @@
 .OrderItems .Product-Container .Product-Wrapper {
   display: flex;
   flex-direction: row;
+  align-items: center;
   -webkit-box-pack: start;
   justify-content: flex-start;
   position: relative;
   width: calc(100% - 2rem);
+  border-top: 1px solid grey;
 }
 .OrderItems .Product-Container .Product-Wrapper .Product-Image {
   width: 6rem;
@@ -111,6 +116,30 @@
 .SidebarSummary {
   flex: 2;
   margin-right: 20px;
+}
+.SidebarSummary h2 {
+  padding-left: 20px;
+}
+
+.OrderHeader {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 10px;
+  gap: 1rem;
+}
+.OrderHeader .OrderId,
+.OrderHeader .OrderDate {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.Product-Container {
+  border-top: 1px solid rgb(205, 203, 203);
+  background-color: #edeaea;
+}
+.Product-Container:hover {
+  background-color: white;
 }
 
 /*# sourceMappingURL=OrderContent.css.map */
