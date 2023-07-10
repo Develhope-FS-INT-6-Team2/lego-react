@@ -2,6 +2,7 @@
 import React, { useState, createContext, useEffect, useContext } from "react";
 import axios from "axios";
 import { LoginContext } from "../context/LoginContext";
+import AddtobagPopup from "../AddtobagPopup/AddtobagPopup"; // Make sure to import the modal
 
 export const CartContext = createContext();
 
@@ -10,6 +11,8 @@ export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState(initialCartItems);
   const [products, setProducts] = useState([]);
   const { userId, isLoggedIn } = useContext(LoginContext);
+  const [isModalOpen, setModalOpen] = useState(false); // state to manage the modal
+  const [lastAddedItem, setLastAddedItem] = useState(null); // state to manage the last added item
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -24,7 +27,7 @@ export function CartProvider({ children }) {
           const response = await axios.get(
             `http://localhost:3010/api/cart/${userId}`
           );
-          setCartItems(response.data); // updated here
+          setCartItems(response.data);
         } catch (error) {
           console.error("Error fetching cart items:", error);
         }
@@ -97,24 +100,29 @@ export function CartProvider({ children }) {
     console.log("Adding product to cart with ID:", productId);
 
     const existingCartItem = cartItems.find(
+
       (item) => String(item._id) === String(productId) // kept as is
+
     );
 
     if (existingCartItem) {
       setCartItems(
         cartItems.map((item) =>
-          String(item.id) === String(productId) // kept as is
+          String(item.id) === String(productId)
             ? { ...item, quantity: item.quantity + 1 }
             : item
         )
       );
       console.log("Product already in cart, increased quantity");
+      setLastAddedItem({ ...existingCartItem, quantity: 1 }); // Set the last added item
+      setModalOpen(true); // Open the modal
     } else {
       const product = findProductById(productId);
       if (product) {
         setCartItems([...cartItems, { ...product, quantity: 1 }]);
+        setLastAddedItem({ ...product, quantity: 1 }); // Set the last added item
+        setModalOpen(true); // Open the modal
         console.log("Product added to cart:", product);
-        alert("Product added to cart:", product);
       } else {
         console.log("Product not found, cannot add to cart");
       }
@@ -153,6 +161,13 @@ export function CartProvider({ children }) {
       }}
     >
       {children}
+      {/* The modal is conditionally rendered here */}
+      {isModalOpen && (
+        <AddtobagPopup
+          lastAddedItem={lastAddedItem}
+          onClose={() => setModalOpen(false)}
+        />
+      )}
     </CartContext.Provider>
   );
 }
