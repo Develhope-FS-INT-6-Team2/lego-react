@@ -1,12 +1,12 @@
 import React,{useState, useContext, useEffect} from "react";
 import { LoginContext } from '../../context/LoginContext';
 import axios from  "axios"
-
+import { CartContext } from '../../context/CartContext'; // Provide the correct path to your CartContext.js file
 
 function OneSet(props){
     let{image, title, price, id} = props;
     const { userId } = useContext(LoginContext);
-
+    const { addToCart } = useContext(CartContext); // Accessing addToCart function from context
     
    
     // const clickFeaturedSets = () => {
@@ -63,7 +63,7 @@ function OneSet(props){
             className="add-to-bag-button"
             type="button"
             value="Add to Bag"
-            onClick={handleAddWishlist}
+            onClick={() => addToCart(id)}
             />
         </div>
     );
