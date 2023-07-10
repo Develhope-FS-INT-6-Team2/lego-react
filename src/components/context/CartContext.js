@@ -100,7 +100,9 @@ export function CartProvider({ children }) {
     console.log("Adding product to cart with ID:", productId);
 
     const existingCartItem = cartItems.find(
-      (item) => String(item.id) === String(productId)
+
+      (item) => String(item._id) === String(productId) // kept as is
+
     );
 
     if (existingCartItem) {
