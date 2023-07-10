@@ -33,7 +33,7 @@ function CartPageLeft() {
         <div className="cart-items-body">
           {cartItems.map((item) => (
             <CartItem
-              key={item.id}
+              key={item._id}
               id={item.id}
               title={item.title}
               price={item.price}

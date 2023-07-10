@@ -8,6 +8,7 @@ const cors = require("cors");
 const userRoutes = require("../Routes/userRoutes");
 const productRoutes = require("../Routes/productRoutes");
 const orderRoutes = require("../Routes/orderRoutes");
+const cartRoutes = require('../Routes/cartRoutes');
 
 const app = express();
 const PORT = 3010;
@@ -34,6 +35,7 @@ async function connectToDatabase() {
 app.use("/api/user", userRoutes);
 app.use("/api/product", productRoutes);
 app.use("/api/order", orderRoutes);
+app.use('/api/', cartRoutes);
 
 app.listen(PORT, () => {
   console.log(
