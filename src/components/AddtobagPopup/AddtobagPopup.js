@@ -1,15 +1,21 @@
-//src\components\AddtobagPopup\AddtobagPopup.js
 import React from "react";
 import "./AddtobagPopup.css";
+import { Link } from "react-router-dom";
 
-
-
-export default function AddtobagPopup() {
+export default function AddtobagPopup({ lastAddedItem, onClose, isVisible }) {
+  const handleOverlayClick = (event) => {
+    if (event.target === event.currentTarget) {
+      onClose();
+    }
+  };
   return (
-    <dialog data-modal>
+    <aside className={`ModalOverlay ${isVisible ? "visible" : ""}`} onClick={handleOverlayClick}>
       <div className="ModalWindow">
         <div className="ModalWindow__CloseButtonWrapper">
-          <button className="ModalWindow__CloseButtonWrapper__StyledButton">
+          <button
+            className="ModalWindow__CloseButtonWrapper__StyledButton"
+            onClick={onClose}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="17"
@@ -50,38 +56,42 @@ export default function AddtobagPopup() {
             <div className="ModalWindow__Content__Body__ItemRow">
               <div className="ModalWindow__Content__Body__ItemRow__ImageContainer">
                 <img
-                  src="#"
+                  src={lastAddedItem?.image}
                   className="ModalWindow__Content__Body__ItemRow__ImageContainer__ProductImage"
                 ></img>
               </div>
               <div>
                 <p className="ModalWindow__Content__Body__ItemRow__ProductTitle">
-                  <span className="">
-                    PEUGEOT 9X8 24H Le Mans Hybrid Hypercar
-                  </span>
+                  <span className="">{lastAddedItem?.title}</span>
                 </p>
                 <p className="ModalWindow__Content__Body__ItemRow__ProductPrice">
-                  <span className="">£169.99</span>
+                  <span className="">£{lastAddedItem?.price}</span>
                 </p>
                 <p className="ModalWindow__Content__Body__ItemRow__ProductQuantity">
-                  Qty: 1
+                  Qty: {lastAddedItem?.quantity}
                 </p>
               </div>
             </div>
             <div className="ModalWindow__Content__Body__ActionsContainer">
               <button
+                id="continueShopping"
                 className="ModalWindow__Content__Body__ActionsContainer__StyledButton"
-                onClick={""}
+                onClick={onClose}
               >
                 Continue Shopping
               </button>
-              <a className="ModalWindow__Content__Body__ActionsContainer__StyledLink">
-                View My Bag
-              </a>
+
+              <Link
+                to="/cart"
+                onClick={onClose}
+                className="ModalWindow__Content__Body__ActionsContainer__StyledLink"
+              >
+                <a>View My Bag</a>
+              </Link>
             </div>
           </div>
         </div>
       </div>
-    </dialog>
+    </aside>
   );
 }
