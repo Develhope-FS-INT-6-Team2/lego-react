@@ -1,0 +1,116 @@
+.OrderItems {
+  margin-bottom: 0px;
+  padding: 0px 1.25rem;
+}
+.OrderItems .Product-Container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10rem;
+  border-bottom: none;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 1.25rem 0px;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+.OrderItems .Product-Container .cancel-order-button {
+  display: inline-block;
+  width: auto;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  border-collapse: collapse;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.1875rem;
+  background-color: rgb(0, 109, 183);
+  color: rgb(255, 255, 255);
+  border-color: rgb(0, 109, 183);
+}
+.OrderItems .Product-Container .OrderInformation {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+}
+.OrderItems .Product-Container .OrderInformation .OrderContainer {
+  margin-bottom: 20px;
+}
+.OrderItems .Product-Container .OrderInformation .OrderContainer .OrderHeader {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 10px;
+  gap: 1rem;
+}
+.OrderItems .Product-Container .OrderInformation .OrderContainer .OrderHeader .OrderId,
+.OrderItems .Product-Container .OrderInformation .OrderContainer .OrderHeader .OrderDate {
+  font-size: 14px;
+  font-weight: bold;
+}
+.OrderItems .Product-Container .Product-Wrapper {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  position: relative;
+  width: calc(100% - 2rem);
+}
+.OrderItems .Product-Container .Product-Wrapper .Product-Image {
+  width: 6rem;
+  margin-right: 2.5rem;
+  height: 100%;
+  text-align: center;
+  flex-shrink: 0;
+}
+.OrderItems .Product-Container .Product-Wrapper .Product-Image .Product-Image-Style {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+.OrderItems .Product-Container .Product-Wrapper .Product-Info {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.OrderItems .Product-Container .Product-Wrapper .Product-Info .Product-Name {
+  display: flex;
+}
+.OrderItems .Product-Container .Product-Wrapper .Product-Info .Product-Name .Product-Name-Style {
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  line-height: 1.5625rem;
+  font-weight: 500;
+  text-transform: inherit;
+  margin: 0.625rem 0px;
+}
+.OrderItems .Product-Container .Product-Wrapper .Product-Info .Product-Price {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.OrderItems .Product-Container .Product-Wrapper .Product-Info .Product-Price .Product-Price-Style {
+  width: 100%;
+}
+
+.ContentWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+}
+
+.SidebarSummary {
+  flex: 2;
+  margin-right: 20px;
+}
+
+/*# sourceMappingURL=OrderContent.css.map */
