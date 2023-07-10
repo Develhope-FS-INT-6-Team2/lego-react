@@ -14,56 +14,56 @@ import vip from "./images/vip.jpg";
 function CategoryNavbar(){
     return(
     <div className="category-navbar-container">
-        <a href="/product:5" className="category-navbar-one-category">
+        <a href="/all-products" className="category-navbar-one-category">
             <img
                 src={news}
                 alt="new-category"
             />
             <p>New</p>
         </a>
-        <Link to="./LoginPage" className="category-navbar-one-category">
+        <Link to="/all-products" className="category-navbar-one-category">
             <img
                 src={exclusives}
                 alt="exclusives-category"
             />
             <p>Exclusives</p>
         </Link>
-        <a href="#" className="category-navbar-one-category">
+        <a href="/all-products" className="category-navbar-one-category">
             <img
                 src={offers}
                 alt="offers-category"
             />
             <p>Offers</p>
         </a>
-        <a href="#" className="category-navbar-one-category">
+        <a href="/all-products" className="category-navbar-one-category">
             <img
                 src={easter}
                 alt="easter-category"
             />
             <p>Easter</p>
         </a>
-        <a href="#" className="category-navbar-one-category">
+        <a href="/all-products" className="category-navbar-one-category">
             <img
                 src={superMario}
                 alt="super-mario-category"
             />
             <p>LEGO® Super Mario™</p>
         </a>
-        <a href="#" className="category-navbar-one-category">
+        <a href="/all-products" className="category-navbar-one-category">
             <img
                 src={dreamCars}
                 alt="dream-cars-category"
             />
             <p>Dream Cars</p>
         </a>
-        <a href="#" className="category-navbar-one-category">
+        <a href="/all-products" className="category-navbar-one-category">
             <img
                 src={magazine}
                 alt="magazine-category"
             />
             <p>Magazine</p>
         </a>
-        <a href="#" className="category-navbar-one-category">
+        <a href="/all-products" className="category-navbar-one-category">
             <img
                 src={vip}
                 alt="vip-category"
